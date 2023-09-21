@@ -1,0 +1,169 @@
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-5-8ab775ec-84e49cc5-75b9df9c
+product_unique_id WP-DE-DMACH
+domain localhost/divi-machine
+
+Response Body:
+[{"status":"success","status_code":"s100","message":"Licence Key Successfully Activated for localhost\/divi-machine","licence_status":"active","licence_start":"2022-11-08","licence_expire":"2023-11-08"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action deactivate
+licence_key dmach-5-8ab775ec-84e49cc5-75b9df9c
+product_unique_id WP-DE-DMACH
+domain localhost/divi-machine
+
+Response Body:
+[{"status":"success","status_code":"s201","message":"Licence Key Successfully Unassigned"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1-6d8f975f-f1e45cac-0b0b2f9b
+product_unique_id WP-DE-DMACH
+domain localhost/divi-machine
+
+Response Body:
+[{"status":"success","status_code":"s100","message":"Licence Key Successfully Activated for localhost\/divi-machine","licence_status":"active"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action deactivate
+licence_key dmach-1-6d8f975f-f1e45cac-0b0b2f9b
+product_unique_id WP-DE-DMACH
+domain localhost/divi-machine
+
+Response Body:
+[{"status":"success","status_code":"s201","message":"Licence Key Successfully Unassigned"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"success","status_code":"s100","message":"Licence Key Successfully Activated for applause-wp.local","licence_status":"active"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"error","status_code":"e112","message":"You had reached the maximum number of domains for this key"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"error","status_code":"e112","message":"You had reached the maximum number of domains for this key"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"error","status_code":"e112","message":"You had reached the maximum number of domains for this key"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"error","status_code":"e112","message":"You had reached the maximum number of domains for this key"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"error","status_code":"e112","message":"You had reached the maximum number of domains for this key"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"success","status_code":"s100","message":"Licence Key Successfully Activated for applause-wp.local","licence_status":"active"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"success","status_code":"s101","message":"Licence Key was Already Activated for applause-wp.local","licence_status":"active"}]
+
+Response Server Response:
+code 200
+message OK
+------
+Arguments:
+woo_sl_action activate
+licence_key dmach-1li--8ccf7b59-4ea79f88-6bee7c80
+product_unique_id WP-DE-DMACH
+domain applause-wp.local
+
+Response Body:
+[{"status":"success","status_code":"s101","message":"Licence Key was Already Activated for applause-wp.local","licence_status":"active"}]
+
+Response Server Response:
+code 200
+message OK

@@ -1,0 +1,131 @@
+// Form Styles specifically for the form in State of Digital Quality (SDQ)
+
+#full-form {
+  @apply tw-relative tw-z-[1] tw-h-full tw-w-full;
+
+  input.notYourWebsite {
+    @apply tw-absolute tw-bg-black;
+    top: -10000rem;
+    left: -10000rem;
+  }
+
+  input[type='checkbox'] {
+    @apply tw-relative tw-w-4 tw-h-4 tw-mr-2;
+    top: 3px;
+  }
+
+  #indicates-required {
+    @apply tw-order-last tw-mb-6 tw-text-base tw-text-gray-700;
+  }
+
+  .error-star {
+    @apply tw-text-error-red tw-text-md;
+  }
+
+  .mkto-form-loader {
+    @apply tw-relative tw-z-[1] tw-h-full tw-w-full;
+
+    .loading-wrapper {
+      @apply tw-h-full tw-w-full tw-z-[200] tw-absolute;
+
+      &.animate__fadeOut {
+        @apply tw-hidden;
+
+        .isLoading {
+          @apply tw-hidden;
+        }
+      }
+
+      .isLoading {
+        @apply tw-absolute tw-z-[999] tw-h-full tw-w-full tw-bg-white tw-flex tw-items-center tw-justify-center;
+      }
+    }
+  }
+  
+  .mkto-message,
+  .mkto-form-loader {
+    transition: transform 0.8s;
+    @apply tw-z-[100];
+  }
+
+  .mktoForm {
+    
+    .title {
+      @apply tw-text-maroon-500 tw-pb-4 tw-mb-0 tw-text-2xl tw-text-left;
+    }
+  }
+
+  #form-interior {
+    &.two-column {
+      @apply tablet:tw-grid-cols-2 tablet:tw-gap-x-4 tw-grid tw-w-full;
+    }
+
+    &.one-column {
+      @apply tw-w-full;
+    }
+
+    .field-row {
+      @apply tw-mb-4;
+      
+      .field-row-label  {
+        @apply tw-inline-block tw-w-full tw-text-base tw-font-medium tw-leading-6 tw-text-gray-700;
+
+        > * {
+          @apply tw-leading-6;
+        }
+      }
+
+      .field-row-field {
+        @apply focus:tw-border-catalina-400 tw-px-2 tw-py-2 tw-text-base tw-leading-6 tw-text-gray-600 tw-bg-white tw-border tw-border-gray-300 tw-border-solid tw-rounded tw-outline-none;
+      }
+    }
+  }
+
+  #special-terms,
+  #show-gdpr {
+    @apply tw-px-3 tw-mb-4 tw-overflow-hidden;
+    transition: all 0.3s ease-in-out;
+    height: 0;
+    
+    label {
+      @apply tw-text-left;
+
+      input {
+        @apply tw-mt-1 tw-mr-2;
+      }
+
+      span {
+        @apply tw-text-sm;
+
+        a {
+          @apply hover:tw-text-gray-600 tw-text-blue-500 tw-underline;
+        }
+      }
+    }
+
+    &.animate__fadeOutUp {
+      height: 0px;
+      overflow: hidden;
+    }
+
+    &.animate__fadeInDown {
+      height: 100%;
+    }
+  }
+
+  #form-footer-links {
+    ul {
+      @apply tw-w-full tw-mx-0 tw-text-sm tw-text-left tw-list-none;
+
+      li {
+        @apply tw-p-0 tw-m-0;
+
+        a {
+          @apply hover:tw-text-gray-600 tw-text-sm tw-text-blue-500 tw-underline;
+        }
+
+        
+      }
+    }
+  }
+}

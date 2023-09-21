@@ -1,0 +1,512 @@
+/* ========================================== 
+  Header Customizations
+========================================== */
+
+$transition: all 0.3s linear;
+
+.header-background-section {
+  @apply tw-w-full tw-h-[25rem] tw-min-h-[25rem] tw-inline-block tw-bg-no-repeat tw-bg-cover;
+}
+
+#homepage-banner {
+  @apply tw-w-full;
+}
+
+#page-container {
+  #main-header {
+    /* top: 0px; */
+    /* position: sticky !important; */
+    min-height: 4.5rem;
+  }
+}
+
+/* Adjust header for banner alert */
+
+body.has-alert {
+  #page-container {
+    padding-top: 120px !important;
+  }
+}
+
+#page-container #main-header.has-alert {
+    max-height: 120px;
+}
+
+.et-pb-section.et_pb_section_sticky {
+  padding: 4% 0 !important;
+}
+
+body.admin-bar {
+  #wpadminbar {
+    @apply tw-overflow-hidden;
+    li {
+      @apply tw-max-w-[200px] tw-overflow-hidden;
+    }
+  }
+}
+
+.get-started-button a {
+  @apply tw-rounded tw-border-none tw-cursor-pointer tw-inline-block tw-text-sm tw-font-bold tw-leading-5 tw-px-6 tw-py-2 tw-bg-yellow-500 tw-text-gray-900;
+  padding: 0.5rem 1.5rem !important;
+
+  &:focus,
+  &:hover,
+  &:active {
+    @apply tw-text-black tw-bg-yellow-600;
+  }
+}
+
+body.admin-bar #wpadminbar {
+  overflow: hidden;
+}
+body.admin-bar #wpadminbar li {
+  overflow: hidden;
+  max-width: 190px;
+}
+
+/* ========================================== 
+  Header Heros for Main Pages
+========================================== */
+.header-hero {
+  @apply tw-outline-none tw-p-0 tw-bg-transparent tw-bg-no-repeat tw-bg-cover tw-mx-auto tw-relative tw-min-h-[25rem] tw-grid tw-content-center;
+
+  .hero-bg {
+    @apply tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-transparent tw-bg-no-repeat tw-bg-cover;
+    background-position: center center;
+
+    @screen small {
+      left: 15vw;
+      width: calc(100% - 15vw);
+    }
+
+    @screen medium {
+      left: 12vw;
+      width: calc(100% - 12vw);
+    }
+  }
+
+  .hero-wrapper {
+    @apply tw-relative tw-z-10 tw-grid tw-items-center tw-w-full tw-h-full tw-p-0 tw-mx-auto tw-my-0;
+    min-height: 25rem;
+    max-width: 75vw;
+
+    @screen tablet {
+      min-height: 25rem;
+      max-width: 65vw;
+    }
+
+    @screen small {
+      min-height: 0;
+      max-width: 45vw;
+      margin: 0;
+      margin-left: 4rem;
+    }
+
+    .hero-body {
+      @apply tw-shadow-old tw-block tw-bg-white tw-rounded-[3px] tw-self-center tw-px-6 tw-py-8;
+
+      @screen tablet {
+        @apply tw-py-7 tw-top-0 tw-px-5 tw-m-0;
+      }
+
+      &::before {
+        display: block;
+        content: '';
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+/* ========================================== 
+  CTA Banner / Alert Banner
+========================================== */
+.banner-alerts-container {
+  display: none !important;
+
+  @apply tw-bg-applause-blue tw-text-white;
+
+  #banner-alerts {
+    @apply tw-text-center tw-flex tw-justify-center tw-gap-4;
+    max-height: 3rem;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  a {
+    @apply tw-text-white tw-text-sm tw-border-b tw-border-white tw-border-solid tw-transition-all tw-inline-block tw-leading-[3rem];
+  }
+
+  h2 {
+    @apply tw-text-white tw-text-sm tw-leading-[3rem];
+
+    &:hover {
+      @apply tw-border-opacity-0;
+    }
+  }
+
+  .controls {
+    @apply tw-p-4;
+
+    a.dismiss {
+      @apply tw-invert tw-inline-block tw-text-white tw-duration-200 tw-rounded-none;
+      transform-origin: left;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-image: url("https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/icons/streamline-micro-bold/interface-essential/add-remove-delete/interface-delete-1.svg");
+      background-size: contain;
+      height: 1rem;
+      width: 1rem;
+      text-indent: -10000rem;
+
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
+  }
+}
+
+@media (min-width: 901px) {
+  .banner-alerts-container {
+    display: block !important;
+  }
+}
+// END Banner Alert
+
+/* ========================================== 
+  Navigation Customizations
+========================================== */
+
+// Mobile ===================================
+// ==========================================
+@media (max-width: 900px) {
+  /* ### Menu breakpoint for default menu ### */
+  #et_mobile_nav_menu {
+    display: block !important;
+  }
+  #top-menu {
+    display: none !important;
+  }
+
+  /* ### Menu breakpoint for the theme builder ### */
+  .et_pb_menu .et_pb_menu__menu,
+  #et-main-area .de-mega-menu-container {
+    display: none !important;
+  }
+
+  #et_mobile_nav_menu {
+    display: block !important;
+
+    #mobile_menu {
+      max-height: 75vh;
+      overflow-x: scroll;
+      scrollbar-color: #fff #fff;
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #fff;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border: 1px solid #ececec;
+        border-radius: 10px;
+      }
+
+      .de-mega-menu-item {
+        .inner-menu-applause {
+          .dicm_custom_icon_boxs {
+            .et_pb_module_inner {
+              .inner-link {
+                @apply tw-gap-2;
+
+                > img {
+                  @apply tw-inline-block;
+                  width: 24px;
+                  height: 24px;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .et_pb_svg_logo #logo {
+    max-width: 12rem;
+    width: 12rem;
+    height: auto !important;
+  }
+
+  .et_header_style_left .logo_container {
+    height: 4.5rem;
+    max-height: 4.5rem;
+  }
+
+  .et_header_style_left #et-top-navigation .mobile_menu_bar {
+    padding-bottom: 16px;
+  }
+
+  #page-container {
+    #et-boc {
+      #main-header {
+        #et-top-navigation {
+          max-height: 4.5rem;
+        }
+      }
+    }
+  }
+
+  /* Our Solutions window */
+  .our_solutions.menu-item {
+    .et_pb_row {
+      .et_pb_column {
+        width: 100% !important;
+      }
+    }
+
+    .dicm_custom_icon_boxs {
+      .inner-link {
+        @apply tw-gap-4;
+      }
+    }
+
+    .et_pb_module.et_pb_text {
+      @apply tw-py-0 tw-my-0;
+
+      padding: 0 !important;
+      margin: 0 !important;
+
+      .et_pb_text_inner {
+        a {
+          border: 0px transparent solid;
+        }
+
+        p {
+          margin-bottom: 0 !important;
+          padding-bottom: 0 !important;
+        }
+      }
+    }
+
+    .no-link {
+      padding-left: 0px !important;
+      padding-bottom: 10px !important;
+
+      span {
+        @apply tw-gap-2;
+      }
+    }
+
+    .mini-title {
+      padding-left: 0px !important;
+      padding-bottom: 5px !important;
+
+      span {
+        @apply tw-gap-2;
+      }
+    }
+
+    .mini-title .link-title {
+      @apply tw-border-b tw-border-solid tw-border-gray-900 tw-mb-2;
+      line-height: 1rem;
+      transition: all 0.3s linear;
+
+      &::after {
+        border-color: transparent transparent transparent #606060;
+        border-width: 4px 0 4px 6.9px;
+        content: "";
+        display: inline-block;
+        height: 0;
+        margin-left: 0.5rem;
+        width: 0;
+      }
+    }
+  }
+}
+
+// Tablet ===================================
+// ==========================================
+@media (min-width: 901px), (max-width: 980px), (min-width: 980px)  {
+
+  /* ### Menu breakpoint for default menu ### */
+  #et_mobile_nav_menu {
+    display: none !important;
+  }
+  #top-menu {
+    display: block !important;
+  }
+
+  /* ### Menu breakpoint for the theme builder ### */
+  .et_pb_menu .et_pb_menu__menu {
+    display: block !important;
+  }
+  .et_mobile_nav_menu {
+    display: none !important;
+  }
+
+  .et_header_style_left #logo {
+    max-width: 12rem;
+    width: 12rem;
+    height: auto !important;
+  }
+
+  .et_header_style_left #et-top-navigation,
+  .et_header_style_left .et-fixed-header #et-top-navigation {
+    padding-top: 0px !important;
+  }
+
+  /* Top Menu Bar */
+  #top-menu {
+    > li.menu-item {
+      padding-right: 0px !important;
+
+      /* Disable arrows */
+      > a::after {
+        content: "";
+        display: none !important;
+      }
+
+      /* Hover Tabs */
+      &:not(.get-started-button) {
+        a {
+          @apply tw-opacity-100 tw-font-[500];
+          padding: 1.8rem 0.5rem !important;
+
+          &:hover {
+            @apply tw-opacity-100 tw-bg-blue-100;
+          }
+
+          &::before {
+            content: "";
+            transition: all linear 0.2s;
+            @apply tw-transform-none tw-w-none tw-h-[2px] tw-p-0 tw-border-none tw-absolute tw-bottom-0 tw-left-0 tw-top-auto tw-right-auto tw-m-0;
+
+            &:hover {
+              @apply tw-transform-none tw-w-full tw-h-[2px] tw-bg-blue-500 tw-inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .de-mega-menu-container {
+    @apply tw-flex tw-relative;
+    max-width: 80%;
+    margin: 0 auto;
+
+    .de-mega-menu {
+      @apply tw-shadow-small tw-rounded-b-sm;
+      animation-duration: 200ms;
+      width: 100% !important;
+      max-width: 100% !important;
+      max-height: 75vh !important;
+      top: 0px !important;
+      right: 0px !important;
+      border-top: 1px solid theme("colors.gray.200");
+
+      .et_pb_section {
+        .et_pb_row {
+          @apply tw-w-full tw-flex tw-flex-nowrap;
+
+          .dicm_custom_icon_boxs {
+            .et_pb_module_inner {
+              .inner-link {
+                @apply tw-gap-2;
+
+                > img {
+                  @apply tw-inline-block;
+                  width: 27px;
+                  height: auto;
+                  max-height: 27px;
+                }
+              }
+
+              .mini-title .link-title {
+                @apply tw-border-b tw-border-solid tw-border-gray-900 tw-mb-2;
+                line-height: 1rem;
+                transition: all 0.3s linear;
+
+                &::after {
+                  border-color: transparent transparent transparent #606060;
+                  border-width: 4px 0 4px 6.9px;
+                  content: "";
+                  display: inline-block;
+                  height: 0;
+                  margin-left: 0.5rem;
+                  width: 0;
+                }
+              }
+
+              .cta-link {
+                img {
+                  @apply tw-w-full tw-aspect-[3/2];
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &#our_solutions {
+        .et_pb_section {
+          .et_pb_row {
+            @apply tw-shadow-small tw-rounded-b-sm;
+
+            .et_pb_column {
+              .et_pb_module.et_pb_text {
+                width: 100%;
+                display: inline-block !important;
+                /* padding: 0px !important; */
+                line-height: 1.2rem !important;
+
+                .et_pb_text_inner {
+                  p {
+                    padding-bottom: 0px !important;
+                    margin-bottom: 0px !important;
+
+                    a {
+                      @apply tw-text-sm tw-text-gray-900 tw-px-2 tw-py-2 tw-rounded-sm tw-cursor-pointer tw-inline-block;
+                      transition: $transition;
+                      display: inline-block !important;
+                      width: 100%;
+                      margin-right: 5px;
+
+                      &:hover,
+                      &:active,
+                      &:focus {
+                        color: theme("colors.black");
+                        background-color: theme("colors.blue.100");
+                      }
+                    }
+                  }
+                }
+              }
+
+              .dicm_custom_icon_boxs_36 {
+                margin-top: 1rem;
+              }
+
+              .nav-icon {
+                max-width: 20px;
+                width: 20px;
+                height: auto;
+              }
+              .no-link span,
+              .mini-title span {
+                @apply tw-gap-[5px];
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

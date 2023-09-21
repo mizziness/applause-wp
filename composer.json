@@ -1,0 +1,60 @@
+{
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "path",
+			"url": "wp-content/plugins/*/"
+		},
+		{
+			"type": "path",
+			"url": "wp-content/themes/*/"
+		}
+	],
+	"extra": {
+		"wordpress-install-dir": "wordpress",
+		"installer-paths": {
+			"wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+			"wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+			"wp-content/themes/{$name}/": ["type:wordpress-theme"]
+		}
+	},
+	"require": {
+		"php": "8.1.6",
+		"ext-gd": "*",
+		"ext-imagick": "*",
+		"ext-exif": "*",
+		"ext-intl": "*",
+		"ext-memcached": "*",
+		"aws/aws-sdk-php": "^3.11",
+		"deliciousbrains/wp-queue": "^2.0",
+		"guzzlehttp/guzzle": "^7.7",
+		"vlucas/phpdotenv": "^3.4.0",
+		"wp-cli/wp-cli-bundle": "*",
+		"wpackagist-plugin/addons-for-divi": "^3.6",
+		"wpackagist-plugin/amazon-web-services": "^1.0",
+		"wpackagist-plugin/custom-post-type-ui": "^1.13",
+		"wpackagist-plugin/insert-headers-and-footers": "^2.0",
+		"wpackagist-plugin/popups-for-divi": "^3.0",
+		"wpackagist-plugin/safe-svg": "^2.1",
+		"wpackagist-plugin/wp-mail-smtp": "^3.8",
+		"wpackagist-theme/twentyfifteen": "*"
+	},
+	"scripts": {
+	},
+	"require-dev": {
+		"heroku/heroku-buildpack-php": "*"
+	},
+	"config": {
+    	"sort-packages": true,
+		"allow-plugins": {
+			"composer/installers": true
+		},
+		"platform": {
+			"php": "8.1.6",
+			"ext-imagick": "3.7.0"
+		}
+	}
+}

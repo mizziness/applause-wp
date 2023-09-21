@@ -19,4 +19,8 @@ Keys/applause-wp.local.key
 *.sql
 *.log
 *.zip
+.vscode/
 /**/*/stats.json
+
+/dist
+/**/*/dist/**/*/

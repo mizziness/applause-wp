@@ -1,0 +1,39 @@
+// Homepage
+// ======================================================== //
+#homepage {
+$base: 25rem;
+
+  .homepage-hero {
+    @apply tw-relative;
+
+    &__overlay {
+      @apply tw-w-full tw-bg-200% tw-min-h-[25rem] tw-h-[25rem] tw-inline-block tw-absolute tw-top-0 tw-left-0 tw-z-[10];
+    }
+
+    &__background {
+      @apply tw-w-full tw-bg-cover tw-bg-no-repeat tw-min-h-[25rem] tw-h-[25rem] tw-inline-block;
+
+      &::after {
+        @apply tw-inline-block tw-h-[25rem] tw-w-full tw-absolute tw-top-0 tw-left-0 tw-z-[9];
+        content: '';
+      }
+    }
+
+    &__body {
+      @apply tw-relative tw-z-[18];
+
+      .homepage-hero__content {
+        @apply tw-shadow-old tw-bg-white tw-rounded-[4px] tw-p-8 tw-relative tw-z-[1] tw-w-full tw-max-w-[75vw] tw-mx-auto tw-my-0 tw-bottom-[9rem] tw-mb-[-9rem];
+        
+        @screen small {
+          @apply tw-left-0 tw-mx-0 tw-max-w-[55vw] tw-px-8 tw-py-10 tw-mb-[-9rem];
+        }
+
+        @screen medium {
+          @apply tw-left-[4.5rem];
+        }
+      }
+    }
+  }
+}
+

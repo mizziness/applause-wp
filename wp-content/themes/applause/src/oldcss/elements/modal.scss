@@ -1,0 +1,46 @@
+body.open-modal {
+  @apply tw-overflow-hidden;
+}
+
+.applause-modal {
+  &.closed {
+    @apply tw-hidden;
+  }
+}
+
+.modal-outer {
+  @apply tw-bg-backdrop tw-fixed tw-inset-0 tw-z-20 tw-flex tw-items-center tw-justify-center tw-w-screen tw-h-screen tw-p-4 tw-overflow-y-scroll;
+}
+
+.modal-inner {
+  @apply tw-relative tw-m-auto;
+}
+
+.modal-padding {
+ @apply tw-px-4;
+}
+
+.modal-inner .close-button {
+  @apply tw-absolute tw-block tw-top-4 tw-right-4 tw-p-3 tw-bg-white tw-bg-100% tw-bg-no-repeat tw-z-[999];
+}
+
+.mfp-modal {
+  @apply tw-relative tw-p-4 tw-mx-auto tw-bg-white tw-rounded tw-text-center tw-border-[6px] tw-border-white tw-max-w-[40rem];
+  width: calc(100% - 2rem);
+
+  &__banner {
+    @apply tw-rounded-t;
+  }
+}
+
+.mfp-close {
+  @apply tw-hidden;
+}
+
+.spinClose {
+  transition: transform ease-in-out 0.2s;
+
+  &:hover {
+    transform: scale(.85, .85);
+  }
+}

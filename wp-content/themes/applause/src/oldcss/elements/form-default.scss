@@ -1,0 +1,209 @@
+#full-form,
+.form-modal-container {
+  @apply tw-relative tw-z-[1] tw-h-full tw-w-full;
+
+  input.notYourWebsite {
+    @apply tw-absolute tw-bg-black;
+    top: -10000rem;
+    left: -10000rem;
+  }
+
+  input[type='checkbox'] {
+    @apply tw-relative tw-w-4 tw-h-4 tw-mr-2;
+    top: 3px;
+  }
+
+  .mkto-form-loader {
+    @apply tw-relative tw-z-[1] tw-h-full tw-w-full tw-transition-all tw-duration-300;
+
+    .loading-wrapper {
+      @apply tw-h-full tw-w-full tw-z-[200] tw-transition-all tw-duration-300;
+
+      .isLoading {
+        @apply tw-absolute tw-z-[999] tw-h-full tw-w-full tw-bg-white tw-flex tw-items-center tw-justify-center;
+      }
+
+      &.animate__fadeIn {
+        @apply tw-absolute;
+      }
+    }
+
+    &.animate__fadeOut {
+      @apply tw-h-0 tw-max-h-[0px] tw-overflow-hidden;
+    }
+  }
+  
+  .mkto-message,
+  .mkto-form-loader {
+    transition: transform 0.8s;
+    @apply tw-z-[100];
+  }
+
+  .mktoForm {
+    @apply tw-transition-all tw-duration-300;
+    
+    .title-container {
+      @apply tw-px-4 tw-pb-4 tw-mb-8 tw-border-b;
+
+      .title {
+        @apply tw-pb-4 tw-mb-0 tw-text-center;
+      }
+    }
+
+    #indicates-required {
+      @apply tw-mb-6 tw-text-base tw-text-center tw-text-gray-700;
+    }
+
+    #special-terms,
+    #show-gdpr {
+      @apply tw-px-3 tw-mb-4 tw-overflow-hidden;
+      transition: all 0.3s ease-in-out;
+      height: 0;
+      
+      label {
+        @apply tw-text-left;
+
+        input {
+          @apply tw-mt-1 tw-mr-2;
+        }
+
+        span {
+          @apply tw-text-sm;
+
+          a {
+            @apply hover:tw-text-gray-600 tw-text-blue-500 tw-underline;
+          }
+        }
+      }
+
+      &.animate__fadeOutUp {
+        height: 0px;
+      }
+
+      &.animate__fadeInDown {
+        height: 100%;
+      }
+    }
+
+    #form-footer-links {
+      ul {
+        @apply tw-w-full tw-mx-0 tw-text-sm tw-text-center tw-list-none;
+
+        li {
+          @apply tw-inline-block tw-p-0 tw-m-0;
+
+          a {
+            @apply hover:tw-text-gray-600 tw-w-full tw-mx-2 tw-text-sm tw-text-blue-500 tw-underline;
+          }
+
+          &:last-of-type {
+            &::before {
+              @apply tw-inline-block tw-px-[2px];
+              content: "|";
+            }
+          }
+        }
+      }
+    }
+
+    #button-container {
+      @apply tw-flex tw-justify-center tw-mt-6;
+
+      .btn {
+        @apply tw-px-10 tw-py-4 tw-font-sans tw-text-lg tw-transition-all;
+      }
+    }
+  }
+
+  #form-interior {
+    @apply small:tw-w-auto tw-flex tw-flex-wrap tw-items-start tw-w-full;
+
+    &.two-column {
+      @apply tablet:tw-grid-cols-2 tw-grid tw-w-full;
+    }
+
+    &.one-column {
+      @apply tw-flex-nowrap tw-flex tw-flex-col tw-items-start tw-w-full;
+    }
+
+    .field-row {
+      @apply tw-relative tw-flex tw-items-center tw-w-full tw-px-3 tw-mb-6;
+
+      .field-row-field {
+        @apply tw-text-black tw-border-gray-900;
+      }
+
+      &.is-valid {
+        .field-row-field,
+        .field-row-label {
+          @apply tw-text-blue-900 tw-border-blue-500;
+        }
+      }
+
+      &.has-error {
+        .field-row-field,
+        .field-row-label {
+          @apply tw-text-error-red tw-border-error-red;
+        }
+      }
+    }
+
+    .field-row-field {
+      @apply focus:tw-outline-none tw-w-full tw-p-3 tw-text-sm tw-font-medium tw-text-gray-700 tw-bg-white tw-border tw-rounded-sm tw-shadow-none;
+    }
+
+    .field-row-label {
+      @apply tw-absolute tw-z-10 tw-ml-3 tw-text-sm tw-rounded tw-pointer-events-none tw-transition-transform tw-duration-300;
+
+      .pristine-error.error-msg {
+        &::before {
+          content: "(";
+        }
+        
+        &::after {
+          content: ")";
+        }
+      }
+    }
+
+    .labelFocus {
+      @apply label-up tw-px-2 tw-text-xs tw-bg-white;
+    }
+
+    .pristine-error,
+    .error-msg {
+      @apply tw-italic tw-text-xs tw-text-error-red tw-border-error-red;
+    }
+
+    .error-msg.error-star {
+      @apply tw-text-error-red tw-text-md;
+    }
+
+    .error-msg.error {
+      @apply tw-text-error-red tw-text-xs;
+    }
+
+    .applause-select {
+      .select-wrapper {
+        @apply tw-relative tw-w-full tw-h-full;
+
+        select::-ms-expand {
+          display: none;
+        }
+
+        select {
+          @apply tw-appearance-none;
+        }
+
+        &::after {
+          @apply tw-absolute tw-pointer-events-none tw-top-0 tw-right-0 tw-text-lg tw-font-semibold tw-leading-[1.125rem] tw-p-3;
+          content: '\005E';
+          pointer-events: none;
+          transform: rotate(180deg) scaleX(1.15);
+        }
+      }
+    }
+  }
+}
+
+

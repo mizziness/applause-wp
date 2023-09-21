@@ -1,0 +1,118 @@
+.prefabSection {
+  .layout-textLeft,
+  .layout-textRight {
+    @apply tw-grid tw-grid-cols-2;
+  }
+  
+  .prefab_text_w_image {
+    @apply tw-gap-y-0;
+
+    .layout-textLeft {
+      .column:last-of-type {
+        @apply tw-order-1;
+      }
+      .column:first-of-type {
+        @apply tw-order-2;
+      }
+    }
+
+    .layout-textRight {
+      .column:last-of-type {
+        @apply tw-order-2;
+      }
+      .column:first-of-type {
+        @apply tw-order-1;
+      }
+    }
+
+    .element-paragraphText {
+      p::last-of-type {
+        @apply tw-pb-0 tw-mb-0;
+      }
+    }
+  }
+
+}
+
+section.section,
+div.section {
+  @apply tw-outline-none tw-px-5 tw-py-18 tw-relative tw-z-[1];
+
+  .layout-textRight {
+    @apply medium:tw-grid-cols-2 tw-gap-x-10 tw-grid;
+  }
+
+  .layout-textLeft {
+    @apply medium:tw-grid-cols-2 tw-gap-x-10 medium:tw-items-start tw-gap-y-8 tw-grid;
+  }
+
+  .layout-textBoth {
+    .column {
+      @apply tw-self-start;
+    }
+    @apply medium:tw-grid-cols-2 tw-gap-x-10 medium:tw-items-center tw-gap-y-8 tw-grid;
+  }
+
+  .section-block-image {
+    picture,
+    picture > img {
+      @apply tw-rounded-[4px] tw-mb-4 medium:tw-mb-0;
+    }
+  }
+
+  @screen tablet {
+    @apply tw-px-0;
+  }
+
+  &.split-color {
+    @screen tablet {
+      @apply tw-py-8 tw-mt-0;
+    }
+  }
+
+  .showcase-section {
+    @apply tw-max-w-[70vw] tw-relative tw-bg-transparent;
+
+    &.layout-textOnly {
+      @apply tw-w-full tw-mx-auto tw-text-center;
+    }
+
+    &.layout-pictureBox {
+      @apply tw-block tw-w-full tw-px-4 tw-py-4 tw-mx-auto tw-text-center tw-bg-white tw-rounded tw-shadow-small;
+
+      @screen medium {
+        @apply tw-grid;
+        grid-template-columns: 35% 65%;
+      }
+    }
+
+    .showcase-image {
+      @apply medium:tw-block tw-relative tw-grid tw-content-center tw-w-full tw-h-full tw-max-w-full tw-bg-cover tw-rounded;
+      background-position: center center;
+      justify-items: center;
+
+      > * {
+        @apply tw-relative tw-z-[2];
+      }
+
+      &::after {
+        @apply tw-h-full tw-w-full tw-absolute tw-top-0 tw-left-0 tw-z-[1] tw-block tw-bg-black tw-bg-opacity-60 tw-transition-colors;
+        content: "";
+      }
+    }
+  }
+
+  .pull-quote {
+    .blockquote.image {
+      @apply tw-mb-2;
+
+      img {
+        @apply tw-h-[100px] tw-block tw-my-0 tw-mx-auto;
+      }
+    }
+  }
+
+  .prefab_text_w_video {
+    @apply tw-py-8;
+  }
+}

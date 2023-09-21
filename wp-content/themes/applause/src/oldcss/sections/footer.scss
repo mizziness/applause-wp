@@ -1,0 +1,53 @@
+/***************************************************
+  Footer
+  The footer element structure is:
+  // footer > .footer-top > .footer-navigation
+  // footer > .footer-bottom > #copyright, #legal-links
+***************************************************/
+
+footer {
+  #applause-logo-footer {
+    a, picture, img {
+      @apply tw-block tw-h-auto;
+      width: 16vw;
+      max-width: 350px;
+    }
+  }
+
+  .footer-navigation {
+    @apply tablet:tw-grid tablet:tw-gap-x-5 small:tw-gap-x-10 tw-w-full;
+
+    .column {
+      @screen small {
+        border-top: none;
+      }
+
+      &:last-child {
+        @screen small {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .footer-menu-head {
+    @apply tw-flex;
+
+    img {
+      @apply tw-absolute tw-right-0 tw-mr-4;
+      height: .5rem;
+      width: .5rem;
+    }
+
+    &.open {
+      img {
+        transform: scaleY(-1);
+      }
+    }
+  }
+
+  ul {
+    @apply tablet:tw-h-auto tablet:tw-overflow-visible tw-h-0 tw-overflow-hidden;
+    transition:height 0.2s ease-out;
+  }
+}

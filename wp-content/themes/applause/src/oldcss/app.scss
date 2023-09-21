@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./css/base-styles.scss";
+@import "./css/buttons.scss";
+@import "./css/forms.scss";
+
+@import "./css/sections/header.scss";
+@import "./css/sections/prefabs.scss";
+@import "./css/sections/video-popups.scss";
+
+@import "./css/pages/home.scss";
+
+
+
+/* .custom-featured-images img {
+	border-radius: 10px;
+}
+.divi-location-fullwidth .divi-filter-item, .divi-location-fullwidth .et_pb_de_mach_search_posts_item p.et_pb_contact_field.divi-filter-item {
+	margin-top: 0 !important;
+}
+html[lang="fr-FR"] #et-main-area, 
+html[lang="ja"] #et-main-area {
+    padding-top: 0 !important;
+}
+.dicm_resource_events img {
+	max-width: 200px;
+}
+.de-mega-menu {
+	animation-name: fadeTop;
+	margin-top: 0px !important;
+}
+.de-mega-menu p a {
+	color: inherit !important;
+}
+html[lang="ja"] .widget_nav_menu h4.title{
+	display: none
+}
+body a {
+	text-decoration: none !important
+}
+
+#et-main-area .de-mega-menu {
+	animation: fadeTop !important;
+	position: relative;
+} */
+
+

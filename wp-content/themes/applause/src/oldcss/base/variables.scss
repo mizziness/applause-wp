@@ -1,0 +1,26 @@
+/***************************************************
+  SASS Variables
+***************************************************/
+@use "sass:math";
+
+$applause-blue: theme('colors.applause.blue');
+$applause-blue-dark: theme('colors.applause.blue-dark');
+$transition: all 0.3s linear;
+
+/* Hamburger Nav Settings */
+$hamburger-size:                            50px; // Set both width and height
+$hamburger-width:                           40px; // Width (overrides $size, for a non square button)
+$hamburger-thickness:                       3px; // Thickness of the bars
+$hamburger-color:                           theme('colors.blue.500');
+$hamburger-color-hover:                     theme('colors.blue.700');
+$hamburger-color-active:                    $hamburger-color;
+$hamburger-background:                      transparent;
+$hamburger-background-transition-speed:     0.3s;
+$hamburger-opacity-transition-speed:        0.3s;
+$hamburger-padding:                         0;
+$hamburger-extra-transition-rules:          all 0.3s linear;
+
+// Spits out code like: linear-gradient( rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+@function createOverlay($color: #000000, $alpha: 0.6) {
+  @return linear-gradient( rgba($color, $alpha), rgba($color, $alpha));
+}

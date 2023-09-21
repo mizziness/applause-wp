@@ -1,0 +1,37 @@
+.abm-nav-item {
+  @apply tw-relative tw-py-6 tw-mr-8 tw--my-5 tw-text-base tw-no-underline;
+
+  &:hover {
+    @apply tw-text-blue-500;
+
+    &:after {
+      @apply tw-absolute tw-inset-0 tw-bottom-0 tw-left-0 tw-w-full tw-bg-blue-500;
+      content: '';
+      height: 5px;
+    }
+  }
+}
+
+.abm-btn-inverse {
+  @apply tw-p-2 tw-px-4 tw-text-base tw-no-underline tw-normal-case tw-transition-all tw-bg-green-500 tw-border-2 tw-border-green-500 tw-rounded-sm;
+
+  &:hover,
+  &:active {
+    @apply tw-text-white tw-bg-green-700 tw-border-green-700;
+  }
+}
+
+.abm-btn {
+  @apply tw-p-3 tw-px-12 tw-text-lg tw-font-bold tw-text-white tw-no-underline tw-transition-all tw-bg-green-500 tw-border-2 tw-border-green-500 tw-rounded-sm;
+
+  &:hover,
+  &:active {
+    @apply tw-text-white tw-bg-green-700 tw-border-green-700;
+  }
+}
+
+.mkto-success-message {
+  p {
+    @apply tw-font-medium;
+  }
+}

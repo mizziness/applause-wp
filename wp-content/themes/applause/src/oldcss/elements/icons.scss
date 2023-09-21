@@ -1,0 +1,54 @@
+// Streamline Icons base
+.icon {
+  @apply tw-bg-100% tw-bg-no-repeat tw-inline-block tw-min-w-[.5rem] tw-min-h-[.5rem];
+
+  &.flip {
+    transform: rotate(180deg);
+  }
+  
+  &.icon-times {
+    background-image: url("/public/icons/streamline-micro-bold/interface-essential/add-remove-delete/interface-delete-1.svg");
+  }
+
+  &.icon-plus {
+    background-image: url("/public/icons/streamline-micro-bold/interface-essential/add-remove-delete/interface-add-1.svg");
+
+    &.gray {
+      background-image: url("/public/icons/streamline-micro-bold/interface-essential/add-remove-delete/interface-add-1.svg");
+    }
+  }
+
+  &.icon-search {
+    background-image: url("/public/icons/streamline-micro-bold/interface-essential/search/interface-search.svg");
+  }
+
+  &.icon-read-time {
+    @apply tw-relative tw-top-[1px];
+    background-image: url("/public/icons/read-time.svg");
+  }
+
+  &.thin-arrow-right {
+    @apply tw-relative tw-top-[1px] tw-min-w-[1rem];
+    background-image: url("/public/icons/thin-arrow-right.svg");
+  }
+}
+
+.icon.icon-phone {
+  @apply tw-inline-block tw-bg-no-repeat;
+  background-size: 100%;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  background-image: url("/public/icons/streamline-micro-bold/phone/mobile-phone/phone-telephone.svg");
+  // @include icon("phone/mobile-phone/phone-telephone.svg", "0272B4", ".75rem", ".75rem");
+}
+
+.icon.icon-email {
+  @apply tw-inline-block tw-bg-no-repeat;
+  background-repeat: no-repeat;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  background-image: url("/public/icons/streamline-micro-bold/mail/signs/mail-sign-at.svg");
+  // @include icon("mail/signs/mail-sign-at.svg", "0272B4", ".75rem", ".75rem");
+}
+
+

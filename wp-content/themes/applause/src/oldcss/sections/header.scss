@@ -1,0 +1,51 @@
+.header-hero {
+  @apply tw-outline-none tw-p-0 tw-bg-transparent tw-bg-no-repeat tw-bg-cover tw-mx-auto tw-relative tw-min-h-[25rem] tw-grid tw-content-center;
+
+  .hero-bg {
+    @apply tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-transparent tw-bg-no-repeat tw-bg-cover;
+    background-position: center center;
+
+    @screen small {
+      left: 15vw;
+      width: calc(100% - 15vw);
+    }
+
+    @screen medium {
+      left: 12vw;
+      width: calc(100% - 12vw);
+    }
+  }
+
+  .hero-wrapper {
+    @apply tw-relative tw-z-10 tw-grid tw-items-center tw-w-full tw-h-full tw-p-0 tw-mx-auto tw-my-0;
+    min-height: 25rem;
+    max-width: 75vw;
+
+    @screen tablet {
+      min-height: 25rem;
+      max-width: 65vw;
+    }
+
+    @screen small {
+      min-height: 0;
+      max-width: 45vw;
+      margin: 0;
+      margin-left: 4rem;
+    }
+
+    .hero-body {
+      @apply tw-shadow-old tw-block tw-bg-white tw-rounded-[3px] tw-self-center tw-px-6 tw-py-8;
+
+      @screen tablet {
+        @apply tw-py-7 tw-top-0 tw-px-5 tw-m-0;
+      }
+
+      &::before {
+        display: block;
+        content: '';
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}

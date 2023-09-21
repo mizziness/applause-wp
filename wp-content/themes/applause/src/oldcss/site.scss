@@ -1,0 +1,45 @@
+@import 'base/variables';
+@import 'base/default';
+
+@import "~delicious-hamburgers/scss/base";
+@import "~delicious-hamburgers/scss/animations/stack";
+
+@import 'elements/animations';
+@import 'elements/buttons';
+@import 'elements/form-default';
+@import 'elements/icons';
+@import 'elements/modal';
+@import 'elements/table';
+@import 'elements/video-popups';
+
+@import 'sections/footer';
+@import 'sections/main-navigation';
+@import 'sections/section-blocks';
+
+@import 'pages/customized-pages';
+@import 'pages/abm';
+@import 'pages/lp-resources';
+@import 'pages/retail-microsites';
+@import 'pages/resources';
+
+.split-color {
+  background: linear-gradient(0deg, theme('colors.gray.200') 50%, theme('colors.white') 0%);
+}
+
+.split-color-reversed {
+  background: linear-gradient(0deg, theme('colors.white') 50%, theme('colors.gray.200') 0%);
+}
+
+#legal-links {
+  #ot-sdk-btn.ot-sdk-show-settings, 
+  #ot-sdk-btn.optanon-show-settings {
+    font-size: .75rem !important;
+    color: white !important;
+    border: none !important;
+
+    &:hover {
+      color: white !important;
+      background-color: transparent !important;
+    }
+  }
+}

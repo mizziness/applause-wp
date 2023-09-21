@@ -1,0 +1,127 @@
+/***********************************
+  Retail Microsite
+***********************************/
+
+#retail-mirosite {
+  #full-form {
+    .mktoForm {
+      .mktoButtonRow {
+        .mktoSimple {
+          button {
+            @apply tw-relative tw-text-lg tw-bg-black tw-rounded-none;
+            padding: 1em 2em !important;
+
+            &:hover {
+              @apply tw-bg-gray-500;
+            }
+
+            &:before,
+            &:after {
+              @apply tw-absolute tw-pointer-events-none;
+              content: url("/public/assets/retail-btn-arrows.svg");
+              width: 83px;
+              height: 42px;
+              top: calc(50% - 21px);
+            }
+
+            &:before {
+              left: -103px;
+            }
+
+            &:after {
+              right: -103px;
+              transform: scaleX(-1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  .two-columns {
+    &.retail-resouces {
+      grid-template-columns: 35% 1fr;
+    }
+
+    &.contact-form {
+      @screen small {
+        grid-template-columns: 40% 60%;
+      } 
+    }
+  }
+}
+
+.header-hero {
+  &#retail-micro-header {
+    background-position: center left;
+
+    @screen large {
+      background-position: 9vw center;
+    }
+  }
+}
+
+.hero-body {
+  > *:last-child {
+    @apply tw-mb-0;
+  }
+}
+
+.contact-section {
+  @apply tw-flex tw-flex-col;
+
+  @screen small {
+    @apply tw-flex-row tw-flex-wrap tw-items-start tw-justify-between;
+  }
+
+  &__title.title {
+    @apply tw-w-full tw-mb-12 tw-text-center;
+  }
+
+  &__left,
+  &__right {
+    @apply tw-mb-12;
+
+    @screen small {
+      @apply tw-block tw-pr-32 tw-mb-0;
+    }
+
+    @screen small {
+      @apply tw-flex tw-justify-between;
+    }
+  }
+
+  &__text {
+    @apply tw-mb-4;
+
+    @screen small {
+      @apply tw-pr-0 tw-mb-4;
+    }
+
+    @screen small {
+      @apply tw-pr-6 tw-mb-0;
+    }
+  }
+
+  &__list {
+    @apply mobile:tw-pl-0 tablet:tw-pl-6 tw-pt-4;
+    line-height: 1.33;
+
+    li.green {
+      &::before {
+        content: '•';
+        margin-right: 0.3em;
+        @apply tw-text-green-500;
+      }
+    }
+  }
+
+  /* Override standard form styles */
+  #full-form .mktoForm .mktoFormRow {
+    @screen small {
+      @apply tw-float-left tw-clear-none tw-w-1/2 tw-px-4;
+    }
+  }
+}

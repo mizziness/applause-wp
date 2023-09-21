@@ -1,0 +1,273 @@
+/* Mobile Footer Styles */
+
+footer {
+  .footer-top-section {
+    .footer-widget-custom-grid {
+      @apply tw-grid tw-max-w-[75vw] tw-mx-auto tw-border-0 tw-border-b tw-border-solid tw-border-white;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      .fwidget.et_pb_widget.widget_nav_menu {
+        @apply tw-w-full;
+        width: 100% !important;
+
+        .menu {
+          @apply tw-hidden;
+
+          .menu-item {
+            @apply tw-px-4;
+
+            &:last-of-type {
+              @apply tw-mb-4;
+            }
+
+            a {
+              @apply tw-text-sm tw-relative tw-inline-block;
+
+              &::after {
+                content: "";
+                @apply tw-inline-block tw-w-none tw-h-[1px] tw-bg-white tw-transition-all tw-duration-200 tw-absolute tw-bottom-[2px] tw-left-0;
+              }
+            }
+
+            &:hover {
+              a {
+                &::after {
+                  content: "";
+                  @apply tw-inline-block tw-w-full tw-h-[1px] tw-bg-white;
+                }
+              }
+            }
+          }
+        }
+
+        .title {
+          @apply tw-border-t tw-border-solid tw-border-white tw-p-4 tw-uppercase tw-relative tw-cursor-pointer;
+
+          &::after {
+            @apply tw-block tw-bg-no-repeat tw-invert tw-absolute tw-origin-center;
+            transition: all 0.3s linear;
+            content: "";
+            background-image: url("https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/icons/streamline-micro-bold/interface-essential/geometric-shape/interface-geometric-triangle.svg");
+            height: 8px;
+            width: 8px;
+            right: 1rem;
+            top: 1.3rem;
+
+            &:hover {
+              @apply tw-rotate-180;
+            }
+          }
+        }
+      }
+    }
+
+    .et_pb_module.et_pb_image {
+      @apply tw-hidden;
+    }
+
+    .et_builder_inner_content {
+      .et_pb_section {
+        .et_pb_row {
+          .et_pb_column.et_pb_column_0_tb_footer.et_pb_column_1_2 {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom-section {
+    .et_pb_row {
+      @apply tw-gap-5;
+      width: 80%;
+      max-width: 1080px;
+
+      .et_pb_column {
+        &.et_pb_column_2_tb_footer {
+          @apply tw-w-1/3;
+          width: 30% !important;
+          float: left;
+        }
+
+        &.et_pb_column_3_tb_footer {
+          @apply tw-w-2/3;
+          width: 60% !important;
+          floa: left;
+        }
+
+        #menu-footer-bottom {
+          @apply tw-text-center;
+
+          li a {
+            @apply tw-text-sm tw-relative tw-inline-block;
+
+            &::after {
+              content: "";
+              @apply tw-inline-block tw-h-[1px] tw-bg-white tw-transition-all tw-duration-200 tw-absolute tw-bottom-[2px] tw-left-0;
+              width: 0px;
+            }
+
+            &:hover {
+              &::after {
+                content: "";
+                @apply tw-inline-block tw-h-[1px] tw-bg-white;
+                width: 100% !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ul.menu {
+      @apply tw-w-full tw-text-right;
+
+      li {
+        @apply tw-inline-block tw-text-right tw-mx-2;
+      }
+    }
+
+    .fwidget.et_pb_widget.widget_nav_menu {
+      @apply tw-w-full;
+    }
+  }
+}
+
+@screen mobile {
+}
+
+@screen tablet {
+  footer {
+    .footer-top-section {
+      .et_pb_row {
+        @apply tw-max-w-80perc tw-mx-auto;
+      }
+
+      .et_pb_module.et_pb_image {
+        @apply tw-block;
+      }
+
+      .footer-widget-custom-grid {
+        @apply tw-border-none tw-grid-cols-4 tw-gap-4 tw-mx-auto tw-p-0;
+
+        .fwidget.et_pb_widget.widget_nav_menu {
+          @apply tw-mx-auto tw-p-0;
+          width: 80%;
+          max-width: 1080px;
+
+          ul.menu {
+            @apply tw-inline-block;
+
+            .menu-item {
+              @apply tw-px-0;
+
+              &:last-of-type {
+                @apply tw-mb-0;
+              }
+            }
+          }
+
+          .title {
+            @apply tw-border-none tw-px-0 tw-cursor-default tw-text-sm;
+
+            &::after {
+              @apply tw-hidden;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom-section {
+      .et_pb_row {
+        width: 80%;
+        max-width: 1080px;
+      }
+
+      ul.menu {
+        @apply tw-w-full tw-text-right;
+
+        li {
+          @apply tw-inline-block tw-text-right tw-mx-2;
+        }
+      }
+
+      .fwidget.et_pb_widget.widget_nav_menu {
+        @apply tw-w-full;
+      }
+    }
+  }
+}
+
+.wpml-ls-legacy-dropdown-click a.wpml-ls-item-toggle {
+  &::after {
+    @apply tw-origin-center;
+    transition: all 0.3s linear;
+    
+  }
+
+  &:hover {
+    &::after {
+      @apply tw-origin-center;
+      transform: scale(-1);
+    }
+  }
+}
+
+.wpml-ls-legacy-dropdown-click a.wpml-ls-item-toggle {
+  background-color: transparent !important;
+  border: 0 none !important;
+  color: #ffffff !important;
+}
+
+.wpml-ls-legacy-dropdown-click .wpml-ls-sub-menu {
+  visibility: visible;
+  position: absolute;
+  top: auto;
+  right: 0;
+  left: auto;
+  border-top: 1px solid #cdcdcd;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  z-index: 101;
+  min-width: 100px;
+  bottom: 0;
+}
+
+.wpml-ls-legacy-dropdown-click .wpml-ls-item {
+  float: right !important;
+}
+
+.js-wpml-ls-sub-menu .wpml-ls-item {
+  float: none !important;
+}
+
+.wpml-ls-legacy-dropdown-click .wpml-ls-sub-menu {
+  visibility: hidden;
+}
+.wpml-ls-legacy-dropdown-click a {
+  border: 0 none !important;
+}
+
+.wpml-ls-legacy-dropdown-click .wpml-ls-sub-menu {
+  background: #fff;
+}
+
+#legal-links {
+    #ot-sdk-btn.ot-sdk-show-settings,
+    #ot-sdk-btn.optanon-show-settings {
+        font-size: 0.75rem !important;
+        color: white !important;
+        border: none !important;
+
+        &:hover {
+            color: white !important;
+            background-color: transparent !important;
+        }
+    }
+}

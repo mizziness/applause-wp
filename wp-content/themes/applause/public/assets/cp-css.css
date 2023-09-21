@@ -1,0 +1,434 @@
+body #page-container .redactor-box .redactor-styles a {
+    color: rgba(2, 114, 180, 1.0);
+}
+
+body #page-container .redactor-box .redactor-styles a:hover {
+    text-decoration: underline;
+}
+
+body #page-container .redactor-box .redactor-styles p code {
+    --tw-bg-opacity: 1;
+    background-color: rgba(240, 240, 240, 1.0);
+    padding-left: .5rem;
+    padding-right: .5rem;
+    white-space: nowrap
+}
+
+body #page-container .redactor-box .redactor-styles p mark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(252, 186, 0, 1.0);
+    padding-left: .5rem;
+    padding-right: .5rem;
+    white-space: nowrap
+}
+
+body #page-container .redactor-box .redactor-styles ol,
+body #page-container .redactor-box .redactor-styles ul {
+    list-style-position: outside;
+    list-stye-type: none;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem
+    padding-left: 0;
+}
+
+body #page-container .redactor-box .redactor-styles ol li,
+body #page-container .redactor-box .redactor-styles ul li {
+    line-height: 1.25rem;
+    padding-bottom: .5rem;
+    padding-left: .5rem;
+    position: relative;
+    list-stye-type: none;
+}
+
+body #page-container .redactor-box .redactor-styles ol li ol,
+body #page-container .redactor-box .redactor-styles ol li ul,
+body #page-container .redactor-box .redactor-styles ul li ol,
+body #page-container .redactor-box .redactor-styles ul li ul {
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+    padding-bottom: 0
+}
+
+body #page-container .redactor-box .redactor-styles ol li p,
+body #page-container .redactor-box .redactor-styles ul li p {
+    margin-bottom: 0;
+}
+
+body #page-container .redactor-box .redactor-styles ul.green-check li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 2rem;
+    width: 100%
+}
+
+body #page-container .redactor-box .redactor-styles ul.green-check li:before {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    -ms-flex-line-pack: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-content: center;
+    background-color: rgba(0, 183, 139, 1.0);
+    border-radius: 9999px;
+    color: rgba(255, 255, 255, 1.0);
+    content: "✓";
+    display: grid;
+    font-size: 1rem;
+    height: 20px;
+    justify-content: center;
+    left: -1.25rem;
+    padding: 10px;
+    position: absolute;
+    width: 20px
+}
+
+body #page-container .redactor-box .redactor-styles ul.green-check li ul li:before {
+    --tw-text-opacity: 1;
+    background-color: transparent;
+    color: rgba(0, 183, 139, 1.0);
+    content: "○"
+}
+
+body #page-container .redactor-box .redactor-styles ul.green-check li ol {
+    counter-reset: green-numbers-counter
+}
+
+body #page-container .redactor-box .redactor-styles ul.green-check li ol li {
+    counter-increment: green-numbers-counter
+}
+
+body #page-container .redactor-box .redactor-styles ul.green-check li ol li:before {
+    --tw-text-opacity: 1;
+    background-color: transparent;
+    color: rgba(0, 183, 139, 1.0);
+    content: counter(green-numbers-counter) ". "
+}
+
+body #page-container .redactor-box .redactor-styles ul.red-x li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 2rem;
+    width: 100%
+}
+
+body #page-container .redactor-box .redactor-styles ul.red-x li:before {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    -ms-flex-line-pack: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-content: center;
+    background-color: rgba(239, 68, 68, 1.0);
+    border-radius: 9999px;
+    color: rgba(255, 255, 255, 1.0);
+    content: "✕";
+    display: grid;
+    font-size: 1rem;
+    height: 20px;
+    justify-content: center;
+    left: -1.25rem;
+    padding: 10px;
+    position: absolute;
+    width: 20px
+}
+
+body #page-container .redactor-box .redactor-styles ul.red-x li ul li:before {
+    --tw-text-opacity: 1;
+    background-color: transparent;
+    color: rgba(239, 68, 68, 1.0);
+    content: "○"
+}
+
+body #page-container .redactor-box .redactor-styles ul.red-x li ol {
+    counter-reset: red-numbers-counter
+}
+
+body #page-container .redactor-box .redactor-styles ul.red-x li ol li {
+    counter-increment: red-numbers-counter
+}
+
+body #page-container .redactor-box .redactor-styles ul.red-x li ol li:before {
+    --tw-text-opacity: 1;
+    background-color: transparent;
+    color: rgba(239, 68, 68, 1.0);
+    content: counter(red-numbers-counter) ". "
+}
+
+body #page-container .redactor-box .redactor-styles ul.blue-arrows li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 2rem;
+    width: 100%
+}
+
+body #page-container .redactor-box .redactor-styles ul.blue-arrows li:before {
+    --tw-text-opacity: 1;
+    -ms-flex-line-pack: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-content: center;
+    color: rgba(2, 114, 180, 1.0);
+    content: "⟶";
+    display: grid;
+    font-size: 1rem;
+    height: 20px;
+    justify-content: center;
+    left: -1.25rem;
+    padding: 10px;
+    position: absolute;
+    width: 20px
+}
+
+body #page-container .redactor-box .redactor-styles ul.blue-arrows li ul li:before {
+    --tw-text-opacity: 1;
+    background-color: transparent;
+    color: rgba(2, 114, 180, 1.0);
+    content: "○"
+}
+
+body #page-container .redactor-box .redactor-styles ul.blue-arrows li>ol {
+    counter-reset: blue-subnumbers-counter
+}
+
+body #page-container .redactor-box .redactor-styles ul.blue-arrows li>ol li {
+    counter-increment: blue-subnumbers-counter
+}
+
+body #page-container .redactor-box .redactor-styles ul.blue-arrows li>ol li:before {
+    --tw-text-opacity: 1;
+    background-color: transparent;
+    color: rgba(2, 114, 180, 1.0);
+    content: counter(blue-subnumbers-counter) ". "
+}
+
+body #page-container .redactor-box .redactor-styles ol.blue-numbers {
+    list-style-type: none;
+    list-style-position: outside;
+    counter-reset: blue-numbers-counter;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 0
+}
+
+body #page-container .redactor-box .redactor-styles ol.blue-numbers li {
+    counter-increment: blue-numbers-counter;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%
+}
+
+body #page-container .redactor-box .redactor-styles ol.blue-numbers li:before {
+    --tw-text-opacity: 1;
+    color: rgba(2, 114, 180, 1.0);
+    content: counter( blue-numbers-counter) ". ";
+    font-weight: 700
+}
+
+body #page-container .redactor-box .redactor-styles ol.blue-numbers li ol,
+body #page-container .redactor-box .redactor-styles ol.blue-numbers li ul {
+    counter-reset: blue-letters-counter
+}
+
+body #page-container .redactor-box .redactor-styles ol.blue-numbers li ol li,
+body #page-container .redactor-box .redactor-styles ol.blue-numbers li ul li {
+    counter-increment: blue-letters-counter
+}
+
+body #page-container .redactor-box .redactor-styles ol.blue-numbers li ol li:before,
+body #page-container .redactor-box .redactor-styles ol.blue-numbers li ul li:before {
+    --tw-text-opacity: 1;
+    color: rgba(2, 114, 180, 1.0);
+    content: counter(blue-letters-counter, lower-alpha) ". ";
+    font-weight: 700
+}
+
+body #page-container .redactor-box .redactor-styles blockquote {
+    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 255, 255, 1.0);
+    border-color: rgba(2, 114, 180, var(--tw-border-opacity));
+    border-left-width: 4px;
+    margin-bottom: 1.5rem;
+    padding: .5rem 1rem
+}
+
+body #page-container .redactor-box .redactor-styles blockquote p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0
+}
+
+body #page-container .redactor-box .redactor-styles blockquote.blog-quote {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    background-color: rgba(255, 255, 255, 1.0);
+    color: rgba(2, 114, 180, 1.0);
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem
+}
+
+body #page-container .redactor-box .redactor-styles blockquote.blog-quote p,
+body #page-container .redactor-box .redactor-styles blockquote.blog-quote p.quote-text {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.75rem
+}
+
+body #page-container .redactor-box .redactor-styles blockquote.blog-quote .quote-author {
+    --tw-text-opacity: 1;
+    color: rgba(58, 58, 58, 1.0);
+    font-size: .875rem;
+    font-weight: 400;
+    margin-top: .5rem;
+    position: relative
+}
+
+body #page-container .redactor-box .redactor-styles blockquote.blog-quote .quote-author:before {
+    content: "—";
+    margin-right: 5px
+}
+
+body #page-container .redactor-box .redactor-styles .blog-video-block {
+    margin-bottom: 2.5rem
+}
+
+@media (min-width:1166px) {
+    body #page-container .redactor-box .redactor-styles .blog-video-block {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+}
+
+body #page-container .redactor-box .redactor-styles .blog-video-block>div {
+    width: 100%
+}
+
+@media (min-width:1166px) {
+    body #page-container .redactor-box .redactor-styles .blog-video-block>div {
+        width: 50%
+    }
+}
+
+body #page-container .redactor-box .redactor-styles .blog-video-block .caption-text {
+    -ms-flex-item-align: center;
+    align-self: center;
+    display: block;
+    font-size: .75rem;
+    line-height: 1rem;
+    margin-top: .5rem
+}
+
+@media (min-width:1166px) {
+    body #page-container .redactor-box .redactor-styles .blog-video-block .caption-text {
+        margin-top: 0;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem
+    }
+}
+
+body #page-container .redactor-box .redactor-styles .blog-video-block .caption-text p {
+    --tw-text-opacity: 1;
+    color: rgba(86, 86, 86, 1.0);
+    font-size: .75rem;
+    line-height: 1rem;
+    margin: 0;
+    padding: 0
+}
+
+body #page-container .redactor-box .redactor-styles .blog-image-single {
+    margin-bottom: 2.5rem;
+    margin-left: auto;
+    margin-right: auto
+}
+
+body #page-container .redactor-box .redactor-styles .blog-image-single img {
+    border-radius: .375rem
+}
+
+body #page-container .redactor-box .redactor-styles .blog-image-double {
+    margin-bottom: 2.5rem;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media (min-width:901px) {
+    body #page-container .redactor-box .redactor-styles .blog-image-double {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+
+    body #page-container .redactor-box .redactor-styles .blog-image-double .blog-image {
+        width: 50%
+    }
+}
+
+body #page-container .redactor-box .redactor-styles .blog-image-double .blog-image img {
+    border-radius: .375rem
+}
+
+@media (min-width:901px) {
+    body #page-container .redactor-box .redactor-styles .blog-image-double .blog-image:first-of-type {
+        margin-right: .5rem
+    }
+
+    body #page-container .redactor-box .redactor-styles .blog-image-double .blog-image:last-of-type {
+        margin-left: .5rem
+    }
+}
+
+body #main-form #fields-pageHeroStyle-field .radio-group {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+body #main-form #fields-pageHeroStyle-field .radio-group .layout-icon {
+  max-width: 150px;
+}
+
+body #main-form .tw-hidden,
+body #main-form .tw-not-hidden {
+  transition: all ease-in-out 0.3s;
+  transform-origin: bottom center;
+  width: 100%;
+}
+
+body #main-form .tw-hidden {
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body #main-form .tw-not-hidden {
+  display: block;
+  opacity: 1;
+  height: auto;
+  overflow: visible;
+}
