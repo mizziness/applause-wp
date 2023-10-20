@@ -1,0 +1,251 @@
+/* Carousel Equal Height*/
+.dtq-carousel.equal-height-on:not(.slick-vertical) .slick-track {
+    display: flex !important;
+}
+
+.dtq-carousel.equal-height-on:not(.slick-vertical) .slick-track .slick-slide {
+    height: initial !important;
+}
+
+.dtq-carousel.equal-height-on:not(.slick-vertical) .slick-track .et_pb_module,
+.dtq-carousel.equal-height-on:not(.slick-vertical)
+    .slick-track
+    .ba_et_pb_module,
+.dtq-carousel.equal-height-on:not(.slick-vertical)
+    .slick-track
+    .et_pb_module_inner,
+.dtq-carousel.equal-height-on:not(.slick-vertical) .slick-track .dtq-module,
+.dtq-carousel.equal-height-on:not(.slick-vertical)
+    .slick-track
+    .dtq-module-inner,
+.dtq-carousel.equal-height-on:not(.slick-vertical)
+    .slick-track
+    .slick-slide
+    > div {
+    height: 100%;
+    width: 100% !important;
+}
+
+div.dtq-carousel .slick-vertical .slick-track,
+div.dtq-carousel .slick-vertical .slick-track {
+    padding: 0 !important;
+}
+
+div.dtq-carousel.equal-height-on.slick-vertical .slick-track,
+div.dtq-carousel.equal-height-on .slick-vertical .slick-track {
+    display: block !important;
+}
+/* Equal Height End*/
+
+/*
+* Common For Carousel Start
+*/
+[dir="rtl"] .dtq-carousel {
+    direction: ltr !important;
+}
+
+[dir="rtl"] .dtq-carousel .slick-prev {
+    right: auto;
+}
+
+[dir="rtl"] .dtq-carousel .slick-next {
+    left: auto;
+}
+
+[dir="rtl"] .dtq-carousel .slick-slide {
+    float: left !important;
+}
+.dtq-carousel * {
+    vertical-align: middle !important;
+}
+
+.dtq-carousel figure {
+    margin: 0;
+}
+
+.dtq-carousel .slick-arrow:before,
+.dtq-carousel .slick-arrow:after {
+    color: inherit !important;
+}
+
+.dtq-carousel .slick-arrow {
+    z-index: 999;
+}
+
+.dtq-carousel .slick-dots {
+    padding: 0 !important;
+}
+
+.dtq-carousel .slick-arrow:before {
+    font-family: ETmodules !important;
+    line-height: 0.5;
+    line-height: 1.35;
+    vertical-align: middle;
+}
+
+.dtq-carousel-frontend .slick-arrow:before {
+    content: attr(data-icon) !important;
+}
+
+.dtq-carousel .slick-dots li button:before {
+    opacity: 1 !important;
+}
+
+.dtq-carousel .slick-arrow.slick-disabled:before {
+    opacity: 1 !important;
+}
+
+.dtq-carousel .slick-arrow.slick-disabled {
+    cursor: not-allowed !important;
+}
+
+.dtq-carousel .slick-dots li button:before {
+    display: none;
+}
+
+.dtq-carousel .slick-dots li button {
+    padding: 0 !important;
+    transition: all 0.2s ease;
+}
+
+.dtq-carousel .slick-dots li {
+    height: initial !important;
+    width: initial !important;
+    padding: 0 !important;
+}
+
+.dtq-carousel .et_pb_button {
+    display: inline-block;
+}
+/*
+* Center Mode
+*/
+.dtq-centered--highlighted .slick-slide.slick-center {
+    transform: scale(1, 1);
+}
+.dtq-centered--highlighted .slick-slide {
+    transform: scale(0.8, 0.8);
+}
+
+span.dtq-admin-modules-item-icon.dtq-icon-svg {
+    width: 23px;
+}
+.dtq-et-font-icon {
+    font-family: ETmodules;
+    font-weight: 400;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-style: normal;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.dtq-et-icon {
+    display: inline-block;
+    transition: 0.2s all ease !important;
+    transform-origin: center;
+    vertical-align: middle !important;
+    line-height: 1;
+    font-style: normal !important;
+}
+
+/* .et-db #et-boc .dtq-et-icon:after,
+.dtq-et-icon:after {
+    content: attr(data-icon) !important;
+    font-family: "ETmodules" !important;
+    line-height: inherit;
+    font-size: inherit !important;
+    display: inline-block;
+    text-shadow: none;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: none;
+    text-transform: none;
+    transition: all 0.2s ease;
+}
+
+.et-db #et-boc .dtq-et-icon:before,
+.dtq-et-icon:before {
+    display: none !important;
+} */
+
+.dtq-lightbox {
+    cursor: pointer;
+}
+
+.dtq-bg-support,
+.ba_et_pb_module {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dtq-module img {
+    vertical-align: middle;
+}
+
+.dtq-img-cover {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.dtq-btn-default {
+    display: inline-block;
+    transition: 0.2s !important;
+}
+.dtq-flex {
+    display: flex;
+}
+.dtq-module a {
+    color: inherit;
+}
+
+/** Builder Module CSS **/
+.et-db #et-boc .et-fb-modules-list ul > li[class^="ba"]:hover,
+.et-db #et-boc .et-fb-modules-list ul > li[class^="ba"]:focus,
+.et-db #et-boc .et-fb-modules-list ul > li[class^="ba"]:active {
+    color: #13142d !important;
+}
+
+.et-db #et-boc .et-fb-modules-list li[class^="ba"] {
+    font-size: 12px !important;
+    color: #13142d !important;
+    border-color: #f8954f !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    position: relative;
+}
+
+.et-db #et-boc .et-l .et-fb-modules-list li[class^="ba"]:before,
+.et-db #et-boc .et-fb-modules-list li[class^="ba"]:before {
+    color: #13142d !important;
+}
+
+.et-db
+    #et-boc
+    .et-l
+    .et-fb-modules-list
+    li[class^="ba"]
+    .et-fb-icon.et-fb-icon--svg {
+    color: #f8954f !important;
+    width: 16px !important;
+    min-width: 16px !important;
+    height: 22px !important;
+    margin: 2px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.et-db #et-boc .et-fb-modules-list ul > li.divi_torque_lite {
+    border-color: #f8954f !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: #13142d !important;
+}
+
+.et-db #et-boc .et-fb-modules-list ul > li.divi_torque_lite:before {
+    content: url(../imgs/icon.svg) !important;
+    font-family: none !important;
+    color: #f8954f !important;
+}

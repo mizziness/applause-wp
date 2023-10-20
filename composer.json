@@ -22,12 +22,7 @@
 		}
 	},
 	"require": {
-		"php": "8.1.6",
-		"ext-gd": "*",
-		"ext-imagick": "*",
-		"ext-exif": "*",
-		"ext-intl": "*",
-		"ext-memcached": "*",
+		"php": "8.1.2",
 		"aws/aws-sdk-php": "^3.11",
 		"deliciousbrains/wp-queue": "^2.0",
 		"guzzlehttp/guzzle": "^7.7",
@@ -42,19 +37,20 @@
 		"wpackagist-plugin/wp-mail-smtp": "^3.8",
 		"wpackagist-theme/twentyfifteen": "*"
 	},
-	"scripts": {
-	},
-	"require-dev": {
-		"heroku/heroku-buildpack-php": "*"
-	},
 	"config": {
     	"sort-packages": true,
 		"allow-plugins": {
 			"composer/installers": true
 		},
 		"platform": {
-			"php": "8.1.6",
-			"ext-imagick": "3.7.0"
+			"php": "8.1.2"
 		}
+	},
+	"scripts": {
+		"tw:app": "npx tailwindcss -m -i wp-content/themes/applause/dist/app-build.css -o wp-content/themes/applause/dist/app-build.min.css",
+		"tw:extras": "npx tailwindcss -m -i wp-content/themes/applause/dist/extras-build.css -o wp-content/themes/applause/dist/extras-build.min.css",
+		"tw:admin": "npx tailwindcss -i wp-content/themes/applause/dist/css/admin.css -o wp-content/themes/applause/dist/admin.css",
+		"tailwind": "composer tw:app && composer tw:extras && composer tw:admin",
+		"build": "grunt clean && grunt sass && grunt concat"
 	}
 }

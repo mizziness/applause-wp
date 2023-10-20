@@ -1,0 +1,105 @@
+div.reviews-glassdoor {
+  display: inline-flex;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+div.reviews-glassdoor img {
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  width: 50%;
+}
+
+div.reviews-kununu {
+  display: inline-flex;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+div.reviews-kununu img {
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  width: 50%;
+}
+
+div.reviews-kununu:hover,
+div.reviews-glassdoor:hover {
+  border-color: #606060;
+}
+
+div.reviews-kununu,
+div.reviews-glassdoor {
+  transition: all linear 0.3s;
+}
+
+#life-at-applause-play a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer !important;
+}
+
+#life-at-applause-play a div {
+  padding: 1rem 1rem 1rem 5.5rem;
+}
+
+.video-image:after {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+#life-at-applause-tabs img {
+  border-radius: 6px;
+}
+
+.et-db #et-boc .et-l #life-at-applause-tabs .et-fb-popover-tinymce > div {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.et-db #et-boc .et-l #life-at-applause-tabs .et-fb-popover-tinymce > div > div {
+  margin: 1rem auto;
+}
+
+ul.et_pb_tabs_controls:after,
+.et_pb_all_tabs,
+.et_pb_tab,
+.et_pb_tabs_controls,
+.et_pb_tabs_controls li {
+  border: 0px solid transparent;
+}
+
+.about-us-clicklets div.wrapper {
+  display: flex;
+  max-width: 100%;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+}
+
+.about-us-clicklets div.wrapper img {
+  max-width: 50%;
+  width: auto;
+  height: 22px;
+  display: block;
+  overflow: hidden;
+}
+
+.about-us-clicklets div.wrapper img:first-child {
+  padding-right: 0.5rem;
+}
+
+.about-us-clicklets div.wrapper img:last-child {
+  padding-left: 0.5rem;
+}

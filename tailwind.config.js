@@ -5,7 +5,7 @@ module.exports = {
     'wp-content/themes/applause/**/*.{js,twig,php,html}',
     'src/**/*.{js,twig,php,html}',
     '../applause/**/*.{js,twig,php,html}',
-    '../../plugins/applause-divi-extensions/**/*.{js,twig,php,html}',
+    '../../plugins/applause-divi-extensions/**/*/*.{js,twig,php,html}',
   ],
   theme: {
     colors: {
@@ -469,7 +469,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-rtl'),
-    require('tailwindcss-textshadow'),
+    // require('tailwindcss-textshadow'),
     '@tailwindcss/nesting',
     ({ addComponents, theme }) => {
       addComponents({
@@ -478,19 +478,19 @@ module.exports = {
           maxWidth: '70vw',
           minWidth: '280px',
 
-          // Breakpoints
-          "@screen tablet": {
-            maxWidth: '522px',
-          },
-          "@screen small": {
-            maxWidth: '767px',
-          },
-          "@screen medium": {
-            maxWidth: '965px',
-          },
-          "@screen large": {
-            maxWidth: '1275px',
-          },
+          // // Breakpoints
+          // "@screen tablet": {
+          //   maxWidth: '522px',
+          // },
+          // "@screen small": {
+          //   maxWidth: '767px',
+          // },
+          // "@screen medium": {
+          //   maxWidth: '965px',
+          // },
+          // "@screen large": {
+          //   maxWidth: '1275px',
+          // },
         },
       });
     }

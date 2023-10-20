@@ -1,0 +1,18 @@
+body.terms-of-use ol {
+    list-style: none !important;
+    counter-reset: item;
+    margin: 1rem 0;
+}
+
+body.terms-of-use ol li {
+    margin-bottom: 1rem;
+    counter-increment: item;
+}
+
+body.terms-of-use ol li::before {
+    font-weight: 500;
+    content: counter(item) ". ";
+    display: inline-block;
+    margin-left: -2rem;
+    margin-right: 1rem;
+}

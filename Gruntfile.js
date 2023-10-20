@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             {
               expand: true,
               cwd: 'wp-content/themes/applause/src/css',
-              src: ['*.scss'],
+              src: ['**/*.scss'],
               dest: 'wp-content/themes/applause/dist/css',
               ext: '.css'
             }
@@ -26,9 +26,13 @@ module.exports = function(grunt) {
             '<%= grunt.template.today("yyyy-mm-dd") %> */',
         },
         css: {
-          src: 'wp-content/themes/applause/dist/**/*.css',
-          dest: 'wp-content/themes/applause/dist/css/app-build.css',
+          src: ['wp-content/themes/applause/dist/css/*.css', '!admin.css'],
+          dest: 'wp-content/themes/applause/dist/app-build.css',
         },
+        folders: {
+          src: 'wp-content/themes/applause/dist/css/*/*.css',
+          dest: 'wp-content/themes/applause/dist/extras-build.css'
+        }
       },
       
     });

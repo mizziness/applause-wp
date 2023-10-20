@@ -85,7 +85,7 @@ class DICM_BLOG_READING_TIME extends ET_Builder_Module {
 
 		// Render module content
 		$output = sprintf(
-			'<div class="tw-flex tw-gap-x-2"><strong>%1$s</strong><img src="https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/wp-content/uploads/2023/06/read-time.svg" /> %2$s</div>',
+			'<div class="reading-time"><strong>%1$s</strong><img src="https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/wp-content/uploads/2023/06/read-time.svg" /> %2$s</div>',
 			esc_html( $title ),
 			$totalreadingtime
 		);

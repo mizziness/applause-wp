@@ -1,6 +1,10 @@
 // Custom JS goes here ------------
 
 jQuery(function ($) {
+  if ( $("body").hasClass("state-of-digital-quality-2022") ) {
+    $("#sqd-header-hero-huge").append("<div id='sqd-hands'></div>");
+  }
+
   var page = parseInt(load_more_params.current_page) + 1;
   var loading = false;
   var $loadMoreButton = $(".load-more-elements button");
@@ -54,37 +58,38 @@ jQuery(function ($) {
   };
 
   // GRAVITY FORMS - MATERIAL DSIGN - ADD FOCUS TO LABEL
-  $("form input, form textarea, form select").focusin(function () {
-    $(this).parent().siblings("label").addClass("focused");
-  });
+  // Run on GFORM RENDER
+  $(document).on('gform_post_render', function(event, form_id, current_page){
+    let gformInputs = $(".ginput_container input, .ginput_container select, .ginput_container textarea");
 
-  $("form input, form textarea, form select").focusout(function () {
-    var input = $(this);
-    if (input.val().length === 0) {
-      input.parent().siblings("label").removeClass("focused");
-    }
-  });
+    $(gformInputs).each(function(){
+      if ( $(this).val().length <= 0 ) {
+        $(this).removeClass("focused");
+        $(this).parents().siblings("label").removeClass("focused");
+      } else {
+        $(this).addClass("focused");
+        $(this).parents().siblings("label").addClass("focused");
+      }
+    });
 
-  // on ajax submission
-  $("#gform_ajax_frame_1, #gform_ajax_frame_2, #gform_ajax_frame_3").on(
-    "load",
-    function () {
-      $("form input, form textarea, form select").focusin(function () {
-        $(this).parent().siblings("label").addClass("focused");
-      });
-      $("form input, form textarea, form select").focusout(function () {
-        var input = $(this);
-        if (input.val().length === 0) {
-          input.parent().siblings("label").removeClass("focused");
-        }
-      });
-      $("form input, form textarea, form select").each(function () {
-        if ($(this).val().length != 0) {
-          $(this).parent().siblings("label").addClass("focused");
-        }
-      });
-    }
-  );
+    // When focused in the field, always lift the label
+    $(gformInputs).on("focus", function(event){
+      $(event.currentTarget).addClass("focused");
+      $(event.currentTarget).parent().siblings("label").addClass("focused");
+    });
+
+    // Nothing is in the field so move the label back
+    $(gformInputs).on("blur", function(event){
+      if ( $(event.currentTarget).val().length <= 0 ) {
+        $(event.currentTarget).removeClass("focused");
+        $(event.currentTarget).parent().siblings("label").removeClass("focused");
+      }
+    });
+
+    $(".gform_validation_errors").addClass("screen-reader-text");
+    $(".gfield_error .gfield_validation_message").addClass("screen-reader-text");
+
+  });
 
   function windowPopup(url, width, height) {
     var left = screen.width / 2 - width / 2,
@@ -111,26 +116,6 @@ jQuery(function ($) {
     }
   });
 
-  // Mobile Footer Nav Open/Close
-  let footerHeaders = $(".footer-widget-custom-grid .title");
-  $(footerHeaders).each(function () {
-    let container = $(this).parents(".fwidget.et_pb_widget.widget_nav_menu");
-    $(container).attr("aria-expanded", false);
-    $(container).on("click", function () {
-      let expanded =
-        $(container).attr("aria-expanded") == "false" ? false : true;
-      if (expanded == false) {
-        $(container).find(".menu").stop().slideDown("fast");
-        $(container).attr("aria-expanded", true);
-        $(container).addClass("open");
-      } else {
-        $(container).find(".menu").stop().slideUp("fast");
-        $(container).attr("aria-expanded", false);
-        $(container).removeClass("open");
-      }
-    });
-  });
-
   const copyLink = document.querySelectorAll(".icon-share-link");
   copyLink.forEach((link) => {
     link.addEventListener("click", function () {
@@ -149,7 +134,7 @@ jQuery(function ($) {
   });
 
   // Copy nav into mobile menu
-  $("#et-main-area .de-mega-menu-container .de-mega-menu").each(function () {
+  $("#mega-menu-dropdowns .mega-nav-dropdown").each(function () {
     let id = $(this).attr("id");
     let copyFrom = $(this).find(".et_pb_section .et_pb_row").clone(true);
     $(copyFrom).find(".dicm_custom_image_boxs").remove();
@@ -263,7 +248,83 @@ jQuery(function ($) {
       }
     }
   }
+
+  // Top Navigation 
+  // ============================================================
+  const menuButtons = $("#top-menu li.menu-item").not(".get-started-button");
+  
+  $(menuButtons).each(function(){
+    let currentMenu = $(this).attr("class").split(" ")[0];
+
+    $(this).on("mouseenter", function(e){
+      $("#mega-menu-dropdowns .et_pb_row").hide();
+      let dropdown = $("#mega-menu-dropdowns").find("#" + currentMenu).find('.et_pb_row');
+      $(dropdown).slideDown("fast");
+    });
+
+  });
+
+  $("#mega-menu-dropdowns .et_pb_row").on("mouseleave", function(e){
+    let currentMenu = $(this).closest('.mega-nav-dropdown').attr("id");
+
+    if ( $(e.toElement).closest('li').hasClass(currentMenu) ) {
+      e.preventDefault();
+    } else {
+      $(this).slideUp("fast");
+    }
+  })
+
+  // Bottom Navigation 
+  // ============================================================
+  $("#footer-navigation-top .et_pb_text").each(function(){
+
+    let pair = $(this).add( $(this).next(".et_pb_menu") );
+    $(pair).wrapAll("<div class='menu-column-wrapper'></div>");
+    
+  });
+
+  // Mobile Footer Nav Open/Close
+  let footerHeaders = $("#mega-footer-top .menu-column-wrapper .footer-menu-header");
+
+  $(footerHeaders).each(function () {
+    let container = $(this).parents(".menu-column-wrapper");
+    let menu = $(container).find(".et_pb_menu");
+
+    $(container).attr("aria-expanded", false);
+    
+    $(this).on("click", function(){
+      if ( $('body').outerWidth(true) > 900 ) {
+        
+        return false;
+
+      } else {
+
+        let expanded = $(container).attr("aria-expanded") == "false" ? false : true;
+
+        if (expanded == false) {
+          $(container).addClass("open");
+          $(container).attr("aria-expanded", true);
+          $(menu).slideDown("fast");
+        } else {
+          $(container).removeClass("open");
+          $(container).attr("aria-expanded", false);
+          $(menu).slideUp("fast");
+        }
+
+      }
+    });
+    
+  });
+
+  // Support for Featured Post layout on the Blog index page
+  $("#blog-index-featured #featured-posts .dp-dfg-item").each(function(){
+    $(this).find('div').wrapAll('<div class="column"></div>');
+    $(this).find('figure').wrapAll('<div class="column"></div>');
+  });
+
 });
+
+
 
 // END Sliders 
 // ============================================================

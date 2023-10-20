@@ -11,3 +11,590 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
 /*------------------------------ ADDITIONAL CSS HERE ------------------------------ */
+
+#et-boc,
+.et-boc {
+  position: relative;
+}
+
+div[data-lastpass-icon-root="true"],
+div[data-lastpass-infield="true"] {
+  opacity: 0;
+}
+
+.gform_fields .gfield--type-section {
+  display: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.gform_wrapper.gravity-theme .gform_footer.left_label {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.gform_body *::placeholder {
+  position: relative;
+  z-index: -10;
+}
+
+.form-footer-links {
+  padding-left: 0 !important;
+}
+
+.mktoForm #form-footer-links ul li:last-of-type:before {
+  padding-left: 0px;
+}
+
+.category-abm-microsites .wistia_embed {
+  margin: 0 auto;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+}
+
+.et_pb_section.header-hero.et_pb_with_background.et_pb_fullwidth_section.et_section_regular {
+  margin-left: 12rem;
+}
+
+@media (min-width: 981px) {
+
+  .et_pb_section.header-hero.et_pb_with_background.et_pb_fullwidth_section.et_section_regular {
+    margin-left: 12rem !important;
+  }
+
+  #mega-menu-dropdowns .mega-nav-dropdown {
+    position: relative;
+    max-width: 1080px;
+    right: -8rem;
+    width: 66vw;
+  }
+}
+
+/* =========================================================================== */
+/* HEADER / MAIN MENU STYLES  */
+/* =========================================================================== */
+
+nav#top-menu-nav,
+#top-menu,
+nav.et-menu-nav,
+.et-menu {
+  display: none;
+}
+
+.et_header_style_left .logo_container {
+  text-align: center;
+}
+
+#et-top-navigation #et_mobile_nav_menu {
+  display: block !important;
+}
+
+#et-top-navigation #et_mobile_nav_menu .mobile_menu_bar_toggle {
+  padding: 20px 0;
+}
+
+#et-top-navigation #et_mobile_nav_menu .mobile_menu_bar_toggle {
+  transition: all linear 0.3s;
+  transform-origin: center center;
+}
+
+#et-top-navigation #et_mobile_nav_menu .mobile_menu_bar_toggle:hover {
+  transform: scale(120%);
+}
+
+#et-top-navigation .get-started-button a {
+  font-weight: 600;
+  text-align: center;
+}
+
+#et-top-navigation .get-started-button {
+  border: 0px solid transparent;
+}
+
+#et-top-navigation .get-started-button a:hover {
+  background-color: #E3A700;
+  font-weight: 600;
+}
+
+/* Tablet 900 Breakpoint */
+/* =========================================================================== */
+@media (max-width: 900px) {
+
+  #page-container {
+    padding-top: 0 !important;
+    overflow-y: visible !important;
+    margin-top: 0 !important;
+  }
+
+  #page-container #main-header {
+    top: 0px !important;
+    position: sticky;
+  }
+
+  #et_mobile_nav_menu #mobile_menu {
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  #mobile_menu .menu-item .inner-menu-applause {
+    box-shadow: none;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: none;
+  }
+
+  #mobile_menu .menu-item .inner-menu-applause {
+    margin-top: 1rem !important;
+  }
+
+  #mobile_menu .menu-item:last-child {
+    margin-top: 1rem;
+  }
+
+  #mobile_menu .et_pb_column {
+    box-shadow: none;
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #solutions-menu .mini-title,
+  #solutions-menu .no-link {
+    border-bottom: none;
+    border-top: 1px solid #ccc;
+  }
+
+  #solutions-menu .no-link {
+    padding-top: 10px;
+  }
+
+  #solutions-menu .mini-title .link-title {
+    border-bottom: none;
+  }
+
+  #solutions-menu .solutions-link {
+    line-height: 1.7rem;
+  }
+
+  #solutions-menu .solutions-link p {
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .dicm_custom_icon_boxs a.inner-link {
+    color: #222;
+    opacity: 1;
+  }
+
+  .dicm_custom_icon_boxs a.inner-link:hover {
+    background-color: #e6f1f8;
+    border-radius: 4px;
+    color: #222 !important;
+    opacity: 1;
+  }
+
+  #mobile_menu .et_pb_column .et_pb_module {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 0;
+  }
+
+  .et_mobile_menu li a,
+  .et_mobile_menu li a:hover {
+    color: #222;
+    font-weight: 400;
+    border-color: #ccc;
+    opacity: 1;
+  }
+
+  .et_mobile_menu li:not(.get-started-button) a {
+    background-color: transparent !important;
+    position: relative;
+  }
+
+  .et_mobile_menu li:not(.get-started-button) a:hover {
+    background-color: #E6F1F8 !important;
+    position: relative;
+  }
+
+  .et_mobile_menu li:not(.get-started-button)>a:after {
+    border-color: transparent transparent transparent #606060;
+    border-width: 4px 0 4px 6.9px;
+    content: "";
+    display: block;
+    height: 0;
+    margin-left: .5rem;
+    width: 0;
+    border-style: solid;
+    position: absolute;
+    right: 1rem;
+    top: 1.1rem;
+    transition: all linear 0.2s;
+  }
+
+  .et_mobile_menu li:not(.get-started-button) a:hover:after {
+    transform: scale(120%);
+    border-color: transparent transparent transparent #222;
+  }
+
+  .et_mobile_menu li.menu-item {
+    border-top: 1px solid #ccc;
+    margin-bottom: -1px;
+  }
+
+  .et_mobile_menu li.menu-item a.inner-link {
+    border: none;
+  }
+}
+
+/* ---- END min-width 900 */
+
+@media (min-width: 901px) {
+
+  #et-top-navigation #et_mobile_nav_menu {
+    display: none !important;
+  }
+
+  #page-container:not(.et-fb-root-ancestor) {
+    padding-top: 72px !important;
+    overflow-y: visible !important;
+  }
+
+}
+
+/* =========================================================================== */
+/* FOOTER / FOOTER MENU STYLES  */
+/* =========================================================================== */
+
+/*  mega-footer-top */
+/* =========================================================================== */
+#mega-footer-top .menu-column-wrapper {
+  display: inline-block;
+}
+
+#mega-footer-top .menu-column-wrapper ul li {
+  padding: 5px 0;
+  display: block;
+  width: 100%;
+}
+
+#mega-footer-top .menu-column-wrapper ul li,
+#mega-footer-top .menu-column-wrapper ul li a {
+  width: 100%;
+  display: block;
+}
+
+#mega-footer-top .menu-column-wrapper ul li a {
+  color: white;
+  position: relative;
+  display: inline;
+  font-weight: 400;
+  padding-bottom: 2px;
+}
+
+#mega-footer-top .menu-column-wrapper ul li a:hover {
+  color: white;
+  opacity: 1;
+}
+
+#mega-footer-top .menu-column-wrapper ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: white;
+  height: 1px;
+  width: 0%;
+  transition: all linear 0.2s;
+  bottom: 0px;
+  left: 0px;
+}
+
+#mega-footer-top .menu-column-wrapper ul li a:hover::after {
+  width: 100%;
+}
+
+#mega-footer-top .menu-column-wrapper {
+  border-top: 1px solid white;
+  width: 100%;
+  display: block;
+  padding: 0 1rem;
+}
+
+#mega-footer-top .menu-column-wrapper:last-of-type {
+  border-bottom: 1px solid white;
+}
+
+#mega-footer-top .menu-column-wrapper .et_pb_menu__wrap {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+#mega-footer-top .menu-column-wrapper .footer-menu-header {
+  padding: 0;
+  margin-bottom: 0 !important;
+  cursor: pointer;
+  transition: all linear 0.3s;
+}
+
+#mega-footer-top .menu-column-wrapper .footer-menu-header p {
+  transition: all linear 0.3s;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+#mega-footer-top .menu-column-wrapper .footer-menu-header:hover p {
+  color: #aaa;
+}
+
+#mega-footer-top .menu-column-wrapper .footer-menu-header .et_pb_text_inner {
+  width: 100%;
+  padding: 1rem 0;
+  position: relative;
+}
+
+#mega-footer-top .menu-column-wrapper .footer-menu-header .et_pb_text_inner:after {
+  border-color: transparent transparent transparent #ffffff;
+  border-width: 4px 0 4px 6.9px;
+  content: "";
+  display: block;
+  height: 0;
+  margin-left: .5rem;
+  width: 0;
+  border-style: solid;
+  position: absolute;
+  right: 0;
+  top: 1.3rem;
+  line-height: 1.3rem;
+}
+
+#mega-footer-top .menu-column-wrapper.open .footer-menu-header .et_pb_text_inner:after {
+  transform: rotate(90deg);
+}
+
+#mega-footer-top .menu-column-wrapper .et-menu-nav {
+  width: 100%;
+  display: block;
+}
+
+#mega-footer-top .menu-column-wrapper .et_pb_menu {
+  display: none;
+}
+
+#mega-footer-top .menu-column-wrapper .et_pb_menu .et-menu {
+  margin: 0;
+}
+
+#mega-footer-top .menu-column-wrapper .et_pb_menu .et-menu li {
+  padding: 10px 0;
+}
+
+/*  mega-footer-bottom */
+/* =========================================================================== */
+
+#mega-footer-bottom .footer-bottom-section {
+  display: block;
+  width: 100%;
+}
+
+#mega-footer-bottom #menu-footer-bottom {
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1080px;
+}
+
+#mega-footer-bottom .footer-bottom-section #footer-menu-bottom li a::after,
+#mega-footer-bottom .footer-bottom-section #footer-menu-bottom li a:hover::after {
+  bottom: 0;
+}
+
+#copyright {
+  text-align: center;
+}
+
+#mega-footer-bottom .footer-bottom-section #footer-menu-bottom li a,
+#mega-footer-bottom .footer-bottom-section #footer-menu-bottom li a:hover {
+  line-height: 1rem;
+  padding: 0;
+  color: white;
+  opacity: 1.0;
+}
+
+#mega-footer-bottom .footer-bottom-section .widget_icl_lang_sel_widget {
+  width: 100%;
+}
+
+#mega-footer-bottom .footer-bottom-section #language-selection {
+  margin: 0 auto;
+}
+
+#mega-footer-bottom .footer-bottom-section #legal-links #menu-footer-bottom li a {
+  color: white;
+  opacity: 1.0;
+  padding-bottom: 3px;
+}
+
+/* Tablet 900 Breakpoint */
+/* =========================================================================== */
+@media (min-width: 901px) {
+
+  /* =========================================================================== */
+  /* HEADER / MAIN MENU STYLES  */
+  /* =========================================================================== */
+
+  nav#top-menu-nav,
+  #top-menu,
+  nav.et-menu-nav,
+  .et-menu {
+    display: block;
+  }
+
+  .et_header_style_left .logo_container {
+    text-align: left;
+  }
+
+  /*  mega-footer-top */
+  /* =========================================================================== */
+
+  #mega-footer-top .menu-column-wrapper {
+    border: 0px;
+    padding: 0;
+    padding-left: 1rem;
+  }
+
+  #mega-footer-top .menu-column-wrapper .et-menu-nav {
+    margin-left: none;
+  }
+
+  #mega-footer-top .menu-column-wrapper:last-of-type {
+    border: 0px;
+  }
+
+  #mega-footer-top .menu-column-wrapper .et_pb_menu {
+    display: block !important;
+  }
+
+  #mega-footer-top .menu-column-wrapper .footer-menu-header .et_pb_text_inner {
+    padding-top: 0;
+  }
+
+  #mega-footer-top .menu-column-wrapper .footer-menu-header .et_pb_text_inner:after {
+    display: none;
+  }
+
+  #mega-footer-top .et_pb_column:first-child .et_pb_image {
+    display: block !important;
+    width: 80%;
+  }
+
+  #mega-footer-top #footer-navigation-top {
+    display: grid;
+    justify-self: self-end;
+    width: 80%;
+    max-width: 1080px;
+    grid-template-columns: 25% 25% 25% 25%;
+    column-gap: 1rem;
+  }
+
+  #mega-footer-top .et_pb_row {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 0;
+  }
+
+  #mega-footer-top .et_pb_row .et_pb_column {
+    width: 100%;
+  }
+
+  #mega-footer-top .menu-column-wrapper li.menu-item {
+    font-weight: 400;
+  }
+
+  #mega-footer-top .menu-column-wrapper .footer-menu-header,
+  #mega-footer-top .menu-column-wrapper .footer-menu-header p,
+  #mega-footer-top .menu-column-wrapper .footer-menu-header:hover,
+  #mega-footer-top .menu-column-wrapper .footer-menu-header:hover p {
+    color: white !important;
+    opacity: 1.0;
+    cursor: default;
+  }
+
+  /*  mega-footer-bottom */
+  /* =========================================================================== */
+
+  #mega-footer-bottom #menu-footer-bottom {
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  #mega-footer-bottom .footer-bottom-section {
+    display: flex;
+    max-width: 1080px;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  #footer-left #copyright {
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+  #mega-footer-bottom .footer-bottom-section .widget_icl_lang_sel_widget {
+    width: 100px;
+    margin-bottom: 0.5rem;
+  }
+
+  #mega-footer-bottom .footer-bottom-section #language-selection {
+    margin: 0 0 !important;
+    width: 100px;
+  }
+
+  #mega-footer-bottom .footer-bottom-section #footer-left {
+    display: grid;
+    grid-template-columns: 25% 75%;
+  }
+
+  #mega-footer-bottom .footer-bottom-section #legal-links {
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  #mega-footer-bottom .footer-bottom-section #legal-links #menu-footer-bottom li {
+    display: inline !important;
+    text-align: right;
+    line-height: 1;
+  }
+
+  #mega-footer-bottom .footer-bottom-section #legal-links #menu-footer-bottom li a {
+    text-align: right;
+    line-height: 1;
+    padding-bottom: 5px;
+    color: white;
+    opacity: 1.0;
+  }
+
+  /* =========================================================================== */
+  /* Blog Single Post Styles
+  /* =========================================================================== */
+
+  #single-blog-post .et_pb_post_content .et_pb_section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  #single-blog-post .et_pb_post_content .et_pb_section .et_pb_row {
+    margin: 0;
+    width: 100%;
+  }
+
+  #single-blog-post .et_pb_post_content .et_pb_section .et_pb_row .et_pb_text_inner {
+    color: #606060;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+}

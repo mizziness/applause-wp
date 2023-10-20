@@ -70,35 +70,32 @@ class DICM_AUTHOR_BLOG extends ET_Builder_Module {
 		// Module specific props added on $this->get_fields()
 		$title                 = $this->props['title'];
 
-		$author_id = get_post_field( 'post_author', get_the_ID() );
-		$author_name = get_the_author_meta( 'display_name', $author_id );
-		$author_description = get_the_author_meta( 'user_description', $author_id );
-		$author_thumb = get_avatar(  $author_id, 50 );
+		$author_ids = get_field( 'blog_author_ids', get_the_ID() );
+		$author_id = $author_ids[0];
 
-		$blog_autor = get_post_meta(get_the_ID(), 'blog_authors', true);
+		$blog_author = get_post( $author_id );
+
+		$author_name = $blog_author->title;
+		$author_description = $blog_author->post_content;
+		$author_thumb = get_the_post_thumbnail( $blog_author->ID );
 
 		
 		// Render module content
 		$output = '';
-		if( $blog_autor ) {
+		if( $blog_author ) {
 			$output .= '<section id="author-bio">';
-			$output .= '<a href="'.get_permalink($blog_autor).'" class="tw-group tw-inline-flex tw-no-underline">';
+			$output .= '<a href="'.get_permalink($blog_author).'" class="tw-group tw-inline-flex tw-no-underline">';
 			$output .= '<div class="author-image tw-mr-4">';
-			
-			$output .= '<img src="' .get_the_post_thumbnail_url($blog_autor, 'thumbnail' )  .'" />';
-			
-			$output .= '</div><div class="author-info"><div class="group-hover:tw-text-blue-700 tw-text-sm tw-font-semibold tw-text-blue-500">'.get_the_title($blog_autor).'</div><div class="group-hover:tw-text-gray-700 tw-text-xs tw-leading-3">'.get_post_meta($blog_autor, 'authortitle', true).'</div></div></a></section>';		
+			$output .= '<img src="' .get_the_post_thumbnail_url($blog_author, 'thumbnail' )  .'" />';
+			$output .= '</div><div class="author-info"><div class="author-name">'.get_the_title($blog_author).'</div><div class="author-title">'.get_field('authortitle', $author_id).'</div></div></a></section>';		
 		} else {
 			$output .= '<section id="author-bio">';
 			$output .= '<a href="#" class="tw-group tw-inline-flex tw-no-underline">';
 			$output .= '<div class="author-image tw-mr-4">';
-			
 			$output .= $author_thumb;
-			
-			$output .= '</div><div class="author-info"><div class="group-hover:tw-text-blue-700 tw-text-sm tw-font-semibold tw-text-blue-500">'.$author_name.'</div><div class="group-hover:tw-text-gray-700 tw-text-xs tw-leading-3">'.$author_description.'</div></div></a></section>';
+			$output .= '</div><div class="author-info"><div class="author-name">'.$author_name.'</div></div></a></section>';
 		}
 		
-
 		// Render wrapper
 		// 3rd party module with no full VB support has to wrap its render output with $this->_render_module_wrapper().
 		// This method will automatically add module attributes and proper structure for parallax image/video background

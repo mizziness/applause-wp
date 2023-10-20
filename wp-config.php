@@ -1,25 +1,18 @@
 <?php
 
-$environment = getenv("ENVIRONMENT");
+@ini_set( 'max_execution_time' , 300 );
+@ini_set( 'max_input_time', 300 );
+@ini_set( 'upload_max_filesize', '512M');
+@ini_set( 'post_max_size', '512M' );
+@ini_set( 'memory_limit', '512M' );
 
-if ($environment == "development") 
-{
-  require_once "/Users/tshipps/Sites/wordpress-12factor/vendor/autoload.php";
-} 
-else if ($environment == "staging") 
-{
-  require_once "./vendor/autoload.php";
-}
-else if ($environment == "production")
-{
-  require_once "./vendor/autoload.php";
-}
+require_once  ("vendor/autoload.php");
 
 if (class_exists('Dotenv\Dotenv') && file_exists(__DIR__ . '/.env')) {
     Dotenv\Dotenv::create(__DIR__)->load();
 }
 
-// DATABASE_URL="mysql://root:root@127.0.0.1:3306/applause_wp_final_2"
+$environment = getenv("ENVIRONMENT") ?? 'development';
 
 /**
  * The base configuration for WordPress
@@ -45,7 +38,7 @@ if (class_exists('Dotenv\Dotenv') && file_exists(__DIR__ . '/.env')) {
 
 //"mysql://root:root@127.0.0.1:3306/"
 
-define( 'DB_NAME', $environment == 'development' ? 'applause_wp_final_2' : 'av08830b' );
+define( 'DB_NAME', $environment == 'development' ? 'applause-wp-stage' : 'av08830b' );
 
 /** Database username */
 define( 'DB_USER', $environment == 'development' ? 'root' : 'av08830' );
@@ -147,13 +140,12 @@ define('AS3CF_AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY'));
 
 if(function_exists('get_option')) {
 
-  $localUrl = "https://stage-website.devcloud.applause.com";
+  $localUrl = getenv("WP_SITEURL") ?? "https://applause-wp.local/";
 
   update_option('siteurl', $localUrl);
   update_option('home', $localUrl);
   define('WP_HOME', $localUrl);
   define('WP_SITEURL', $localUrl);
-  
 }
 
 /* That's all, stop editing! Happy publishing. */
