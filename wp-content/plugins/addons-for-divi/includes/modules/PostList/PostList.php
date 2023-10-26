@@ -552,9 +552,9 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased
 	{
 
 		$advanced_fields                = array();
-		$advanced_fields['text']        = false;
-		$advanced_fields['text_shadow'] = false;
-		$advanced_fields['fonts']       = false;
+		$advanced_fields['text']        = array();
+		$advanced_fields['text_shadow'] = array();
+		$advanced_fields['fonts']       = array();
 
 		$advanced_fields['borders']['image'] = array(
 			'label_prefix' => esc_html__('Image', 'addons-for-divi'),

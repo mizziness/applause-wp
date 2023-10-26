@@ -111,10 +111,10 @@ class DTQ_Logo_Carousel_Child extends BA_Builder_Module
 	{
 
 		$advanced_fields                = array();
-		$advanced_fields['text']        = false;
-		$advanced_fields['fonts']       = false;
-		$advanced_fields['text_shadow'] = false;
-		$advanced_fields['max_width']   = false;
+		$advanced_fields['text']        = array();
+		$advanced_fields['fonts']       = array();
+		$advanced_fields['text_shadow'] = array();
+		$advanced_fields['max_width']   = array();
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(

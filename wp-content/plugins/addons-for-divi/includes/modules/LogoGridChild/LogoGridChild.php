@@ -136,15 +136,14 @@ class DTQ_Logo_Grid_Child extends BA_Builder_Module
 		return array_merge($label, $fields);
 	}
 
-
 	public function get_advanced_fields_config()
 	{
 
 		$advanced_fields                = array();
-		$advanced_fields['text']        = false;
-		$advanced_fields['fonts']       = false;
-		$advanced_fields['text_shadow'] = false;
-		$advanced_fields['max_width']   = false;
+		$advanced_fields['text']        = array();
+		$advanced_fields['fonts']       = array();
+		$advanced_fields['text_shadow'] = array();
+		$advanced_fields['max_width']   = array();
 
 		$advanced_fields['background'] = array(
 			'css' => array(
@@ -182,7 +181,6 @@ class DTQ_Logo_Grid_Child extends BA_Builder_Module
 
 		return $advanced_fields;
 	}
-
 
 	public function render_logo()
 	{

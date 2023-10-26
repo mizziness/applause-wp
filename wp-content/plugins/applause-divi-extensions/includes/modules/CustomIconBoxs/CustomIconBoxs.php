@@ -129,11 +129,11 @@ class DICM_IMAGES_BOXS extends ET_Builder_Module
 			$image_url = str_replace('https://wordpress-12factor.herokuapp.com', $cdn_url, $module_image);
 		}
 
-		$output = '<a class="p-0 cta-link hover click-track tw-block" href="' . 
+		$output = '<a class="cta-link hover" href="' . 
 			$resource_btn_url . '" target="_blank"><img src="' . 
-			$image_url . '" alt="" aria-hidden="true" /><div class="cta-title tw-mt-4 tw-mb-2 tw-text-base tw-text-gray-900">' . 
-			$posts_title . '</div><p class="p-0 cta-description tw-text-gray-500">' . 
-			$description . '</p><div class="tw-mt-2 tw-text-blue-500 tw-underline">' . 
+			$image_url . '" alt="" aria-hidden="true" /><div class="cta-title">' . 
+			$posts_title . '</div><p class="cta-description">' . 
+			$description . '</p><div class="cta-fake-link">' . 
 			$module_text . '</div></a>'; 
 
 		// Render wrapper

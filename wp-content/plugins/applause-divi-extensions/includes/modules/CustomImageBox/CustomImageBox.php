@@ -74,8 +74,8 @@ class DICM_ICON_BOXS extends ET_Builder_Module {
 				'label'       => __( 'Module Type', 'et_builder' ),
 				'default'     => 'secondary',
 				'options'     => array(
-					'menu'           => __( 'For Menu', 'et_builder' ),
-					'title'          => __( 'Title', 'et_builder' ),
+					'menu'           => __( 'Menu Link', 'et_builder' ),
+					'title'          => __( 'Menu Header / Title', 'et_builder' ),
 				),
 			),
 		);
@@ -128,16 +128,38 @@ class DICM_ICON_BOXS extends ET_Builder_Module {
 		}
 
 		if( $module_type == 'title' ) {
-			if( empty($resource_btn_url ) ) {
-				$output = '<div class="no-link medium:tw-mb-2 medium:tw-pb-2 medium:tw-pt-0 tw-flex tw-pt-1 tw-mr-4 tw-text-xs tw-text-gray-500 tw-uppercase tw-border-b tw-border-solid tw-border-gray-200">
-				<span class="tw-flex"><img class="nav-icon tw-inline-block ls-is-cached lazyloaded" aria-hidden="true" alt="" src="'.$image_url.'"><div><div class="link-title tw-text-xs tw-uppercase">' . $posts_title . '</div></div>
-				</span></div>';
+			
+			if (empty($resource_btn_url )) {
+
+				$output = 
+					"<div class='no-link type-title'>
+						<span>
+						<img class='nav-icon' src='{$image_url}' aria-hidden='true' alt='' />
+						<div class='link-title'>{$posts_title}</div>
+						</span>
+					</div>";
+
 			} else {
-				$output = '<a class="mini-title click-track medium:tw-mb-1 medium:tw-pt-0 tw-flex tw-pt-1 tw-mr-4 tw-text-gray-500 tw-border-b tw-border-solid tw-border-gray-200" href="'.$resource_btn_url.'" target=""><span class="tw-flex"><img class="nav-icon tw-inline-block ls-is-cached lazyloaded" aria-hidden="true" alt="" src="'.$image_url.'"><div><div class="link-title carat tw-text-xs tw-uppercase">' . $posts_title . '</div></div>
-				</span></a>';
+
+				$output = 
+					"<a class='mini-title type-title' href='{$resource_btn_url}'>
+						<span>
+						<img class='nav-icon' src='{$image_url}' aria-hidden='true' alt='' />
+						<div class='link-title'>{$posts_title}</div>
+						</span>
+					</a>";
 			}
+
 		} else {
-			$output = '<a href="'.$resource_btn_url.'" class="inner-link hover click-track tw-flex" data-category="Header"><img alt="" src="'.$image_url.'"><div><div class="p-1 link-title tw-font-normal tw-text-gray-900">' . $posts_title . '</div><p class="p-0 tw-mb-0 link-description tw-text-gray-500">'.$description.'</p></div></a>';
+
+			$output = 
+				"<a class='inner-link hover type-menu' href='{$resource_btn_url}'>
+					<img class='nav-icon' src='{$image_url}' aria-hidden='true' alt='' />
+					<div>
+						<div class='link-title'>{$posts_title}</div>
+						<p class='link-description'>{$description}</p>
+					</div>
+				</a>";
 		}
 
 				

@@ -3,8 +3,8 @@ Contributors: techlabpro1
 Donate link:
 Tags: testimonials slider, testimonial, testimonials,testimonial slider, testimonial showcase, responsive testimonial, testimonial plugin
 Requires at least: 4.5
-Tested up to: 6.2
-Stable tag: 2.3.3
+Tested up to: 6.3
+Stable tag: 2.3.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -185,6 +185,10 @@ The following are the fields that this plugin allows you to have on your testimo
 06. Styles
 
 == Changelog ==
+
+= 2.3.4 (September 5, 2023) =
+* Added: WordPress 6.3 version compatible
+* Added: PHP 8.2.0 version compatible
 
 = 2.3.3 (June 1, 2023) =
 * Fixed: Some Css issue & responsive issue

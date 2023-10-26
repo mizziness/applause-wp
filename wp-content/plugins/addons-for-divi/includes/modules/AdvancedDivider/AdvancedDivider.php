@@ -604,10 +604,10 @@ class DTQ_Advanced_Divider extends BA_Builder_Module
 	public function get_advanced_fields_config()
 	{
 		$advanced_fields                = array();
-		$advanced_fields['text']        = false;
-		$advanced_fields['borders']     = false;
-		$advanced_fields['text_shadow'] = false;
-		$advanced_fields['fonts']       = false;
+		$advanced_fields['text']        = array();
+		$advanced_fields['borders']     = array();
+		$advanced_fields['text_shadow'] = array();
+		$advanced_fields['fonts']       = array();
 
 		$advanced_fields['fonts']['title'] = array(
 			'css'             => array(

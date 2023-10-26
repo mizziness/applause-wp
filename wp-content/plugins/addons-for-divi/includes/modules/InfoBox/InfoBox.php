@@ -96,9 +96,9 @@ class DTQ_Info_Box extends BA_Builder_Module
 	{
 
 		$advanced_fields                = array();
-		$advanced_fields['text']        = false;
-		$advanced_fields['text_shadow'] = false;
-		$advanced_fields['fonts']       = false;
+		$advanced_fields['text']        = array();
+		$advanced_fields['text_shadow'] = array();
+		$advanced_fields['fonts']       = array();
 
 		$advanced_fields['borders']['box'] = array(
 			'css'         => array(

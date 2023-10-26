@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-06-01 06:42+0000\n"
+"POT-Creation-Date: 2023-09-05 06:33+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -1102,31 +1102,31 @@ msgstr ""
 msgid "Go Premium for More Features"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:107
+#: ../lib/models/TSSProField.php:108
 msgid "[Pro]"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:107
+#: ../lib/models/TSSProField.php:108
 msgid "This is premium field"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:303
+#: ../lib/models/TSSProField.php:304
 msgid "Please use default customizer to add your css. This option is deprecated. "
 msgstr ""
 
-#: ../lib/models/TSSProField.php:632
+#: ../lib/models/TSSProField.php:633
 msgid "Pro"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:689
+#: ../lib/models/TSSProField.php:690
 msgid "Width"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:790, ../lib/models/TSSProField.php:763
+#: ../lib/models/TSSProField.php:791, ../lib/models/TSSProField.php:764
 msgid "Active Social link"
 msgstr ""
 
-#: ../lib/models/TSSProField.php:773
+#: ../lib/models/TSSProField.php:774
 msgid "Available Social link"
 msgstr ""
 

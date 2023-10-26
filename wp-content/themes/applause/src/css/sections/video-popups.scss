@@ -17,8 +17,12 @@ body.wistia_popover_mode {
   height: auto;
 }
 
+// .wistia_embed {
+//   @apply tw-relative tw-rounded-md tw-shadow-small;
+// }
+
 .video-image {
-  @apply tw-relative tw-rounded-md tw-shadow-small;
+  @apply tw-relative;
 
   picture img,
   img {
@@ -120,7 +124,7 @@ body.wistia_popover_mode {
 
 .real-video-button {
   position: static;
-  display: inline-block;
+  display: block;
   height: 100%;
   width: 100%;
 }

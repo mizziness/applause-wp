@@ -1,4 +1,4 @@
-/*! applause - v1.0.0 - 2023-10-19 */body.single-blog-author .et_pb_button_wrapper {
+/*! applause - v1.0.0 - 2023-10-25 */body.single-blog-author .et_pb_button_wrapper {
   padding-top: 1rem;
   margin-top: 2rem;
   position: relative;
@@ -445,6 +445,7 @@ body.single-blog-author #custom-breadcrumbs p {
 #customer-stories-slider.lwp_post_carousel .lwp_meta_categories a,
 #dev-qa-trends-slider.lwp_post_carousel .lwp_meta_categories a {
   display: none;
+  float: left;
 }
 
 #applause-news-slider .lwp_meta_categories a[href*=applause-news] {
@@ -1757,57 +1758,12 @@ body.admin-bar #wpadminbar li {
 /* ========================================== 
   Header Heros for Main Pages
 ========================================== */
-.header-hero {
-  @apply tw-outline-none tw-p-0 tw-bg-transparent tw-bg-no-repeat tw-bg-cover tw-mx-auto tw-relative tw-min-h-[25rem] tw-grid tw-content-center;
-}
-.header-hero .hero-bg {
-  @apply tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-transparent tw-bg-no-repeat tw-bg-cover;
-  background-position: center center;
-}
-@screen small {
-  .header-hero .hero-bg {
-    left: 15vw;
-    width: calc(100% - 15vw);
-  }
-}
-@screen medium {
-  .header-hero .hero-bg {
-    left: 12vw;
-    width: calc(100% - 12vw);
-  }
-}
-.header-hero .hero-wrapper {
-  @apply tw-relative tw-z-10 tw-grid tw-items-center tw-w-full tw-h-full tw-p-0 tw-mx-auto tw-my-0;
-  min-height: 25rem;
-  max-width: 75vw;
-}
-@screen tablet {
-  .header-hero .hero-wrapper {
-    min-height: 25rem;
-    max-width: 65vw;
-  }
-}
-@screen small {
-  .header-hero .hero-wrapper {
-    min-height: 0;
-    max-width: 45vw;
-    margin: 0;
-    margin-left: 4rem;
-  }
-}
-.header-hero .hero-wrapper .hero-body {
-  @apply tw-shadow-old tw-block tw-bg-white tw-rounded-[3px] tw-self-center tw-px-6 tw-py-8;
-}
-@screen tablet {
-  .header-hero .hero-wrapper .hero-body {
-    @apply tw-py-7 tw-top-0 tw-px-5 tw-m-0;
-  }
-}
-.header-hero .hero-wrapper .hero-body::before {
-  display: block;
-  content: "";
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
+.et_pb_fullwidth_section.header-hero {
+  @apply tw-outline-none tw-p-0 tw-bg-transparent tw-bg-no-repeat tw-bg-cover tw-relative tw-min-h-[25rem] tw-grid tw-right-0;
+  position: relative !important;
+  display: grid;
+  width: calc(100% - 12rem) !important;
+  margin-right: 0 !important;
 }
 
 /* ========================================== 
@@ -2225,7 +2181,7 @@ body.wistia_popover_mode {
 }
 
 .video-image {
-  @apply tw-relative tw-rounded-md tw-shadow-small;
+  @apply tw-relative;
 }
 .video-image picture img,
 .video-image img {
@@ -2315,7 +2271,7 @@ body.wistia_popover_mode {
 
 .real-video-button {
   position: static;
-  display: inline-block;
+  display: block;
   height: 100%;
   width: 100%;
 }

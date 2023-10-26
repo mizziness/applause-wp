@@ -561,11 +561,10 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module
 	public function get_advanced_fields_config()
 	{
 
-		$advanced_fields = array();
-
-		$advanced_fields['text']        = false;
-		$advanced_fields['text_shadow'] = false;
-		$advanced_fields['fonts']       = false;
+		$advanced_fields 				= array();
+		$advanced_fields['text']        = array();
+		$advanced_fields['text_shadow'] = array();
+		$advanced_fields['fonts']       = array();
 
 		$advanced_fields['borders']['tweets'] = array(
 			'css'          => array(

@@ -1,9 +1,9 @@
 <?php
 /*
- * Plugin Name: Divi Torque Lite
+ * Plugin Name: Torque Modules Lite
  * Plugin URI:  https://divitorque.com
  * Description: Powerful divi modules to create powerful websites.
- * Version:     3.6.3
+ * Version:     3.6.5
  * Author:      WPPaw
  * Author URI:  https://wppaw.com
  * License: GPL3
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.3');
+define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.5');
 define('DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DIVI_TORQUE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit(DIVI_TORQUE_PLUGIN_URL . 'assets'));
@@ -62,7 +62,6 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
 
         public function activate()
         {
-
             update_option('dt-version', DIVI_TORQUE_PLUGIN_VERSION);
 
             $version = get_option('divitorque_version');

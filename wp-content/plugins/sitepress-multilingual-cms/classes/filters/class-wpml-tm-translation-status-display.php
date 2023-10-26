@@ -14,6 +14,7 @@ use WPML\LIB\WP\Post;
 use WPML\API\PostTypes;
 use WPML\TM\API\Jobs;
 use function WPML\FP\partial;
+use WPML\LIB\WP\User;
 
 class WPML_TM_Translation_Status_Display {
 
@@ -165,6 +166,8 @@ class WPML_TM_Translation_Status_Display {
 			$css_class .= ' otgs-ico-edit-disabled';
 		} elseif ( ! $this->is_lang_pair_allowed( $lang, $source_lang, $post_id ) && ! $element_id ) {
 			$css_class .= ' otgs-ico-add-disabled';
+		} elseif ( ! $this->has_user_rights_to_translate( $trid, $lang ) ) {
+			$css_class .= ' otgs-ico-edit-disabled';
 		}
 
 		if ( ( $this->isTranslateEverythingInProgress( $trid, $post_id, $lang ) && ( 'draft' !== $post_status || $this->is_in_progress( $trid, $lang ) ) ) ) {
@@ -216,6 +219,8 @@ class WPML_TM_Translation_Status_Display {
 				$source_language['display_name'],
 				$language['display_name']
 			);
+		} elseif ( ! $this->has_user_rights_to_translate( $trid, $lang ) ) {
+			$text = __( "You can only edit translations assigned to you.", 'wpml-translation-management' );
 		}
 
 		if ( $this->isTranslateEverythingInProgress( $trid, $original_post_id, $lang ) ) {
@@ -338,15 +343,13 @@ class WPML_TM_Translation_Status_Display {
 	}
 
 	private function shouldUseTMEditor( $postId ) {
-		static $fn;
-		if ( ! $fn ) {
-			$fn = Fns::memorize( function ( $postId ) {
-				list( $useTmEditor, $isWpmlEditorBlocked, $reason ) = \WPML_TM_Post_Edit_TM_Editor_Mode::get_editor_settings( $this->sitepress, $postId );
-				return $useTmEditor && ! $isWpmlEditorBlocked;
-			} );
+		static $cachedKeys;
+		if ( ! isset( $cachedKeys[ $postId ] ) ) {
+			list( $useTmEditor, $isWpmlEditorBlocked, $reason ) = \WPML_TM_Post_Edit_TM_Editor_Mode::get_editor_settings( $this->sitepress, $postId );
+			$cachedKeys[ $postId ]                              = $useTmEditor && ! $isWpmlEditorBlocked;
 		}
 
-		return $fn( $postId );
+		return $cachedKeys[ $postId ];
 	}
 
 	/**
@@ -457,16 +460,43 @@ class WPML_TM_Translation_Status_Display {
 			[
 				'lang_from'      => $lang_from ?: Languages::getCurrentCode(),
 				'lang_to'        => $lang_to,
-				'admin_override' => $this->is_current_user_admin(),
+				'admin_override' => User::isAdministrator(),
 				'post_id'        => $post_id,
 			]
 		);
 	}
 
-	protected function is_current_user_admin() {
+	/**
+	 * It checks whether a current user has rights to edit a translation created by another user.
+	 * All admins and editors can edit any translation.
+	 * Other translators can edit only translations which either are assigned to them or unassigned.
+	 *
+	 * @param int $trid
+	 * @param string $lang
+	 *
+	 * @return bool
+	 */
+	private function has_user_rights_to_translate( $trid, $lang ) {
+		$user = User::getCurrent();
+		if ( User::isAdministrator( $user ) || User::isEditor( $user ) ) {
+			return true;
+		}
 
-		return $this->sitepress->get_wp_api()
-		                       ->current_user_can( 'manage_options' );
+		$job = Jobs::getTridJob( $trid, $lang );
+		if ( ! $job ) {
+			return true;
+		}
+
+		if ( ! Obj::prop( 'translator_id', $job ) ) { // nobody is currently assigned
+			return true;
+		}
+
+		if ( (int) Obj::propOr( 0, 'translator_id', $job ) === (int) $user->ID ) {
+			return true;
+		}
+
+		// Neither admin, nor editor, nor the translator of $trid.
+		return false;
 	}
 
 	/**
@@ -519,10 +549,13 @@ class WPML_TM_Translation_Status_Display {
 	 * @return bool
 	 */
 	private function isTranslateEverythingInProgress( $trid, $postId, $language ) {
-		return Option::shouldTranslateEverything()
+		/** @var string $postType */
+		$postType = Post::getType( $postId );
+		return $postType
+			   && Option::shouldTranslateEverything()
 		       && ! Option::isPausedTranslateEverything()
 		       && $this->shouldAutoTranslate( $trid, $postId, $language )
-		       && ! TranslateEverything::isEverythingProcessedForPostTypeAndLanguage( Post::getType( $postId ), $language )
+		       && ! TranslateEverything::isEverythingProcessedForPostTypeAndLanguage( $postType, $language )
 		       && Lst::includes( Post::getType( $postId ), PostTypes::getAutomaticTranslatable() );
 	}
 

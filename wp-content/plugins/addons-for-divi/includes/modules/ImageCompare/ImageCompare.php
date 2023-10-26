@@ -310,7 +310,7 @@ class DTQ_Image_Compare extends BA_Builder_Module
 	{
 
 		$advanced_fields         = array();
-		$advanced_fields['text'] = false;
+		$advanced_fields['text'] = array();
 
 		$advanced_fields['fonts']['label'] = array(
 			'label'           => esc_html__('Label', 'addons-for-divi'),

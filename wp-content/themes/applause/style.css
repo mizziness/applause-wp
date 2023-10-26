@@ -11,6 +11,45 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
 /*------------------------------ ADDITIONAL CSS HERE ------------------------------ */
+.et_pb_pagebuilder_layout {
+  overflow-x: visible;
+}
+
+.dicm_hype_embed .HYPE_document font,
+.dicm_hype_embed .HYPE_document span,
+.dicm_hype_embed .HYPE_document b {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'proxima_nova';
+}
+
+.acm_hype_embed .HYPE_document font,
+.acm_hype_embed .HYPE_document span,
+.acm_hype_embed .HYPE_document b {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'proxima_nova';
+}
+
+.section-icon-blocks .et_pb_blurb .et_pb_main_blurb_image img[src*=".svg"] {
+  height: 64px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.section-icon-blocks .et_pb_blurb.hover .et_pb_blurb_description,
+.section-icon-blocks .et_pb_blurb.hover .et_pb_blurb_description p {
+  font-size: 14px;
+}
+
+.section-icon-blocks .et_pb_blurb.hover .et_pb_blurb_description span {
+  color: #0272B4;
+  transition: all linear .2s;
+}
+
+.section-icon-blocks .et_pb_blurb.hover:hover .et_pb_blurb_description span {
+  color: #01446C;
+}
 
 #et-boc,
 .et-boc {
@@ -52,21 +91,21 @@ div[data-lastpass-infield="true"] {
   border-radius: 3px;
 }
 
-.et_pb_section.header-hero.et_pb_with_background.et_pb_fullwidth_section.et_section_regular {
+/* .et_pb_section.header-hero.et_pb_with_background.et_pb_fullwidth_section.et_section_regular {
   margin-left: 12rem;
-}
+} */
 
 @media (min-width: 981px) {
 
-  .et_pb_section.header-hero.et_pb_with_background.et_pb_fullwidth_section.et_section_regular {
+  /* .et_pb_section.header-hero.et_pb_with_background.et_pb_fullwidth_section.et_section_regular {
     margin-left: 12rem !important;
-  }
+  } */
 
   #mega-menu-dropdowns .mega-nav-dropdown {
-    position: relative;
+    position: absolute;
     max-width: 1080px;
-    right: -8rem;
-    width: 66vw;
+    width: 50vw;
+    right: 0;
   }
 }
 

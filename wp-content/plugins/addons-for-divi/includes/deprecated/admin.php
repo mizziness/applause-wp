@@ -14,20 +14,7 @@ class Deprecated_DiviTorque_Admin
 		add_action('wp_ajax_' . self::MODULES_NONCE, array(__CLASS__, 'save_data'));
 		add_action('ba_save_admin_data', array(__CLASS__, 'save_modules_data'));
 		add_action('ba_save_admin_data', array(__CLASS__, 'save_extensions_data'));
-		// add_action('admin_init', array(__CLASS__, 'activation_redirect'));
 	}
-
-	// public static function activation_redirect()
-	// {
-	// 	if (get_option(DIVI_TORQUE_REDIRECTION_FLAG, false)) {
-	// 		delete_option(DIVI_TORQUE_REDIRECTION_FLAG);
-	// 		if (!get_option(DIVI_TORQUE_REDIRECTION_FLAG, false) || !divitorque_has_pro()) {
-	// 			die(wp_redirect(divitorque_dashboard_link()));
-	// 		} else {
-	// 			die(wp_redirect(divitorque_dashboard_link()));
-	// 		}
-	// 	}
-	// }
 
 	public static function add_menu()
 	{

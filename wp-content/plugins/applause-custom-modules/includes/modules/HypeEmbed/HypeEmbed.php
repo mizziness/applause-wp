@@ -59,7 +59,11 @@ class ACM_HypeEmbed extends ET_Builder_Module
 
 			if ( $extracted != false ) {
 				$hype_content = str_replace(array('><![CDATA[', ']]></script>'), array('>', '</script>'), $extracted);
+
+				$baseUrl = "https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/wp-content/uploads/hype4/{$mkt_id}/Default/Default.hyperesources";
+				$hype_content = str_replace( array('"Default.hyperesources', '&quot;Default.hyperesources'), '"' . $baseUrl, $hype_content);
 				$output = $hype_content;
+				
 			} else {
 				$output = "Nothing Here";
 			}

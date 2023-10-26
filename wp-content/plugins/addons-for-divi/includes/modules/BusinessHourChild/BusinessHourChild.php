@@ -177,8 +177,8 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module
 	{
 
 		$advanced_fields          = array();
-		$advanced_fields['text']  = false;
-		$advanced_fields['fonts'] = false;
+		$advanced_fields['text']  = array();
+		$advanced_fields['fonts'] = array();
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(

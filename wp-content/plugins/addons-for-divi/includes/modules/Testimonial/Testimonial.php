@@ -915,10 +915,10 @@ class DTQ_Testimonial extends BA_Builder_Module
 	{
 
 		$advanced_fields                = array();
-		$advanced_fields['text']        = false;
-		$advanced_fields['text_shadow'] = false;
-		$advanced_fields['max_width']   = false;
-		$advanced_fields['fonts']       = false;
+		$advanced_fields['text']        = array();
+		$advanced_fields['text_shadow'] = array();
+		$advanced_fields['max_width']   = array();
+		$advanced_fields['fonts']       = array();
 
 		$advanced_fields['box_shadow']['item'] = array(
 			'label'       => esc_html__('Item Box Shadow', 'addons-for-divi'),
