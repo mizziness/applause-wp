@@ -1125,7 +1125,7 @@ body.admin-bar #wpadminbar li {
   CTA Banner / Alert Banner
  ========================================== */
 .banner-alerts-container {
-  display: none !important;
+  display: none;
   @apply tw-bg-applause-blue tw-text-white;
 }
 .banner-alerts-container #banner-alerts {
@@ -1135,7 +1135,7 @@ body.admin-bar #wpadminbar li {
   overflow: hidden;
 }
 .banner-alerts-container a {
-  @apply tw-text-white tw-text-sm tw-border-b tw-border-white tw-border-solid tw-transition-all tw-inline-block tw-leading-[3rem];
+  @apply tw-text-white tw-text-sm tw-transition-all tw-inline-block tw-leading-[3rem];
 }
 .banner-alerts-container h2 {
   @apply tw-text-white tw-text-sm tw-leading-[3rem];
@@ -1151,11 +1151,12 @@ body.admin-bar #wpadminbar li {
   transform-origin: left;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/icons/streamline-micro-bold/interface-essential/add-remove-delete/interface-delete-1.svg");
+  mask-image: url("https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/icons/streamline-micro-bold/interface-essential/add-remove-delete/interface-delete-1.svg");
   background-size: contain;
   height: 1rem;
   width: 1rem;
   text-indent: -10000rem;
+  background-color: #fff;
 }
 .banner-alerts-container .controls a.dismiss:hover {
   transform: scale(1.25);
@@ -1163,7 +1164,7 @@ body.admin-bar #wpadminbar li {
 
 @media (min-width: 901px) {
   .banner-alerts-container {
-    display: block !important;
+    display: block;
   }
 }
 
@@ -1770,7 +1771,7 @@ body.admin-bar #wpadminbar li {
   CTA Banner / Alert Banner
 ========================================== */
 .banner-alerts-container {
-  display: none !important;
+  display: none;
   @apply tw-bg-applause-blue tw-text-white;
 }
 .banner-alerts-container #banner-alerts {
@@ -1780,7 +1781,7 @@ body.admin-bar #wpadminbar li {
   overflow: hidden;
 }
 .banner-alerts-container a {
-  @apply tw-text-white tw-text-sm tw-border-b tw-border-white tw-border-solid tw-transition-all tw-inline-block tw-leading-[3rem];
+  @apply tw-text-white tw-text-sm tw-transition-all tw-inline-block tw-leading-[3rem];
 }
 .banner-alerts-container h2 {
   @apply tw-text-white tw-text-sm tw-leading-[3rem];
@@ -1796,7 +1797,6 @@ body.admin-bar #wpadminbar li {
   transform-origin: left;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/icons/streamline-micro-bold/interface-essential/add-remove-delete/interface-delete-1.svg");
   background-size: contain;
   height: 1rem;
   width: 1rem;
@@ -1808,7 +1808,7 @@ body.admin-bar #wpadminbar li {
 
 @media (min-width: 901px) {
   .banner-alerts-container {
-    display: block !important;
+    display: block;
   }
 }
 /* ========================================== 
