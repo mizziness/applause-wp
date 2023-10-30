@@ -193,6 +193,7 @@ class Marketo_Api_Admin {
 			'orig_utm_campaign__c' 						=> $_POST['orig_utm_campaign__c'],
 			'origutmmedium' 							=> $_POST['origutmmedium'],
 			'orig_utm_source__c' 						=> $_POST['orig_utm_source__c'],
+			'GCLID__c' 						=> $_POST['GCLID__c']
 		);
 
 		$meta = array_merge( $jobData, $hiddenFields );
@@ -284,6 +285,7 @@ class Marketo_Api_Admin {
 			'orig_utm_campaign__c',
 			'origutmmedium',
 			'orig_utm_source__c',
+			'GCLID__c'
 		);
 
 		$html .= '
