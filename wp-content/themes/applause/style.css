@@ -91,22 +91,25 @@ div[data-lastpass-infield="true"] {
   border-radius: 3px;
 }
 
-/* .et_pb_section.header-hero.et_pb_with_background.et_pb_fullwidth_section.et_section_regular {
-  margin-left: 12rem;
-} */
+#mega#mega-menu-dropdowns {
+  position: relative;
+}
 
-@media (min-width: 981px) {
+#mega-menu-dropdowns .et_pb_section {
+  padding: 0;
+  margin: 0;
+}
 
-  /* .et_pb_section.header-hero.et_pb_with_background.et_pb_fullwidth_section.et_section_regular {
-    margin-left: 12rem !important;
-  } */
-
-  #mega-menu-dropdowns .mega-nav-dropdown {
-    position: relative;
-    max-width: 1080px;
-    right: -8rem;
-    width: 66vw;
-  }
+#mega-menu-dropdowns .et_pb_section .et_pb_row {
+  position: absolute;
+  max-width: 55vw;
+  top: 0;
+  right: 0;
+  display: none;
+  padding: 1rem !important;
+  box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  background-color: white;
 }
 
 /* =========================================================================== */

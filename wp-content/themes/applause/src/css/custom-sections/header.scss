@@ -64,64 +64,48 @@ body.admin-bar #wpadminbar li {
   max-width: 190px;
 }
 
-/* ========================================== 
-  Header Heros for Main Pages
-========================================== */
-.header-hero {
-  @apply tw-outline-none tw-p-0 tw-bg-transparent tw-bg-no-repeat tw-bg-cover tw-mx-auto tw-relative tw-min-h-[25rem] tw-grid tw-content-center;
-
-  .hero-bg {
-    @apply tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-transparent tw-bg-no-repeat tw-bg-cover;
-    background-position: center center;
-
-    @screen small {
-      left: 15vw;
-      width: calc(100% - 15vw);
+#mega-menu-dropdowns {
+  .mega-nav-dropdown {
+    #inner-title-push-down {
+      margin-top: 2rem;
     }
 
-    @screen medium {
-      left: 12vw;
-      width: calc(100% - 12vw);
+    .et_pb_module_inner {
+      .inner-link.type-menu {
+        .link-title {
+          @apply tw-text-sm tw-leading-5;
+        }
+
+        .link-description {
+          @apply tw-text-xs tw-leading-5 tw-text-gray-500;
+        }
+      }
     }
   }
 
-  .hero-wrapper {
-    @apply tw-relative tw-z-10 tw-grid tw-items-center tw-w-full tw-h-full tw-p-0 tw-mx-auto tw-my-0;
-    min-height: 25rem;
-    max-width: 75vw;
-
-    @screen tablet {
-      min-height: 25rem;
-      max-width: 65vw;
-    }
-
-    @screen small {
-      min-height: 0;
-      max-width: 45vw;
-      margin: 0;
-      margin-left: 4rem;
-    }
-
-    .hero-body {
-      @apply tw-shadow-old tw-block tw-bg-white tw-rounded-[3px] tw-self-center tw-px-6 tw-py-8;
-
-      @screen tablet {
-        @apply tw-py-7 tw-top-0 tw-px-5 tw-m-0;
-      }
-
-      &::before {
-        display: block;
-        content: '';
-        position: relative;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-    }
+  #solutions-menu {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    display: block;
+    max-height: 75vh;
+    overflow-y: scroll;
   }
 }
 
 /* ========================================== 
+  Header Heros for Main Pages
+========================================== */
+.et_pb_fullwidth_section.header-hero {
+  @apply tw-outline-none tw-p-0 tw-bg-transparent tw-bg-no-repeat tw-bg-cover tw-relative tw-min-h-[25rem] tw-grid tw-right-0;
+  position: relative !important;
+  display: grid;
+  width: calc(100% - 12rem) !important;
+  margin-right: 0 !important;
+}
+
+/* ========================================== 
   CTA Banner / Alert Banner
- ========================================== */
+========================================== */
 .banner-alerts-container {
   display: none;
 
@@ -147,7 +131,7 @@ body.admin-bar #wpadminbar li {
   }
 
   .controls {
-    @apply tw-p-4;
+    @apply tw-p-4 tw-text-white;
 
     a.dismiss {
       @apply tw-invert tw-inline-block tw-text-white tw-duration-200 tw-rounded-none;
@@ -174,3 +158,226 @@ body.admin-bar #wpadminbar li {
   }
 }
 // END Banner Alert
+
+/* ========================================== 
+  Navigation Customizations
+========================================== */
+
+// Mobile ===================================
+// ==========================================
+@media (max-width: 900px) {
+  /* ### Menu breakpoint for default menu ### */
+  #et_mobile_nav_menu {
+    display: block !important;
+  }
+  #top-menu {
+    display: none !important;
+  }
+
+  /* ### Menu breakpoint for the theme builder ### */
+  .et_pb_menu .et_pb_menu__menu,
+  #et-main-area .de-mega-menu-container {
+    display: none !important;
+  }
+
+  #et_mobile_nav_menu {
+    display: block !important;
+
+    #mobile_menu {
+      max-height: 75vh;
+      overflow-x: scroll;
+      scrollbar-color: #fff #fff;
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #fff;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border: 1px solid #ececec;
+        border-radius: 10px;
+      }
+
+      .de-mega-menu-item {
+        .inner-menu-applause {
+          .dicm_custom_icon_boxs {
+            .et_pb_module_inner {
+              .inner-link {
+                @apply tw-gap-2;
+
+                > img {
+                  @apply tw-inline-block;
+                  width: 24px;
+                  height: 24px;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .et_pb_svg_logo #logo {
+    max-width: 12rem;
+    width: 12rem;
+    height: auto !important;
+  }
+
+  .et_header_style_left .logo_container {
+    height: 4.5rem;
+    max-height: 4.5rem;
+  }
+
+  .et_header_style_left #et-top-navigation .mobile_menu_bar {
+    padding-bottom: 16px;
+  }
+
+  #page-container {
+    #et-boc {
+      #main-header {
+        #et-top-navigation {
+          max-height: 4.5rem;
+        }
+      }
+    }
+  }
+
+  /* Our Solutions window */
+  .our_solutions.menu-item {
+    .et_pb_row {
+      .et_pb_column {
+        width: 100% !important;
+      }
+    }
+
+    .dicm_custom_icon_boxs {
+      .inner-link {
+        @apply tw-gap-4;
+      }
+    }
+
+    .et_pb_module.et_pb_text {
+      @apply tw-py-0 tw-my-0;
+
+      padding: 0 !important;
+      margin: 0 !important;
+
+      .et_pb_text_inner {
+        a {
+          border: 0px transparent solid;
+        }
+
+        p {
+          margin-bottom: 0 !important;
+          padding-bottom: 0 !important;
+        }
+      }
+    }
+
+    .no-link {
+      padding-left: 0px !important;
+      padding-bottom: 10px !important;
+
+      span {
+        @apply tw-gap-2;
+      }
+    }
+
+    .mini-title {
+      padding-left: 0px !important;
+      padding-bottom: 5px !important;
+
+      span {
+        @apply tw-gap-2;
+      }
+    }
+
+    .mini-title .link-title {
+      @apply tw-border-b tw-border-solid tw-border-gray-900 tw-mb-2;
+      line-height: 1rem;
+      transition: all 0.3s linear;
+
+      &::after {
+        border-color: transparent transparent transparent #606060;
+        border-width: 4px 0 4px 6.9px;
+        content: "";
+        display: inline-block;
+        height: 0;
+        margin-left: 0.5rem;
+        width: 0;
+      }
+    }
+  }
+}
+
+// Tablet ===================================
+// ==========================================
+@media (min-width: 901px), (max-width: 980px), (min-width: 980px)  {
+
+  /* ### Menu breakpoint for default menu ### */
+  #et_mobile_nav_menu {
+    display: none !important;
+  }
+  #top-menu {
+    display: block !important;
+  }
+
+  /* ### Menu breakpoint for the theme builder ### */
+  .et_pb_menu .et_pb_menu__menu {
+    display: block !important;
+  }
+  .et_mobile_nav_menu {
+    display: none !important;
+  }
+
+  .et_header_style_left #logo {
+    max-width: 12rem;
+    width: 12rem;
+    height: auto !important;
+  }
+
+  .et_header_style_left #et-top-navigation,
+  .et_header_style_left .et-fixed-header #et-top-navigation {
+    padding-top: 0px !important;
+  }
+
+  /* Top Menu Bar */
+  #top-menu {
+    > li.menu-item {
+      padding-right: 0px !important;
+
+      /* Disable arrows */
+      > a::after {
+        content: "";
+        display: none !important;
+      }
+
+      /* Hover Tabs */
+      &:not(.get-started-button) {
+        a {
+          @apply tw-opacity-100 tw-font-[500];
+          padding: 1.8rem 0.5rem !important;
+
+          &:hover {
+            @apply tw-opacity-100 tw-bg-blue-100;
+          }
+
+          &::before {
+            content: "";
+            transition: all linear 0.2s;
+            @apply tw-transform-none tw-w-none tw-h-[2px] tw-p-0 tw-border-none tw-absolute tw-bottom-0 tw-left-0 tw-top-auto tw-right-auto tw-m-0;
+
+            &:hover {
+              @apply tw-transform-none tw-w-full tw-h-[2px] tw-bg-blue-500 tw-inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

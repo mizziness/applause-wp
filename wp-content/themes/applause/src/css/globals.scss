@@ -37,9 +37,26 @@
   height: auto;
 }
 
-.dicm_custom_image_boxs a.hover .tw-underline {
-  text-decoration: underline;
-  color: #0272B4;
+.dicm_custom_image_boxs {
+  .cta-link {
+    img {
+      @apply tw-w-full tw-aspect-[3/2];
+    }
+
+    .cta-description {
+      @apply tw-text-xs tw-leading-4 tw-text-gray-500;
+    }
+
+    .cta-fake-link {
+      @apply tw-text-xs tw-leading-4 tw-text-blue-500 tw-transition-all tw-duration-200 tw-mt-2;
+    }
+
+    &:hover {
+      .cta-fake-link {
+        @apply tw-underline tw-text-blue-700;
+      }
+    }
+  }
 }
 
 .dicm_custom_icon_boxs .no-link .link-title {
@@ -97,34 +114,8 @@
 
 #solutions-menu .solutions-link p {
   font-size: 14px;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-#mega-menu-dropdowns {
-  position: relative;
-}
-
-#mega-menu-dropdowns .et_pb_section {
-  padding: 0;
-  margin: 0;
-}
-
-#mega-menu-dropdowns .mega-nav-dropdown {
-  position: relative;
-  max-width: 55vw;
-  right: -8rem;
-}
-
-#mega-menu-dropdowns .et_pb_section .et_pb_row {
-  position: absolute !important;
-  background-color: white;
-  top: 0;
-  right: 0;
-  display: none;
-  padding: 1rem !important;
-  box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.3);
-  width: 100%;
+  padding: 5px 1rem;
+  line-height: 1.25rem;
 }
 
 .pdfemb-viewer {
