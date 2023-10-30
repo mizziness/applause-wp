@@ -1,4 +1,4 @@
-/*! applause - v1.0.0 - 2023-10-27 */body.single-blog-author .et_pb_button_wrapper {
+/*! applause - v1.0.0 - 2023-10-30 */body.single-blog-author .et_pb_button_wrapper {
   padding-top: 1rem;
   margin-top: 2rem;
   position: relative;
@@ -235,9 +235,9 @@ body.single-blog-author #custom-breadcrumbs p {
 #single-blog-post .categories-section a {
   --tw-bg-opacity: 1;
   --tw-text-opacity: 1;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(236 236 236/var(--tw-bg-opacity));
   border-radius: 9999px;
-  color: rgb(27, 27, 27);
+  color: rgb(27 27 27/var(--tw-text-opacity));
   display: inline-block;
   font-size: 0.875rem;
   margin-right: 0.5rem;
@@ -247,8 +247,8 @@ body.single-blog-author #custom-breadcrumbs p {
 #single-blog-post .categories-section a:hover {
   --tw-bg-opacity: 1;
   --tw-text-opacity: 1;
-  background-color: rgb(2, 114, 180);
-  color: rgb(255, 255, 255);
+  background-color: rgb(2 114 180/var(--tw-bg-opacity));
+  color: rgb(255 255 255/var(--tw-text-opacity));
   text-decoration-line: none;
 }
 

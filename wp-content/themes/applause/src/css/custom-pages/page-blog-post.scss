@@ -185,9 +185,11 @@
 
   .categories-section {
     a {
-      background-color: rgb(236, 236, 236);
+      --tw-bg-opacity: 1;
+      --tw-text-opacity: 1;
+      background-color: rgb(236 236 236 / var(--tw-bg-opacity));
       border-radius: 9999px;
-      color: rgb(27, 27, 27);
+      color: rgb(27 27 27 / var(--tw-text-opacity));
       display: inline-block;
       font-size: 0.875rem;
       margin-right: 0.5rem;
@@ -195,8 +197,10 @@
       transition: all linear 0.2s;
 
       &:hover {
-        background-color: rgb(2, 114, 180);
-        color: rgb(255, 255, 255);
+        --tw-bg-opacity: 1;
+        --tw-text-opacity: 1;
+        background-color: rgb(2 114 180 / var(--tw-bg-opacity));
+        color: rgb(255 255 255 / var(--tw-text-opacity));
         text-decoration-line: none;
       }
     }

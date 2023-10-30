@@ -102,10 +102,10 @@ div[data-lastpass-infield="true"] {
   } */
 
   #mega-menu-dropdowns .mega-nav-dropdown {
-    position: absolute;
+    position: relative;
     max-width: 1080px;
-    width: 50vw;
-    right: 0;
+    right: -8rem;
+    width: 66vw;
   }
 }
 

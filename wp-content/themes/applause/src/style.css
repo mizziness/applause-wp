@@ -1,0 +1,27 @@
+/*---------------------------------------------------------------------------------
+
+ Theme Name:   applause
+ Theme URI:    
+ Description:  For applause site
+ Author:       Themelocation
+ Author URI:   https://www.themelocation.com/
+ Template:     Divi
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+
+/*------------------------------ ADDITIONAL CSS HERE ------------------------------ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./dist/css/base-styles.min.css";
+@import "./dist/css/buttons.min.css";
+@import "./dist/css/forms.min.css";
+
+@import "./dist/css/sections/header.min.css";
+@import "./dist/css/sections/prefabs.min.css";
+@import "./dist/css/sections/video-popups.min.css";
+
+@import "./dist/css/pages/home.min.css"; 

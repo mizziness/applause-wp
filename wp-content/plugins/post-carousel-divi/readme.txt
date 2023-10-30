@@ -2,7 +2,7 @@
 Contributors: themeythemes
 Tags: divi, post carousel, divi module, divi post carousel
 Requires at least: 5.0
-Tested up to: 6.3
+Tested up to: 6.2
 Requires PHP: 5.6
 Stable tag: 1.2
 License: GPLv2 or later
@@ -12,53 +12,43 @@ This plugin add a post carousel module to the Divi theme.
 
 == Description ==
 
-The Divi Post Carousel plugin is a powerful tool that allows you to add stunning post carousels to your website using the [Divi Post Carousel](https://www.learnhowwp.com/divi-post-carousel/) module. With this plugin, you can enhance your Divi Builder experience and create engaging post carousels effortlessly.
+Divi Post Carousel Module. Add post carousel on your website with the [Divi Post Carousel](https://www.learnhowwp.com/divi-post-carousel/) plugin. This plugin adds a new Post Carousel module in the Divi Builder. Once you activate the plugin a new module will appear in your module list by the name of Post Carousel. You can then use the module to add a Post Carousel anywhere inside the Divi Builder.
 
-Once you activate the plugin, a new module called "Post Carousel" will be seamlessly integrated into your module list within the Divi Builder. This module empowers you to place dynamic and visually appealing post carousels anywhere on your website.
-
-To see a live demonstration of the Divi Post Carousel in action, check out the [Divi Post Carousel Demo](https://www.learnhowwp.com/divi-post-carousel/)
+[Divi Post Carousel Demo](https://www.learnhowwp.com/divi-post-carousel/)
 
 **Free Version Features**
 
-* Fully compatible with the Visual Builder
-* Filter posts by Categories
-* Autoplay animation to bring your carousel to life
-* Stop autoplay on hover for enhanced user control
-* Comprehensive autoplay animation controls
-* Smooth slide animation controls for seamless transitions
-* Infinite Animation for continuous browsing experience
-* Flexible options to Show/Hide Arrows for navigation
-* Customize the appearance of Arrows and Dots
-* Choose the number of posts to display in the carousel
-* Control the number of posts to scroll with arrow click or during autoplay
-* Responsive design options, allowing different numbers of slides for desktop, tablet, and mobile
-* And many more customizable options to suit your needs
+* Visual Builder Supported
+* Filter by categories
+* Autoplay Animation
+* Stop autoplay on hover
+* Autoplay animation controls
+* Slide animation controls
+* Infinite Animation
+* Show/Hide Arrows
+* Show/Hide Dots
+* Arrow and Dot styles
+* Choose the number of posts you want to show in the carousel.
+* Choose the number of post to scroll when the arrow is clicked or on autoplay.
+* Responsive options. Set different number of slides for Desktop, Tablet and Phones.
+* Many more options
 
 **Pro Version Features**
 
-Upgrade to the Pro version of the Divi Post Carousel plugin to unlock even more advanced features and customization options, including:
-
-* Fine-tune Post Offset to display posts from a specific position
-* Adjust Excerpt Length to control the amount of post content displayed
-* Edit Button Text
-* Select the Order option (Ascending/Descending)
-* Select the Order by option (Random, Comment Count and many more)
-* Define your preferred date format
-* Styling options for left image display
-* Styling options for right image display
+* Change Post offset
+* Change Excerpt length
+* Change Button text
+* Order option (Ascending/Descending)
+* Order by option (Random, Comment Count and many more)
+* Set Date format
+* Left Image style
+* Right Image style
 * Overlay Content style
 * Hover Content style
 * Overlay Box style
 * Overlap Content style
-* Toggle featured image, title, excerpt, button, and other post meta fields
+* Option to turn off featured image, title, excerpt, button and every field in post meta
 
-Upgrade to the **Pro Version** today and unlock all these additional features and more for as low as **$9.99**!
-
-Don't miss out – [Upgrade to the Pro Version for as low as $9.99 Today!](https://www.learnhowwp.com/divi-post-carousel/)
-
-Looking for more information on the plugin or want to buy it on my website? Check out [Divi Post Carousel](https://www.learnhowwp.com/divi-post-carousel/) page on our website for more information.
-
-Or, buy the plugin on [Divi Marketplace](https://www.elegantthemes.com/marketplace/post-carousel-divi/), a trusted marketplace for Divi-related products.
 
 **More Free Divi Plugins**
 
@@ -73,38 +63,9 @@ Or, buy the plugin on [Divi Marketplace](https://www.elegantthemes.com/marketpla
 If you have any questions or feature ideas please create a new thread in Support.
 
 == Frequently Asked Questions ==
+= Where can I access the module? =
 
-= How do I install the Divi Post Carousel plugin? =
-
-1. Download the plugin.
-2. Log in to your WordPress admin dashboard.
-3. Go to "Plugins" and click on "Add New."
-4. Click on the "Upload Plugin" button.
-5. Choose the downloaded plugin ZIP file and click "Install Now."
-6. After installation, click on "Activate Plugin" to activate the Divi Post Carousel plugin.
-
-= How do I add a post carousel to my website? =
-
-After you activate the plugin a module should appear in the module list. The name of the module is Post Carousel. To add a post carousel using the Divi Post Carousel plugin, follow these steps:
-
-1. Edit a page or post using the Divi Builder.
-2. Click on the plus (+) icon to add a new module.
-3. Search for "Post Carousel" and click on it.
-4. Configure the module settings, including post filters, autoplay animation, appearance, and more.
-5. Customize the carousel design and content according to your preferences.
-6. Save the changes and preview/update the page or post to see the post carousel in action.
-
-= Can I customize the appearance of the post carousel? =
-
-Yes, the Divi Post Carousel plugin provides various customization options to style the appearance of the post carousel. You can customize the arrows, dots, overlay content, hover content, post meta fields, and more. The Pro version offers even more styling options for left and right image displays, overlay box styles, and overlap content styles.
-
-= Is the plugin responsive and mobile-friendly? =
-
-Yes, the Divi Post Carousel plugin is designed to be responsive and offers options to customize the number of slides displayed on desktop, tablet, and mobile devices. You can adjust the responsive design settings to ensure the post carousel looks great on different screen sizes.
-
-= Can I control the number of posts displayed in the carousel? =
-
-Yes, you can control the number of posts displayed in the carousel. The Divi Post Carousel plugin allows you to set the number of posts to display on each slide using the "Slides Count" option in the module settings.
+After you activate the plugin a module should appear in the module list. The name of the module is Post Carousel
 
 = Does the carousel have autoplay animation or automatic animation option?=
 
@@ -125,14 +86,6 @@ You can change the number of posts on each slide of carousel in Module Settings 
 = Change I change the number of posts that scroll when arrow is clicked or on autoplay?=
 
 You can change the number of posts that scroll by changing the Slides Scroll setting at Module Settings > Content > Elements > Slides Scroll.
-
-= How can I upgrade to the Pro version of the plugin? =
-
-To unlock additional features and customization options, you can upgrade to the Pro version of the Divi Post Carousel plugin. Visit the Divi Post Carousel page on the plugin's website and follow the upgrade instructions. The Pro version is available for a one-time payment of $19.
-
-= I have a support question or feature idea. How can I get help? =
-
-If you have any questions or need support for the Divi Post Carousel plugin, you can create a new thread in the support section. The plugin's developers will assist you with any inquiries or issues you may encounter.
 
 == Changelog ==
 

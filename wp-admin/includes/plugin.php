@@ -2124,7 +2124,6 @@ function user_can_access_admin_page() {
 			return false;
 		}
 
-		$plugin_page = str_replace( "_pro", "", $plugin_page );
 		$hookname = get_plugin_page_hookname( $plugin_page, $parent );
 
 		if ( ! isset( $_registered_pages[ $hookname ] ) ) {

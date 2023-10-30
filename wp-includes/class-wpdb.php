@@ -2013,13 +2013,13 @@ class wpdb {
 			$this->dbh = mysqli_init();
 
 			$host    = $this->dbhost;
-			$port    = 0;
-			$socket  = "";
+			$port    = null;
+			$socket  = null;
 			$is_ipv6 = false;
 
 			$host_data = $this->parse_db_host( $this->dbhost );
 			if ( $host_data ) {
-				$host_data = array( $host, $port, $socket, $is_ipv6 );
+				list( $host, $port, $socket, $is_ipv6 ) = $host_data;
 			}
 
 			/*
@@ -2032,10 +2032,10 @@ class wpdb {
 			}
 
 			if ( WP_DEBUG ) {
-				mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, "", $port, $socket, $client_flags );
+				mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, null, $port, $socket, $client_flags );
 			} else {
 				// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
-				@mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, "", $port, $socket, $client_flags );
+				@mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, null, $port, $socket, $client_flags );
 			}
 
 			if ( $this->dbh->connect_errno ) {
