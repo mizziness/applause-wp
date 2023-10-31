@@ -201,29 +201,6 @@ nav.et-menu-nav,
     margin-right: 0;
   }
 
-  #solutions-menu .mini-title,
-  #solutions-menu .no-link {
-    border-bottom: none;
-    border-top: 1px solid #ccc;
-  }
-
-  #solutions-menu .no-link {
-    padding-top: 10px;
-  }
-
-  #solutions-menu .mini-title .link-title {
-    border-bottom: none;
-  }
-
-  #solutions-menu .solutions-link {
-    line-height: 1.7rem;
-  }
-
-  #solutions-menu .solutions-link p {
-    font-weight: 300;
-    font-size: 14px;
-  }
-
   .dicm_custom_icon_boxs a.inner-link {
     color: #222;
     opacity: 1;

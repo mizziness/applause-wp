@@ -1075,12 +1075,62 @@ body.admin-bar #wpadminbar li {
   @apply tw-text-xs tw-leading-5 tw-text-gray-500;
 }
 #mega-menu-dropdowns #solutions-menu {
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  display: block;
   max-height: 75vh;
+  overflow-x: hidden;
   overflow-y: scroll;
+  scrollbar-color: #fff #fff;
+  scrollbar-width: thin;
 }
-
+#mega-menu-dropdowns #solutions-menu::-webkit-scrollbar {
+  width: 10px;
+}
+#mega-menu-dropdowns #solutions-menu::-webkit-scrollbar-track {
+  background: #fff;
+}
+#mega-menu-dropdowns #solutions-menu::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+}
+#mega-menu-dropdowns #solutions-menu .mini-title .link-title {
+  font-size: 12px;
+  color: #606060;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+#mega-menu-dropdowns #solutions-menu .link-entry {
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: #606060;
+}
+#mega-menu-dropdowns #solutions-menu a.mini-title .link-title:after {
+  border-color: transparent transparent transparent #606060;
+  border-width: 4px 0 4px 6.9px;
+  content: "";
+  display: inline-block;
+  height: 0;
+  margin-left: 0.5rem;
+  width: 0;
+  border-style: solid;
+}
+#mega-menu-dropdowns #solutions-menu .solutions-link {
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.25rem;
+}
+#mega-menu-dropdowns #solutions-menu .solutions-link p {
+  font-size: 13px;
+  padding: 5px 1rem;
+  line-height: 1.25rem;
+}
+#mega-menu-dropdowns #solutions-menu .mini-title,
+#mega-menu-dropdowns #solutions-menu .no-link {
+  border-bottom: none;
+  border-top: none;
+}
 /* ========================================== 
   Header Heros for Main Pages
 ========================================== */
@@ -1181,15 +1231,6 @@ body.admin-bar #wpadminbar li {
     background-color: #fff;
     border: 1px solid #ececec;
     border-radius: 10px;
-  }
-  #et_mobile_nav_menu #mobile_menu .de-mega-menu-item .inner-menu-applause .dicm_custom_icon_boxs .et_pb_module_inner .inner-link {
-    @apply tw-gap-2;
-  }
-  #et_mobile_nav_menu #mobile_menu .de-mega-menu-item .inner-menu-applause .dicm_custom_icon_boxs .et_pb_module_inner .inner-link > img {
-    @apply tw-inline-block;
-    width: 24px;
-    height: 24px;
-    overflow: hidden;
   }
   .et_pb_svg_logo #logo {
     max-width: 12rem;

@@ -84,10 +84,80 @@ body.admin-bar #wpadminbar li {
   }
 
   #solutions-menu {
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    display: block;
     max-height: 75vh;
+    overflow-x: hidden;
     overflow-y: scroll;
+    scrollbar-color: #fff #fff;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fff;
+      border: 1px solid #ececec;
+      border-radius: 10px;
+    }
+
+    // .dicm_custom_icon_boxs {
+      .mini-title .link-title {
+        font-size: 12px;
+        color: #606060;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+
+      .link-entry {
+        text-transform: capitalize;
+        font-size: 1rem;
+        color: #606060;
+      }
+
+      a.mini-title .link-title:after {
+        border-color: transparent transparent transparent #606060;
+        border-width: 4px 0 4px 6.9px;
+        content: "";
+        display: inline-block;
+        height: 0;
+        margin-left: .5rem;
+        width: 0;
+        border-style: solid;
+      }
+
+      .solutions-link {
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 0.75rem;
+        line-height: 1.25rem;
+
+        p {
+          font-size: 13px;
+          padding: 5px 1rem;
+          line-height: 1.25rem;
+        }
+      }
+
+      .mini-title,
+      .no-link {
+        border-bottom: none;
+        border-top: none;
+      }
+
+      .no-link {
+        // padding-top: 10px;
+      }
+
+      .mini-title .link-title {
+        // border-bottom: none;
+      }
+    // }
   }
 }
 
@@ -207,25 +277,6 @@ body.admin-bar #wpadminbar li {
         background-color: #fff;
         border: 1px solid #ececec;
         border-radius: 10px;
-      }
-
-      .de-mega-menu-item {
-        .inner-menu-applause {
-          .dicm_custom_icon_boxs {
-            .et_pb_module_inner {
-              .inner-link {
-                @apply tw-gap-2;
-
-                > img {
-                  @apply tw-inline-block;
-                  width: 24px;
-                  height: 24px;
-                  overflow: hidden;
-                }
-              }
-            }
-          }
-        }
       }
     }
   }

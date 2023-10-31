@@ -25,3 +25,4 @@ Keys/applause-wp.local.key
 /dist
 /**/*/dist/**/*/
 applause theme jump
+wp-content/uploads/**/*
