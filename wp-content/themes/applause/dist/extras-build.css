@@ -1077,7 +1077,6 @@ body.admin-bar #wpadminbar li {
 #mega-menu-dropdowns #solutions-menu {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  display: block;
   max-height: 75vh;
   overflow-y: scroll;
 }
