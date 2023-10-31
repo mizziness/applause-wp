@@ -136,11 +136,16 @@
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.applause-contact-forms_wrapper .gfield:not(.gfield--type-select) > label.gfield_label
+{ display: none; }
+
 .applause-contact-forms_wrapper .gfield > label.gfield_label.focused {
   font-size: 0.75rem;
   top: -13px;
   background: #fff;
   padding: 0 10px;
+  display: block;
 }
 .applause-contact-forms_wrapper .gfield input.large,
 .applause-contact-forms_wrapper .gfield select.large {

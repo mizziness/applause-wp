@@ -1,4 +1,4 @@
-/*! applause - v1.0.0 - 2023-10-30 */body.single-blog-author .et_pb_button_wrapper {
+/*! applause - v1.0.0 - 2023-10-31 */body.single-blog-author .et_pb_button_wrapper {
   padding-top: 1rem;
   margin-top: 2rem;
   position: relative;
@@ -1093,6 +1093,14 @@ body.admin-bar #wpadminbar li {
   margin-right: 0 !important;
 }
 
+@media (max-width: 980px) {
+  .et_pb_fullwidth_section.header-hero {
+    width: 100% !important;
+  }
+  .et_pb_fullwidth_section.header-hero .et_pb_fullwidth_header_0 {
+    width: 82% !important;
+  }
+}
 /* ========================================== 
   CTA Banner / Alert Banner
 ========================================== */
