@@ -275,8 +275,13 @@ nav.et-menu-nav,
     display: none !important;
   }
 
-  #page-container:not(.et-fb-root-ancestor) {
-    padding-top: 72px !important;
+  #page-container #main-header {
+    top: 0px !important;
+    position: fixed;
+  }
+  
+  .et_fixed_nav.et_show_nav #page-container:not(.et-fb-root-ancestor) {
+    padding-top: 72px;
     overflow-y: visible !important;
   }
 
