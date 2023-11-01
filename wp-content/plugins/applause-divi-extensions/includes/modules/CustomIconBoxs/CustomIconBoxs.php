@@ -129,12 +129,13 @@ class DICM_IMAGES_BOXS extends ET_Builder_Module
 			$image_url = str_replace('https://wordpress-12factor.herokuapp.com', $cdn_url, $module_image);
 		}
 
-		$output = '<a class="cta-link hover" href="' . 
-			$resource_btn_url . '" target="_blank"><img src="' . 
-			$image_url . '" alt="" aria-hidden="true" /><div class="cta-title">' . 
-			$posts_title . '</div><p class="cta-description">' . 
-			$description . '</p><div class="cta-fake-link">' . 
-			$module_text . '</div></a>'; 
+		$output = 
+			"<a class='cta-link hover' href='{$resource_btn_url}' target='_blank'>
+				<picture><img src='{$image_url}' alt='' aria-hidden='true' /></picture>
+				<div class='cta-title'>{$posts_title}</div>
+				<p class='cta-description'>{$description}</p>
+				<div class='cta-fake-link'>{$module_text}</div>
+			</a>"; 
 
 		// Render wrapper
 		// 3rd party module with no full VB support has to wrap its render output with $this->_render_module_wrapper().

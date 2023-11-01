@@ -438,6 +438,10 @@ nav.et-menu-nav,
   text-align: center;
 }
 
+#copyright .copyright-break {
+  margin-top: 8px;
+}
+
 #mega-footer-bottom .footer-bottom-section #footer-menu-bottom li a,
 #mega-footer-bottom .footer-bottom-section #footer-menu-bottom li a:hover {
   line-height: 1rem;

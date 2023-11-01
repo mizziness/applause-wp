@@ -1,4 +1,4 @@
-/*! applause - v1.0.0 - 2023-10-31 */body.single-blog-author .et_pb_button_wrapper {
+/*! applause - v1.0.0 - 2023-11-01 */body.single-blog-author .et_pb_button_wrapper {
   padding-top: 1rem;
   margin-top: 2rem;
   position: relative;
@@ -1068,14 +1068,7 @@ body.admin-bar #wpadminbar li {
 #mega-menu-dropdowns .mega-nav-dropdown #inner-title-push-down {
   margin-top: 2rem;
 }
-#mega-menu-dropdowns .mega-nav-dropdown .et_pb_module_inner .inner-link.type-menu .link-title {
-  @apply tw-text-sm tw-leading-5;
-}
-#mega-menu-dropdowns .mega-nav-dropdown .et_pb_module_inner .inner-link.type-menu .link-description {
-  @apply tw-text-xs tw-leading-5 tw-text-gray-500;
-}
 #mega-menu-dropdowns #solutions-menu {
-  display: block;
   max-height: 75vh;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -1116,14 +1109,14 @@ body.admin-bar #wpadminbar li {
 }
 #mega-menu-dropdowns #solutions-menu .solutions-link {
   font-size: 13px;
-  padding: 0;
+  padding: 5px 10px !important;
   margin: 0;
   margin-bottom: 0.75rem;
   line-height: 1.25rem;
 }
 #mega-menu-dropdowns #solutions-menu .solutions-link p {
   font-size: 13px;
-  padding: 5px 1rem;
+  padding: 0;
   line-height: 1.25rem;
 }
 #mega-menu-dropdowns #solutions-menu .mini-title,
@@ -1199,6 +1192,62 @@ body.admin-bar #wpadminbar li {
 /* ========================================== 
   Navigation Customizations
 ========================================== */
+.dicm_custom_icon_boxs a.inner-link {
+  @apply tw-flex tw-gap-3;
+}
+.dicm_custom_icon_boxs a.inner-link img {
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.dicm_custom_icon_boxs a.inner-link .link-title {
+  @apply tw-text-gray-700 tw-font-normal tw-text-sm tw-no-underline;
+}
+.dicm_custom_icon_boxs a.inner-link .link-description {
+  @apply tw-text-gray-600 tw-text-xs tw-leading-5;
+}
+.dicm_custom_icon_boxs a.inner-link:hover .link-title {
+  @apply tw-text-gray-900;
+}
+.dicm_custom_icon_boxs a.inner-link:hover .link-description {
+  @apply tw-text-gray-700;
+}
+.dicm_custom_icon_boxs .mini-title span,
+.dicm_custom_icon_boxs .no-link span {
+  display: flex;
+}
+.dicm_custom_icon_boxs .mini-title span .nav-icon,
+.dicm_custom_icon_boxs .no-link span .nav-icon {
+  margin-right: 0.5rem;
+  height: 20px;
+  width: 20px;
+}
+
+.dicm_custom_image_boxs .cta-link {
+  display: block;
+}
+.dicm_custom_image_boxs .cta-link picture {
+  @apply tw-flex tw-relative tw-aspect-[3/2] tw-overflow-hidden tw-rounded-md tw-content-center tw-justify-center tw-flex-wrap tw-flex-row tw-items-center;
+}
+.dicm_custom_image_boxs .cta-link picture img {
+  @apply tw-h-full tw-max-w-none tw-block;
+}
+.dicm_custom_image_boxs .cta-link .cta-title {
+  font-weight: 400;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+.dicm_custom_image_boxs .cta-link .cta-description {
+  @apply tw-text-xs tw-leading-4 tw-text-gray-500;
+}
+.dicm_custom_image_boxs .cta-link .cta-fake-link {
+  @apply tw-text-xs tw-leading-4 tw-text-blue-500 tw-transition-all tw-duration-200 tw-mt-2;
+}
+.dicm_custom_image_boxs .cta-link:hover .cta-fake-link {
+  @apply tw-underline tw-text-blue-700;
+}
+
 @media (max-width: 900px) {
   /* ### Menu breakpoint for default menu ### */
   #et_mobile_nav_menu {
