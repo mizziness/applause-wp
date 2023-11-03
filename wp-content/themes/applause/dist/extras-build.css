@@ -1,4 +1,4 @@
-/*! applause - v1.0.0 - 2023-11-01 */body.single-blog-author .et_pb_button_wrapper {
+/*! applause - v1.0.0 - 2023-11-03 */body.single-blog-author .et_pb_button_wrapper {
   padding-top: 1rem;
   margin-top: 2rem;
   position: relative;
@@ -605,6 +605,19 @@ ul.et_pb_tabs_controls:after,
 }
 
 /*# sourceMappingURL=page-life-at-applause.css.map */
+
+.type-videos {
+  text-align: center;
+}
+.type-videos h1 {
+  font-weight: bold;
+  font-size: 2.6875rem;
+}
+.type-videos .entry-content p {
+  padding-bottom: 40px;
+}
+
+/*# sourceMappingURL=page-resources.css.map */
 
 #sqd-hands {
   height: 100%;
