@@ -316,6 +316,18 @@ jQuery(function ($) {
     
   });
 
+  // Replace cookie link code
+  let cookieTool = $("li.cookie-settings > a");
+  let cookieLink = "<!-- OneTrust Cookies Settings button start --><button id='ot-sdk-btn' class='ot-sdk-show-settings under-link'>Cookie Settings</button><br /><!-- OneTrust Cookies Settings button end -->";
+
+  if ( $(cookieTool).length > 0 ) {
+    $(cookieTool).each(function(){
+      if ( $(this).attr("href") == "#" ) {
+        $(this).replaceWith( cookieLink );
+      }
+    });
+  }
+
   // Support for Featured Post layout on the Blog index page
   $("#blog-index-featured #featured-posts .dp-dfg-item").each(function(){
     $(this).find('div').wrapAll('<div class="column"></div>');
