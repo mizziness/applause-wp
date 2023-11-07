@@ -360,6 +360,115 @@ jQuery(function ($) {
     $(this).find('figure').wrapAll('<div class="column"></div>');
   });
 
+
+  // add data attributes for custom click tracking
+  // CTA buttons
+  $(".et_pb_button").each(function(){
+    $(this).addClass("click-track");
+    $(this).attr('data-category', 'Page Navigation');
+    $(this).attr('data-action', 'Button');
+    $(this).attr('data-label', $(this).text());
+  });
+  // Main nav anchor tags
+  $("#mega-menu-dropdowns a").each(function(){
+    $(this).addClass("click-track");
+    $(this).attr('data-category', 'Header');
+    $(this).attr('data-action', $(this).parents('.mega-nav-dropdown').attr('id').replace('_',' '));
+    $(this).attr('data-label', $(this).find('.link-title').text());
+  });
+  // same, but mobile nav
+  $("#mobile_menu a.inner-link, #mobile_menu a.mini-title").each(function(){
+    $(this).addClass("click-track");
+    $(this).attr('data-category', 'Header');
+    $(this).attr('data-action', $(this).parents('.menu-item').children('a').text());
+    $(this).attr('data-label', $(this).find('.link-title').text());
+  });
+  // Main nav CTAs, just missing label
+  $("#mega-menu-dropdowns .cta-link").each(function(){
+    $(this).attr('data-label', 'CTA - ' + $(this).find('.cta-title').text());
+  });
+  // links in solutions menu, most of them don't use anchor tags
+  $("#solutions-menu .solutions-link").each(function(){
+    $(this).addClass("click-track");
+    $(this).attr('data-category', 'Header');
+    $(this).attr('data-action', 'our solutions');
+    $(this).attr('data-label', $(this).find('.et_pb_text_inner').text());
+  });
+    // Main CTA/contact button
+    $(".get-started-button a").each(function(){
+      $(this).addClass("click-track");
+      $(this).attr('data-category', 'Header');
+      $(this).attr('data-action', 'Main CTA');
+      $(this).attr('data-label', $(this).text());
+    });
+    // footer navigation
+    $("#footer-navigation-top a").each(function(){
+      $(this).addClass("click-track");
+      $(this).attr('data-category', 'Footer');
+      $(this).attr('data-action', $(this).parents('.menu-column-wrapper').find('.footer-menu-header p').text());
+      $(this).attr('data-label', $(this).text());
+    });
+    // forms
+    $(".applause-contact-forms .gform_button").each(function(){
+      $(this).addClass("submit-track");
+      $(this).attr('data-category', 'Form Submit');
+      $(this).attr('data-action', 'Button');
+      $(this).attr('data-label', window.location.href);
+    });
+  /* 
+  Utility - Click Tracking
+  
+  Link format should appear as:
+  <a class="click-track" href="" data-category="" data-action="" data-label="" name=""></a>
+  */
+
+  window.applause = window.applause || {};
+
+  const trackClicksOn = document.querySelectorAll(".click-track");
+
+  trackClicksOn.forEach(link => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      let category = event.currentTarget.getAttribute("data-category");
+      let action = event.currentTarget.getAttribute("data-action");
+      let label = event.currentTarget.getAttribute("data-label");
+
+      window.applause.handleEventTracking(category, action, label, function(){
+        if ( event.currentTarget.href ) {
+          window.location.href = event.currentTarget.href;
+        }
+      });
+    });
+  });
+
+  const trackSubmits = document.querySelectorAll(".submit-track");
+  trackSubmits.forEach(button => {
+    button.addEventListener("click", function (event) {
+      let category = event.currentTarget.getAttribute("data-category");
+      let action = event.currentTarget.getAttribute("data-action");
+      let label = event.currentTarget.getAttribute("data-label");
+
+      window.applause.handleEventTracking(category, action, label);
+    });
+  });
+
+  /* Events & Tracking */
+/*
+  - handleEventTracking() should be applied to links and buttons for Google Analytics/Tracking
+  - A list of Event Types and their corresponding category, action and label can be found here:
+  - https://docs.google.com/spreadsheets/d/1rIyy57AgBs8pHaYoSfQDM1X7XlTOuTUD8-uaRbukqcw/edit#gid=1510182044
+*/
+window.applause.handleEventTracking = function(category, action, label, callback) {
+  if (window.devMode == true) {
+    console.log(`handleEventTracking detected: ${category}, ${action}, ${label}`);
+  }
+  window.dataLayer.push({ event: 'event_activity', action, category, label });
+
+  if ( typeof callback == "function" ) {
+    callback();
+  }
+}
+
 });
 
 
