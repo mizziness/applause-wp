@@ -7,3 +7,7 @@
 .pdfemb-viewer {
   margin: 0 auto !important;
 }
+
+#current-press-releases .news-divider-title {
+  @apply tw-text-gray-600 tw-border-b tw-border-gray-400 tw-border-solid tw-mb-4 tw-pb-2;
+}

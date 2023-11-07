@@ -3,9 +3,13 @@ module.exports = {
   important: true,
   content: [
     'wp-content/themes/applause/**/*.{js,twig,php,html}',
+    './wp-content/themes/applause/**/*.{js,twig,php,html}',
+    './wp-content/themes/applause/ds-script.js',
     'src/**/*.{js,twig,php,html}',
+    './src/**/*.{js,twig,php,html}',
     '../applause/**/*.{js,twig,php,html}',
     '../../plugins/applause-divi-extensions/**/*/*.{js,twig,php,html}',
+    
   ],
   theme: {
     colors: {
@@ -146,11 +150,13 @@ module.exports = {
       // END Colors
     },
     screens: {
-      'mobile':   '479px',
-      'tablet':   '980px',
-      'small':    '1100px',
-      'medium':   '1405px',
-      'large':    'none',
+      'mobile':       '479px',
+      'old-tablet':   '900px',
+      'tablet':       '980px',
+      'small':        '1100px',
+      'medium':       '1405px',
+      'old-large':    '1775px',
+      'large':        'none',
     },
     fontSize: {
       'xs': '.75rem',

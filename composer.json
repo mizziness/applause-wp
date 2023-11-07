@@ -47,9 +47,9 @@
 		}
 	},
 	"scripts": {
-		"tw:app": "npx tailwindcss -m -i wp-content/themes/applause/dist/app-build.css -o wp-content/themes/applause/dist/app-build.min.css",
-		"tw:extras": "npx tailwindcss -m -i wp-content/themes/applause/dist/extras-build.css -o wp-content/themes/applause/dist/extras-build.min.css",
-		"tw:admin": "npx tailwindcss -i wp-content/themes/applause/dist/css/admin.css -o wp-content/themes/applause/dist/admin.css",
+		"tw:app": "npx tailwindcss -m -c tailwind.config.js -i wp-content/themes/applause/dist/app-build.css -o wp-content/themes/applause/dist/app-build.min.css",
+		"tw:extras": "npx tailwindcss -m -c tailwind.config.js -i wp-content/themes/applause/dist/extras-build.css -o wp-content/themes/applause/dist/extras-build.min.css",
+		"tw:admin": "npx tailwindcss -c tailwind.config.js -i wp-content/themes/applause/dist/css/admin.css -o wp-content/themes/applause/dist/admin.css",
 		"tailwind": "composer tw:app && composer tw:extras && composer tw:admin",
 		"build": "grunt clean && grunt sass && grunt concat"
 	}

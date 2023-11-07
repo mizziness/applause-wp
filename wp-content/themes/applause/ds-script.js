@@ -1,6 +1,32 @@
 // Custom JS goes here ------------
 
 jQuery(function ($) {
+
+  // Press Releases / News Mentions 
+  // ==========================================================
+  let pressReleases = $(".type-press_releases");
+  if ($(pressReleases).length > 0) {
+    let startYear = 2023;
+    let years = [];
+
+    $(pressReleases).each(function() {
+      let article = $(this);
+      let year = parseInt($(this).find(".entry-meta").text().split(",")[1].trim());
+      
+      $(article).attr("data-year", year);
+
+      if ( years.indexOf( year ) === -1 ) {
+        years.push( year );
+      }
+    });
+
+    $(years).each(function() {
+      let firstArticle = $(".type-press_releases[data-year='" + this + "']").first();
+      let newDivider = "<h2 class='title as-h3 tw-text-gray-600 tw-border-b tw-border-gray-400 tw-mb-4 tb-pb-2'>${this}</h2>";
+      $(firstArticle).before( newDivider );
+    });
+  }
+
   if ( $("body").hasClass("state-of-digital-quality-2022") ) {
     $("#sqd-header-hero-huge").append("<div id='sqd-hands'></div>");
   }

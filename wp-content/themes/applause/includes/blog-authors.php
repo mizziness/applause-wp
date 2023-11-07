@@ -133,7 +133,8 @@ add_filter('post_type_link', 'blog_author_permalinks', 1, 3);
  */
 function blog_author_rewrites_init()
 {
-    add_rewrite_rule('blog/author/([^/]*)/?$', 'index.php?post_type=blog-author&name=$matches[1]', 'top');
     add_rewrite_rule('blog/([^/]*)/?$', 'index.php?post_type=post&name=$matches[1]', 'top');
+    add_rewrite_rule('blog/author/([^/]*)/?$', 'index.php?post_type=blog-author&name=$matches[1]', 'top');
+    
 }
 add_action('init', 'blog_author_rewrites_init');

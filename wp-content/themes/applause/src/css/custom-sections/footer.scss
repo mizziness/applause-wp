@@ -196,7 +196,7 @@ footer {
     @apply tw-mx-auto tw-my-0 tw-self-center;
 
     .widget_icl_lang_sel_widget {
-      @apply tw-w-full tw-m-0;
+      @apply tw-w-full tw-m-0 tw-pb-4 tablet:tw-pb-0;
     }
 
     .wpml-ls-link {

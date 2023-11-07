@@ -1178,7 +1178,7 @@ footer .footer-bottom-section .fwidget.et_pb_widget.widget_nav_menu {
   @apply tw-mx-auto tw-my-0 tw-self-center;
 }
 #mega-footer-bottom #language-selection .widget_icl_lang_sel_widget {
-  @apply tw-w-full tw-m-0;
+  @apply tw-w-full tw-m-0 tw-pb-4 tablet:tw-pb-0;
 }
 #mega-footer-bottom #language-selection .wpml-ls-link {
   @apply tw-w-full tw-inline-block;
@@ -1583,6 +1583,7 @@ body.admin-bar #wpadminbar li {
   .et_header_style_left #et-top-navigation,
   .et_header_style_left .et-fixed-header #et-top-navigation {
     padding-top: 0px !important;
+    padding-left: 0px !important;
   }
   /* Top Menu Bar */
   #top-menu > li.menu-item {
