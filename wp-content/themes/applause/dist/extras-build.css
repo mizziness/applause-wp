@@ -1,4 +1,4 @@
-/*! applause - v1.0.0 - 2023-11-06 */body.single-blog-author .et_pb_button_wrapper {
+/*! applause - v1.0.0 - 2023-11-08 */body.single-blog-author .et_pb_button_wrapper {
   padding-top: 1rem;
   margin-top: 2rem;
   position: relative;
@@ -1005,6 +1005,33 @@ ul.et_pb_tabs_controls:after,
 }
 
 /*# sourceMappingURL=page-sdq.css.map */
+
+body.solutions .et_pb_row, body.industries .et_pb_row, body.technologies .et_pb_row {
+  display: flex;
+}
+body.solutions .et_pb_blurb, body.industries .et_pb_blurb, body.technologies .et_pb_blurb {
+  height: 100%;
+}
+body.solutions .et_pb_blurb .et_pb_blurb_content, body.industries .et_pb_blurb .et_pb_blurb_content, body.technologies .et_pb_blurb .et_pb_blurb_content {
+  background: url("/wp-content/themes/applause/public/icons/normal-circle-arrow.svg") no-repeat bottom right;
+  height: 100%;
+  position: relative;
+}
+body.solutions .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:first-child, body.industries .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:first-child, body.technologies .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:first-child {
+  padding-bottom: 3rem;
+}
+body.solutions .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:last-child, body.industries .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:last-child, body.technologies .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:last-child {
+  position: absolute;
+  bottom: 0;
+}
+body.solutions .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:last-child a, body.industries .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:last-child a, body.technologies .et_pb_blurb .et_pb_blurb_content .et_pb_blurb_description p:last-child a {
+  text-decoration: underline;
+}
+body.solutions .et_pb_blurb:hover .et_pb_blurb_content, body.industries .et_pb_blurb:hover .et_pb_blurb_content, body.technologies .et_pb_blurb:hover .et_pb_blurb_content {
+  background-image: url("/wp-content/themes/applause/public/icons/hover-circle-arrow.svg");
+}
+
+/*# sourceMappingURL=page-solutions.css.map */
 
 body.terms-of-use ol {
   list-style: none !important;

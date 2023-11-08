@@ -1,0 +1,30 @@
+body.solutions, body.industries, body.technologies {
+    .et_pb_row {
+        display: flex;
+    }
+    .et_pb_blurb {
+        height: 100%;
+
+        .et_pb_blurb_content {
+         background: url('/wp-content/themes/applause/public/icons/normal-circle-arrow.svg') no-repeat bottom right;
+         height: 100%;
+         position: relative;
+         
+            .et_pb_blurb_description p:first-child {
+                padding-bottom: 3rem;
+            }
+            .et_pb_blurb_description p:last-child {
+                position: absolute;
+                bottom: 0;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+  
+        &:hover .et_pb_blurb_content {
+        background-image: url('/wp-content/themes/applause/public/icons/hover-circle-arrow.svg');
+        }
+    }
+}
