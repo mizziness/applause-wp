@@ -567,3 +567,7 @@ body {
     }
   }
 }
+
+
+body.error404.et_right_sidebar #main-content .container::before
+{ display: none; }

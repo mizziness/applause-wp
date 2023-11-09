@@ -477,6 +477,9 @@ body .btn {
     @apply tw-text-base;
   }
 }
+body.error404.et_right_sidebar #main-content .container::before {
+  display: none;
+}
 
 /*# sourceMappingURL=base-styles.css.map */
 
