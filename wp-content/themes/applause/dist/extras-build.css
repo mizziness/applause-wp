@@ -476,19 +476,19 @@ body.page-id-52515 .dp-dfg-skin-default .et_pb_button_wrapper .dp-dfg-load-more-
   float: left;
 }
 
-#applause-news-slider .lwp_meta_categories a[href*=applause-news] {
+#applause-news-slider .lwp_meta_categories a[href*=dfg_active_filter] {
   display: inline-block;
 }
 
-#crowdtesting-slider .lwp_meta_categories a[href*=crowdtesting] {
+#crowdtesting-slider .lwp_meta_categories a[href*=dfg_active_filter] {
   display: inline-block;
 }
 
-#customer-stories-slider .lwp_meta_categories a[href*=customer-stories] {
+#customer-stories-slider .lwp_meta_categories a[href*=dfg_active_filter] {
   display: inline-block;
 }
 
-#dev-qa-trends-slider .lwp_meta_categories a[href*=dev-qa-trends] {
+#dev-qa-trends-slider .lwp_meta_categories a[href*=dfg_active_filter] {
   display: inline-block;
 }
 
