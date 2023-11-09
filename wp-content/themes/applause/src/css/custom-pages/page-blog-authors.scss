@@ -133,6 +133,7 @@ body.single-blog-author, body.page-id-52515 {
   }
 }
 
+/* page-id-52515 is /blog/all/ */
 body.page-id-52515 {
   
   .et-l .dp-dfg-skin-default .dp-dfg-filter a.dp-dfg-filter-link {
@@ -154,6 +155,13 @@ body.page-id-52515 {
   }
   .dp-dfg-skin-default .et_pb_button_wrapper .dp-dfg-load-more-button:hover {
     background-color: #f2f2f2;
+  }
+
+  @media screen and (max-width: 750px)
+  {
+    .dp-dfg-filters, .dp-dfg-sorting {
+      grid-column-start: span 4;
+    }
   }
 
 }
