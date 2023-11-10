@@ -7,9 +7,9 @@ if (!defined('ABSPATH')) {
 use Aws\S3\Exception\S3Exception;
 
 require __DIR__ . "/custom-posts.php";
-require __DIR__ . "/includes/blog-authors.php";
-require __DIR__ . "/includes/blog-posts.php";
-require __DIR__ . "/includes/newsroom-all.php";
+require __DIR__ . "/includes/shortcodes.php";
+require __DIR__ . "/includes/blog.php";
+require __DIR__ . "/includes/newsroom.php";
 
 if (!function_exists('WP_Filesystem')) {
     include_once 'wp-admin/includes/file.php';
@@ -88,12 +88,6 @@ function ds_ct_enqueue_parent()
     if (is_admin()) {
         return;
     }
-
-    // if (strpos($_SERVER["REQUEST_URI"], "/blog") !== false) {
-    //     wp_enqueue_style('blog-css', get_stylesheet_directory_uri() . '/build/css/blog.css', array());
-    // } else {
-    //     wp_enqueue_style('app-css', get_stylesheet_directory_uri() . '/build/css/app.css', array());
-    // }
 }
 
 add_action('wp_enqueue_scripts', 'ds_ct_loadjs');
@@ -106,6 +100,7 @@ function ds_ct_loadjs()
         return;
     }
 
+    wp_enqueue_script('wistia-script', 'https://fast.wistia.com/assets/external/E-v1.js', array(), '', array('strategy'  => 'async'));
     wp_enqueue_script('lazysizes', get_stylesheet_directory_uri() . '/public/assets/lazysizes.min.js');
 
     // Localize the AJAX URL

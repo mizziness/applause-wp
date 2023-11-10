@@ -677,7 +677,7 @@ $base: 25rem;
               @apply tw-relative tw-text-sm tw-list-none tw-list-outside;
 
               li {
-                @apply tw-relative tw-pl-6 tw-mb-4 tw-text-sm;
+                @apply tw-relative tw-pl-6 tw-mb-4 tw-text-sm tw-leading-tight;
 
                 &::before {
                   content: "\2192";

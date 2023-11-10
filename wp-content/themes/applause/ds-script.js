@@ -2,11 +2,12 @@
 
 jQuery(function ($) {
 
+  window._wq = window._wq || [];
+
   // Press Releases / News Mentions 
   // ==========================================================
-  let pressReleases = $(".type-press_releases");
+  let pressReleases = $("#all-press-releases .type-press_releases");
   if ($(pressReleases).length > 0) {
-    let startYear = 2023;
     let years = [];
 
     $(pressReleases).each(function() {
@@ -21,8 +22,8 @@ jQuery(function ($) {
     });
 
     $(years).each(function() {
-      let firstArticle = $(".type-press_releases[data-year='" + this + "']").first();
-      let newDivider = "<h2 class='title as-h3 tw-text-gray-600 tw-border-b tw-border-gray-400 tw-mb-4 tb-pb-2'>${this}</h2>";
+      let firstArticle = $("#all-press-releases .type-press_releases[data-year='" + this + "']").first();
+      let newDivider = "<h2 class='news-divider-title as-h3'>" + this + "</h2>";
       $(firstArticle).before( newDivider );
     });
   }
@@ -242,38 +243,62 @@ jQuery(function ($) {
     });
   }
 
-  const wlbButton = document.getElementById("life-at-applause-play");
-  if (wlbButton != null) {
+  // const wlbButton = document.getElementById("life-at-applause-play");
+  // if (wlbButton != null) {
 
-    // wq is Wistia's window-level global, wistia-queue
-    window._wq = window._wq || [];
+  //   // wq is Wistia's window-level global, wistia-queue
+  //   window._wq = window._wq || [];
     
-    if (wlbButton != null ) {
-      var videoID = wlbButton.querySelector("a").getAttribute("data-href");
+  //   if (wlbButton != null ) {
+  //     var videoID = wlbButton.querySelector("a").getAttribute("data-href");
 
-      if ( videoID == "null" || videoID.trim().length <= 0 ){
-      } else {
-        // Create the wrapper for the button
-        var wistiaContainer = document.createElement('div');
-        wistiaContainer.innerHTML =
-          `<div class="wistia_embed wistia_async_${videoID} popover=true window.wistiaDisableMux=true popoverContent=html popoverDisableAutoPlay=true" 
-            style="display:inline-block; white-space:nowrap;" id="wistia-${videoID}">
-          </div>`;
+  //     if ( videoID == "null" || videoID.trim().length <= 0 ){
+  //     } else {
+  //       // Create the wrapper for the button
+  //       var wistiaContainer = document.createElement('div');
+  //       wistiaContainer.innerHTML =
+  //         `<div class="wistia_embed wistia_async_${videoID} popover=true window.wistiaDisableMux=true popoverContent=html popoverDisableAutoPlay=true" 
+  //           style="display:inline-block; white-space:nowrap;" id="wistia-${videoID}">
+  //         </div>`;
 
-        document.querySelector("#main-content").appendChild(wistiaContainer);
+  //       document.querySelector("#main-content").appendChild(wistiaContainer);
 
-        document.addEventListener("click", function(event){
-          let selector = `#wistia-${videoID} .wistia_click_to_play`;
-          let newWistiaButton = document.querySelector(selector);
-          let checkParent = event.target.closest(".arrow-button-card") != null;
+  //       document.addEventListener("click", function(event){
+  //         let selector = `#wistia-${videoID} .wistia_click_to_play`;
+  //         let newWistiaButton = document.querySelector(selector);
+  //         let checkParent = event.target.closest(".arrow-button-card") != null;
 
-          if ( checkParent === true && newWistiaButton != null && videoID.length > 0 ) {
-            newWistiaButton.click();
-          }
-        });
-      }
-    }
-  }
+  //         if ( checkParent === true && newWistiaButton != null && videoID.length > 0 ) {
+  //           newWistiaButton.click();
+  //         }
+  //       });
+  //     }
+  //   }
+  // }
+
+  // if ( $(".wistia-trigger").length > 0 ) {
+  //   // wq is Wistia's window-level global, wistia-queue
+    
+
+  //   $(".wistia-trigger").each(function() {
+  //     var wistia_id = $(this).attr("data-href") ?? "";
+
+  //     if ( wistia_id.length <= 0 ) {
+  //       console.error("Wistia ID is empty!");
+  //     }
+
+  //     $(this).on("click", function(){
+  //       window._wq.push({ id: wistia_id, onReady: function(video) {
+  //         console.log("I got a handle to the video!", video);
+  //       }});
+  //     })
+
+  //   });
+
+  // }
+
+
+
 
   // Top Navigation 
   // ============================================================

@@ -15,6 +15,10 @@
   overflow-x: visible;
 }
 
+#applause-swiper-timeline {
+  overflow: hidden;
+}
+
 .dicm_hype_embed .HYPE_document font,
 .dicm_hype_embed .HYPE_document span,
 .dicm_hype_embed .HYPE_document b {
@@ -596,6 +600,11 @@ nav.et-menu-nav,
     #mega-footer-bottom #footer-right {
       max-width: 50%;
     }
+
+    #mega-footer-bottom #copyright {
+      text-align: left;
+    }
+    
   }
 
   /* =========================================================================== */
@@ -624,27 +633,39 @@ nav.et-menu-nav,
 /* Press Releases
 /* =========================================================================== */
 
-#current-press-releases .dp-dfg-item {
-  display: flex;
-  width: 100%;
-  padding: 0;
+.dtq-carousel .slick-slide div {
+
+  height: 64px;
+  max-height: none;
+  min-height: 100%;
+  display: grid;
+  
+  
 }
 
-#current-press-releases .dp-dfg-header.entry-header {
+.press-releases-list .dp-dfg-item {
+  display: flex !important;
+  width: 100%;
+  padding: 0;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.press-releases-list .dp-dfg-header.entry-header {
   order: 2;
 }
 
-#current-press-releases .entry-title,
-#current-press-releases .entry-title a {
+.press-releases-list .entry-title,
+.press-releases-list .entry-title a {
   transition: all linear 0.2s;
 }
 
-#current-press-releases .entry-title:hover,
-#current-press-releases .entry-title a:hover {
+.press-releases-list .entry-title:hover,
+.press-releases-list .entry-title a:hover {
   text-decoration: none !important;
 }
 
-#current-press-releases .dp-dfg-meta.entry-meta {
+.press-releases-list .dp-dfg-meta.entry-meta {
   order: 1;
   flex-shrink: 0;
   min-width: 6rem;
@@ -655,7 +676,10 @@ nav.et-menu-nav,
   border-radius: 3px;
   border: 1px solid #ccc;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1rem;
+  min-height: 64px;
 }
 
 #news-mentions-feed .dp-dfg-content.entry-summary {
@@ -701,3 +725,31 @@ nav.et-menu-nav,
   top: -1rem;
   z-index: -1;
 }
+
+#awards-bar .ba_image_carousel_child figure,
+#awards-bar .ba_image_carousel_child figure img {
+  min-height: 64px !important;
+}
+
+@media (max-width: 900px ) {
+  .dtq-carousel .slick-slide div {
+    height: 64px;
+    max-height: none;
+    min-height: 100%;
+    display: grid;
+  }
+
+  #news-mentions-feed .dp-dfg-content.entry-summary {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 901px) {
+
+  .press-releases-list .dp-dfg-item {
+    flex-wrap: nowrap;
+  }
+  
+}
+
+

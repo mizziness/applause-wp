@@ -49,35 +49,6 @@ function dp_dfg_custom_query_function($query, $props)
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
 
-
-// function posts_data_action($query, $props)
-// {
-    
-//     if (isset($props['admin_label']) && $props['admin_label'] === 'Blog Author Query') {
-//         $currentAuthorID = get_the_ID();
-//         $query['post_number']           = 8;
-//         $query['posts_per_page']        = 8;
-//         $query['meta_key']              = 'blog_author_ids';
-//         $query['meta_value']            = strval($currentAuthorID);
-//         $query['meta_compare']          = 'LIKE';
-//     }
-
-//     return $query;
-// }
-// add_action( 'dpdfg_get_posts_data_action', 'posts_data_action', 10, 2);
-
-/**
- * Simple Shortcode to display the author name 
- *
- * @param [type] $atts
- * @return void
- */
-function posttitle_func($atts)
-{
-    return get_the_title();
-}
-add_shortcode('posttitle', 'posttitle_func');
-
 /**
  * Customize the Meta section
  *

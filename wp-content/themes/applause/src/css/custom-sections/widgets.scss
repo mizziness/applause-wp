@@ -1,5 +1,5 @@
 #applause-swiper-timeline {
-  @apply tw-bg-white tw-rounded-lg;
+  @apply tw-bg-white tw-rounded-lg tw-overflow-hidden;
 
   .swiper-initialized {
     @apply tw-px-12;
@@ -288,7 +288,7 @@
 /* Gray Border Boxes */
 .applause-border-box {
   .et_pb_blurb_container {
-    @apply tw-p-4 tw-relative;
+    @apply tw-p-4 tw-relative tw-pt-0;
   }
 
   .et_pb_main_blurb_image {

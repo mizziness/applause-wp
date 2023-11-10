@@ -1,4 +1,4 @@
-/*! applause - v1.0.0 - 2023-11-09 */body.single-blog-author .et_pb_module.et_pb_image .et_pb_image_wrap,
+/*! applause - v1.0.0 - 2023-11-10 */body.single-blog-author .et_pb_module.et_pb_image .et_pb_image_wrap,
 body.single-et_body_layout .et_pb_module.et_pb_image .et_pb_image_wrap {
   @apply tw-block tw-relative;
   height: 250px;
@@ -853,8 +853,8 @@ button.button--small-cta,
   margin: 0 auto !important;
 }
 
-#current-press-releases .news-divider-title {
-  @apply tw-text-gray-600 tw-border-b tw-border-gray-400 tw-border-solid tw-mb-4 tw-pb-2;
+.press-releases-list .news-divider-title {
+  @apply tw-text-gray-600 tw-border-b tw-border-gray-400 tw-border-solid tw-my-4 tw-pb-2 tw-text-2xl tw-font-semibold;
 }
 
 /*# sourceMappingURL=globals.css.map */

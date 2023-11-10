@@ -1,4 +1,4 @@
-/*! applause - v1.0.0 - 2023-11-09 */body.single-blog-author .et_pb_button_wrapper, body.page-id-52515 .et_pb_button_wrapper {
+/*! applause - v1.0.0 - 2023-11-10 */body.single-blog-author .et_pb_button_wrapper, body.page-id-52515 .et_pb_button_wrapper {
   padding-top: 1rem;
   margin-top: 2rem;
   position: relative;
@@ -1821,7 +1821,7 @@ body.wistia_popover_mode {
 
 @charset "UTF-8";
 #applause-swiper-timeline {
-  @apply tw-bg-white tw-rounded-lg;
+  @apply tw-bg-white tw-rounded-lg tw-overflow-hidden;
 }
 #applause-swiper-timeline .swiper-initialized {
   @apply tw-px-12;
@@ -2045,7 +2045,7 @@ body.wistia_popover_mode {
 
 /* Gray Border Boxes */
 .applause-border-box .et_pb_blurb_container {
-  @apply tw-p-4 tw-relative;
+  @apply tw-p-4 tw-relative tw-pt-0;
 }
 .applause-border-box .et_pb_main_blurb_image {
   @apply tw-mb-2;
