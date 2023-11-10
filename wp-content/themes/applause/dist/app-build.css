@@ -844,7 +844,7 @@ button.button--small-cta,
 
 /*# sourceMappingURL=forms.css.map */
 
-@screen tablet {
+@media (min-width: 900px) {
   #main-header .container {
     width: 95%;
   }

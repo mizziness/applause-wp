@@ -116,6 +116,26 @@ div[data-lastpass-infield="true"] {
   background-color: white;
 }
 
+@media (max-width: 1200px) {
+  #mega-menu-dropdowns .et_pb_section .et_pb_row {
+    max-width: 80vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  #mega-menu-dropdowns .et_pb_section .et_pb_row {
+    max-width: 100%;
+  }
+}
+@media (min-width: 900px) {
+  .et_pb_gutters1 .et_pb_column_1_3, .et_pb_gutters1.et_pb_row .et_pb_column_1_3 {
+    width: 33.3333%;
+  }
+  .et_pb_gutters2 .et_pb_column_1_4, .et_pb_gutters2.et_pb_row .et_pb_column_1_4 {
+    width: 22.75%;
+    margin-right: 3%;
+  }
+}
 /* =========================================================================== */
 /* HEADER / MAIN MENU STYLES  */
 /* =========================================================================== */
