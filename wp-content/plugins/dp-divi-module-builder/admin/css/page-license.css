@@ -1,0 +1,25 @@
+.dp_dmb_wrapper {
+    margin: 35px 50px 30px 30px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.dp_dmb_admin_page_title {
+    background: #2d2d2d;
+    padding: 25px 28px;
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    border-radius: 4px 4px 0 0;
+}
+
+.dp_dmb_admin_page_description {
+    color: #6c6c6c;
+    padding: 8px 28px;
+}
+
+#dp_dmb_admin_page_modules_container {
+    padding: 20px 40px 40px;
+}

@@ -3,6 +3,24 @@
 jQuery(function ($) {
 
   window._wq = window._wq || [];
+  window.applause = window.applause || [];
+
+  /* Events & Tracking */
+  /*
+    - handleEventTracking() should be applied to links and buttons for Google Analytics/Tracking
+    - A list of Event Types and their corresponding category, action and label can be found here:
+    - https://docs.google.com/spreadsheets/d/1rIyy57AgBs8pHaYoSfQDM1X7XlTOuTUD8-uaRbukqcw/edit#gid=1510182044
+  */
+  window.applause.handleEventTracking = function(category, action, label, callback) {
+    if (window.devMode == true) {
+      console.log(`handleEventTracking detected: ${category}, ${action}, ${label}`);
+    }
+    window.dataLayer.push({ event: 'event_activity', action, category, label });
+
+    if ( typeof callback == "function" ) {
+      callback();
+    }
+  }
 
   // Press Releases / News Mentions 
   // ==========================================================
@@ -83,6 +101,12 @@ jQuery(function ($) {
       }, 100);
     }
   };
+
+  // If it exists, move the banner alert into the header
+  waitForEl(".banner-alerts-container", function() {
+    let newPadding = $("#main-header").height();
+    $("#page-container").css("padding-top", newPadding );
+  });
 
   // GRAVITY FORMS - MATERIAL DSIGN - ADD FOCUS TO LABEL
   // Run on GFORM RENDER
@@ -242,63 +266,6 @@ jQuery(function ($) {
       },
     });
   }
-
-  // const wlbButton = document.getElementById("life-at-applause-play");
-  // if (wlbButton != null) {
-
-  //   // wq is Wistia's window-level global, wistia-queue
-  //   window._wq = window._wq || [];
-    
-  //   if (wlbButton != null ) {
-  //     var videoID = wlbButton.querySelector("a").getAttribute("data-href");
-
-  //     if ( videoID == "null" || videoID.trim().length <= 0 ){
-  //     } else {
-  //       // Create the wrapper for the button
-  //       var wistiaContainer = document.createElement('div');
-  //       wistiaContainer.innerHTML =
-  //         `<div class="wistia_embed wistia_async_${videoID} popover=true window.wistiaDisableMux=true popoverContent=html popoverDisableAutoPlay=true" 
-  //           style="display:inline-block; white-space:nowrap;" id="wistia-${videoID}">
-  //         </div>`;
-
-  //       document.querySelector("#main-content").appendChild(wistiaContainer);
-
-  //       document.addEventListener("click", function(event){
-  //         let selector = `#wistia-${videoID} .wistia_click_to_play`;
-  //         let newWistiaButton = document.querySelector(selector);
-  //         let checkParent = event.target.closest(".arrow-button-card") != null;
-
-  //         if ( checkParent === true && newWistiaButton != null && videoID.length > 0 ) {
-  //           newWistiaButton.click();
-  //         }
-  //       });
-  //     }
-  //   }
-  // }
-
-  // if ( $(".wistia-trigger").length > 0 ) {
-  //   // wq is Wistia's window-level global, wistia-queue
-    
-
-  //   $(".wistia-trigger").each(function() {
-  //     var wistia_id = $(this).attr("data-href") ?? "";
-
-  //     if ( wistia_id.length <= 0 ) {
-  //       console.error("Wistia ID is empty!");
-  //     }
-
-  //     $(this).on("click", function(){
-  //       window._wq.push({ id: wistia_id, onReady: function(video) {
-  //         console.log("I got a handle to the video!", video);
-  //       }});
-  //     })
-
-  //   });
-
-  // }
-
-
-
 
   // Top Navigation 
   // ============================================================
@@ -477,63 +444,7 @@ jQuery(function ($) {
     });
   });
 
-  /* Events & Tracking */
-/*
-  - handleEventTracking() should be applied to links and buttons for Google Analytics/Tracking
-  - A list of Event Types and their corresponding category, action and label can be found here:
-  - https://docs.google.com/spreadsheets/d/1rIyy57AgBs8pHaYoSfQDM1X7XlTOuTUD8-uaRbukqcw/edit#gid=1510182044
-*/
-window.applause.handleEventTracking = function(category, action, label, callback) {
-  if (window.devMode == true) {
-    console.log(`handleEventTracking detected: ${category}, ${action}, ${label}`);
-  }
-  window.dataLayer.push({ event: 'event_activity', action, category, label });
-
-  if ( typeof callback == "function" ) {
-    callback();
-  }
-}
-
 });
-
-
 
 // END Sliders 
 // ============================================================
-
-// var cdnUrl = 'https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public'; // Replace with your CDN URL
-// var images = document.querySelectorAll('.de-mega-menu img');
-// for (var i = 0; i < images.length; i++) {
-//     var image = images[i];
-//     var imageUrl = image.getAttribute('src');
-//     // Check if the image URL is from your WordPress site
-//     if (imageUrl.indexOf('https://wordpress-12factor.herokuapp.com') !== -1) {
-//         imageUrl = imageUrl.replace('https://wordpress-12factor.herokuapp.com', cdnUrl);
-//         image.setAttribute('src', imageUrl);
-//     }
-// }
-
-// Replace Image URL
-// window.addEventListener('load', function() {
-//     var cdnUrl = 'https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public'; // Replace with your CDN URL
-
-//     var images = document.querySelectorAll('.de-mega-menu img');
-
-//     for (var i = 0; i < images.length; i++) {
-//         var image = images[i];
-
-//         var imageUrl = image.getAttribute('src');
-
-//         // Check if the image URL is from your WordPress site
-//         if (imageUrl.indexOf('https://wordpress-12factor.herokuapp.com') !== -1) {
-//             imageUrl = imageUrl.replace('https://wordpress-12factor.herokuapp.com', cdnUrl);
-//             image.setAttribute('src', imageUrl);
-//         }
-//     }
-
-//     console.clear();
-//     console.log("Divi Site is ready");
-// } );
-
-// console.clear();
-// console.log("Divi Site is ready");

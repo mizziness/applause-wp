@@ -57,19 +57,34 @@ div.reviews-glassdoor {
 
 .video-image:after {
   background-color: rgba(0, 0, 0, 0.25);
+  border-radius: .375rem;
 }
 
-#life-at-applause-tabs img {
-  border-radius: 6px;
+// Life At Applause - Tabbed Panels
+#life-at-applause-tabs {
+  .et_pb_tabs_controls {
+    @apply tw-text-center;
+
+    li {
+      @apply tw-inline-block tw-float-none;
+    }
+  }
+
+  img {
+    @apply tw-rounded-md;
+  }
 }
 
-.et-db #et-boc .et-l #life-at-applause-tabs .et-fb-popover-tinymce > div {
-  max-width: 100%;
+#life-at-applause-tabs .et_pb_tab_content {
+  position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-column-gap: 2rem;
+  margin-right: 2rem;
+  max-width: 100%;
 }
 
-.et-db #et-boc .et-l #life-at-applause-tabs .et-fb-popover-tinymce > div > div {
+#life-at-applause-tabs .et_pb_tab_content > div {
   margin: 1rem auto;
 }
 

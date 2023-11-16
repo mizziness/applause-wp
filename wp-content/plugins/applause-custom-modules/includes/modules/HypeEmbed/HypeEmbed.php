@@ -67,9 +67,7 @@ class ACM_HypeEmbed extends ET_Builder_Module
 			} else {
 				$output = "Nothing Here";
 			}
-
-			// update_post_meta($post_id, "hype_content", $extracted);
-			// $hype_content = get_post_meta($post_id, "hype_content", true);
+			
 		}
 
 		return $this->_render_module_wrapper($output, $render_slug);

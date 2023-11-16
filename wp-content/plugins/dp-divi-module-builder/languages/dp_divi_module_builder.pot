@@ -1,0 +1,1094 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Divi Module Builder\n"
+"POT-Creation-Date: 2022-06-05 10:02-0400\n"
+"PO-Revision-Date: 2018-06-12 08:51-0400\n"
+"Last-Translator: \n"
+"Language-Team: diviplugins.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: dp-divi-module-builder.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;"
+"esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;"
+"__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: admin/class-dp-dmb-admin.php:146
+msgid "The following module will be moved to Trash: "
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:183
+msgid "DMB Dependency"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:185
+msgid "DMB Debugger"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:187
+msgid "DMB Import"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:189
+msgid "DMB Settings"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:191
+msgid "DMB License"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:193
+msgid "DMB Modules"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:195
+msgid "DMB New Module"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:197
+msgid "DMB Edit Module"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:210 admin/class-dp-dmb-admin.php:221
+msgid "Custom Modules"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:211
+msgid "Module"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:212 admin/class-dp-dmb-admin.php:213
+msgid "Add Module"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:214
+msgid "Edit Module"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:215
+msgid "New Module"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:216 includes/class-dp-dmb-cmb2.php:595
+msgid "Modules"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:217
+msgid "View Modules"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:218
+msgid "Search Modules"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:219
+msgid "No modules found"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:220
+msgid "No modules found in Trash"
+msgstr ""
+
+#: admin/class-dp-dmb-admin.php:247
+msgid "PHP processing"
+msgstr ""
+
+#: dp-divi-module-builder.php:71
+msgid "New module"
+msgstr ""
+
+#: dp-divi-module-builder.php:89 includes/class-dp-dmb-settings.php:36
+msgid "Settings"
+msgstr ""
+
+#: dp-divi-module-builder.php:90 includes/class-dp-dmb-license.php:49
+msgid "License"
+msgstr ""
+
+#: dp-divi-module-builder.php:91
+msgid "Get support"
+msgstr ""
+
+#: includes/class-dp-divi-module-builder.php:319
+msgid ""
+"CMB2 dependency is missing. Divi Module Builder can not work without this dependency. "
+"Contact with our support team at support@diviplugins.com."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:22
+msgid "Module Fields"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:34
+msgid ""
+"Begin building your custom module by adding fields below. Fields are ideal for any data "
+"that a user might want to change or customize. Fields will be displayed in the module "
+"in the same order they appear below. Use the up and down arrows within each field box "
+"to move that field up or down and change the order.<br/><br/> The Field Identifier is "
+"how you will reference each field in your HTML output. Here are some examples of valid "
+"identifiers:<br/><em><strong>title</strong></em><br/><em><strong>image1</strong></"
+"em><br/><em><strong>background_color</strong></em> "
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:40
+msgid ""
+"<b>Make this module fullwidth. Fullwidth modules are only available within fullwidth "
+"sections.</b>"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:46
+msgid ""
+"<b>Activate partial VB support for this module.</b> This option will turn on live "
+"preview via ajax in the Visual Builder. Custom javascript will NOT be rendered in live "
+"preview."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:53
+#, php-format
+msgid ""
+"<b>Add a TinyMCE editor to this module.</b> You can use <b>%%tiny_mce%%</b> to output "
+"the content inside HTML or <b>$this->content</b> to output the content inside PHP. If "
+"the module has repeat fields, the tiny_MCE editor can only be outputted in the Repeat "
+"Field HTML Output."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:59
+msgid ""
+"<b>Activate Dynamic Content.</b> This option will activate Dynamic Content on the field "
+"type that support it. Currently not compatible with the Visual Builder."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:65
+msgid ""
+"<b>Remove repeat fields wrapper.</b> This option will remove the div around repeat field "
+"groups. Design and Advanced tab settings will no longer apply to these fields."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:71
+msgid "Repeat Group Label"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:72
+msgid ""
+"Enter the Field Identifier of any repeat field which has a Field Type of Text. The "
+"value of this field will be used for the repeat field group label. If left empty, the "
+"Admin Label will be used."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:81
+msgid "Field {#}"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:82
+msgid "Add Another Field"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:83
+msgid "Remove Field"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:90
+msgid "Field Label"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:91
+msgid ""
+"The Field Label is the label that the end user will see to the left of the input in the "
+"module."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:102
+msgid "Field Identifier"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:103
+msgid ""
+"The Field Identifier must be unique. It will not be visible anywhere in the module. "
+"This is how you will reference the field in the HTML output. You should only use "
+"lowercase letters, numbers, and underscores for field identifiers. No spaces."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:113
+msgid "Field Description (optional)"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:114
+msgid ""
+"A Field Description can be added to help explain the purpose of the field and will "
+"display below the input in the module."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:124
+msgid "Repeat Field"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:125
+msgid ""
+"Check this box if you want this field to be part of a repeatable field group for this "
+"module. You can use repeat fields to create \"Add New Item\" to your module (sliders, "
+"tabs, etc.) Multiple fields can be added to a repeatable field group."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:132
+msgid "Responsive Field"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:133
+msgid ""
+"Check this box if you want this field to be a responsive field. Responsive fields can "
+"hold different values per screen size. To access responsive field values use _tablet "
+"and _phone suffixes on the field identifier."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:140
+msgid "Field Group (optional)"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:141
+msgid ""
+"Enter the field group label you would like this field to display under in the module. "
+"Toggling this field group in the module will show/hide all fields with the same label. "
+"Field groups will display in the same order they are added."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:148
+msgid "Field Type"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:149
+msgid ""
+"The Field Type will determine what type of input the user sees: text box, text area, "
+"color picker, image selector, etc."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:154
+msgid "Text"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:155
+msgid "Textarea"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:156
+msgid "Link"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:157 includes/class-dp-dmb-cmb2.php:613
+msgid "Image"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:158 includes/class-dp-dmb-cmb2.php:612
+msgid "Gallery"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:159 includes/class-dp-dmb-cmb2.php:626
+msgid "Video"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:160 includes/class-dp-dmb-cmb2.php:601
+msgid "Audio"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:161
+msgid "Color"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:162
+msgid "Icon"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:163
+msgid "Select"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:164
+msgid "Checkbox List"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:165 includes/class-dp-dmb-cmb2.php:604
+msgid "Button"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:166
+msgid "Yes/No Toggle"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:167
+msgid "Date Time"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:168
+msgid "Upload"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:176 includes/class-dp-dmb-cmb2.php:184
+#: includes/class-dp-dmb-cmb2.php:195
+msgid "Default Text (optional)"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:177 includes/class-dp-dmb-cmb2.php:185
+msgid "Enter default text for this field."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:196
+msgid "Enter default text for this button."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:203
+msgid "Default Color (optional)"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:204
+msgid "Select a default color."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:215
+msgid "Default State"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:216
+msgid "Check if you want the toggle to be active by default"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:223
+msgid "Default Image"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:224
+msgid "Check this box if you want to enable a default image."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:231
+msgid "Default Image URL"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:232
+msgid ""
+"Type in the URL to the image you would like to display. Leave this blank if you would "
+"like to display the default Divi placeholder image."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:239
+msgid "Select Options"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:240
+msgid "Enter a comma-separated list of select options labels."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:250
+msgid "Select Values"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:251
+msgid ""
+"Enter a comma-separated list of select options values. If left empty or if number of "
+"values does not match number of labels above, the value of the first field option will "
+"be 1 and the values for all other options will increase by 1 in the order you list them."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:261
+msgid "Get Options From Function"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:262
+msgid ""
+"Enter the name of a custom function that will return an array containing the option "
+"labels and values of the select. The key of each value on this array will be the value "
+"of each option."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:269
+msgid "Checkbox Labels"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:270
+msgid ""
+"Enter a comma-separated list of checkbox labels. The return value will be a string of "
+"(on|off) values that will indicate which labels are checked."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:277
+msgid "Process Checkbox Values"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:278
+msgid "Return array of checked options values instead of the (on|off) string."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:285
+msgid "Design Tab"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:286
+msgid ""
+"Check this box if you want to show fonts controls in the Design Tab of the module for "
+"this field."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:293
+msgid "Button URL"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:294
+msgid ""
+"Check this box if you want the button URL to be the_permalink(). If left unchecked, an "
+"URL input will be added to the module."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:301
+msgid "Advanced Tab"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:302
+msgid ""
+"Check this box if you want to show a custom css box in the Advanced Tab of the module "
+"for this field."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:309
+msgid "Hide Field"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:310
+msgid "Check this box if you want to hide the input for this field in the Content tab."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:317
+msgid "Allow Date Format"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:318
+msgid "Check this box if you want to give the user the option to change the date format."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:330 includes/class-dp-dmb-cmb2.php:360
+msgid "HTML Output"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:342
+#, php-format
+msgid ""
+"The HTML Output is where you will add your custom HTML, PHP and available Field "
+"Identifiers created in the left panel. Each Field Identifier needs to be begin and end "
+"with <strong><em>%%</em></strong> if included inside HTML. If included inside the PHP "
+"tags, simply add a <strong><em>$</em></strong> in front of the identifier. This is how "
+"you would include a field with \"title\" set as the identifier:<br/><strong><em>Inside "
+"HTML</em></strong><br/>%%title%%<br/><strong><em>Inside PHP:</em></strong><br/>"
+"$title<br/><br/><strong>* IMPORTANT - </strong> If you add invalid PHP markup inside "
+"the PHP tags and get locked out of editing this module, simply disable PHP for this "
+"module from the Settings page. <br/>Use CTRL+spacebar to autocomplete PHP."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:348
+msgid "<b>Activate PHP processing</b>"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:390 includes/class-dp-dmb-cmb2.php:408
+msgid "CSS Output"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:402
+msgid ""
+"If you have CSS rules you would like to add, place them in the textbox below. Add your "
+"classes to the HTML output above, and then target them in this section."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:424 includes/class-dp-dmb-cmb2.php:442
+msgid "Javascript Output"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:436
+msgid ""
+"If you have javascript or jQuery functions you would like to add, place them in the "
+"textbox below. The code added this section is already wrapped in script tags so DO NOT "
+"include them. "
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:458 includes/class-dp-dmb-cmb2.php:475
+msgid "Repeat Fields HTML Output"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:469
+#, php-format
+msgid ""
+"The Repeat Fields HTML Output is where you will add your custom HTML, PHP and available "
+"Field Identifiers created in the left panel for the repeat field groups. This section "
+"is similar to a foreach loop. To echo the results of this loop, you then need to add <b>"
+"%%repeat_fields%%</b> inside HTML or <b>$this->content</b> inside PHP in the HTML "
+"Output section at the top of this panel.<br/><br />The code entered in this section "
+"will get wrapped in a div container with class <strong>dp_dmb_repeat_item</strong>."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:501
+msgid "Add Custom Functions"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:512
+msgid ""
+"Add custom functions below, which can be accessed in the module's output boxes. You can "
+"use standard PHP tags &lt?php and ?&gt within your functions. Be sure to begin and end "
+"the box below with PHP tags and activate PHP processing in your module. If you add "
+"invalid PHP markup inside the PHP tags and get locked out of editing this module, "
+"simply disable PHP for this module from the Settings page."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:518
+msgid "Custom Functions Code"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:532
+msgid "Before Render"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:543
+msgid ""
+"Code added here will be included in the module's before render function. This is useful "
+"for adding functionality needed before the module renders the output. EX: enqueue "
+"script/styles. Use $this->props to access the module's field values. <b>Use only PHP "
+"code here without open/closing tabs.</b>"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:549
+msgid "Before Render Code"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:563
+msgid "Divi Global Assets"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:574
+msgid "Select the global Divi dependencies needed for the module."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:580
+msgid "Global"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:585
+msgid "Divi Icons & Font Awesome"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:586
+msgid "Magnific Popup CSS/JS"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:587
+msgid "Overlay"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:588
+msgid "Column Gutters"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:589
+msgid "Grid Items"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:590
+msgid "Animations"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:600
+msgid "Accordion"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:602
+msgid "Blog"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:603
+msgid "Blurb"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:605
+msgid "Circle Counter"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:606
+msgid "Contact Form"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:607
+msgid "Countdown Timer"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:608
+msgid "Counter"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:609
+msgid "CTA"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:610
+msgid "Divider"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:611
+msgid "Filterable Portfolio"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:614
+msgid "Map"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:615
+msgid "Menu"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:616
+msgid "Number Counter"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:617
+msgid "Pricing Tables"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:618 includes/class-dp-dmb-import.php:79
+msgid "Search"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:619
+msgid "Shop"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:620
+msgid "Slider"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:621
+msgid "Social Media"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:622
+msgid "Tabs"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:623
+msgid "Team Member"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:624
+msgid "Testimonials"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:625
+msgid "Toggle"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:642
+msgid "Divi Module Builder - External CSS/JS"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:645
+msgid "Dependency"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:648 includes/class-dp-dmb-cmb2.php:713
+msgid "Save Options"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:653
+msgid ""
+"Here you can add 3rd party CSS and Javascript dependencies, which can be added using "
+"external or internal URLs. Dependencies will be properly enqueued in WordPress and "
+"available on any page. For example, to include Font Awesome: <br><br><strong>Select "
+"Type:</strong> CSS<br><strong>Dependency Name:</strong> "
+"fontawesome<br><strong>Dependency URL:</strong> https://maxcdn.bootstrapcdn.com/font-"
+"awesome/4.7.0/css/font-awesome.min.css<br>"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:662
+msgid "Dependency {#}"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:663
+msgid "Add Another Dependency"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:664
+msgid "Remove Dependency"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:670
+msgid "Select Type"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:681
+msgid "Dependency Name"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:691
+msgid "Dependency Url"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:707
+msgid "Divi Module Builder - Debugger"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:710
+msgid "Debugger"
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:718
+msgid ""
+"Click on the checkbox and button below to begin debugging. The debugger will run in the "
+"background while using the Divi Module Builder, keeping a log of all successful and "
+"failed processes in the output below. If you continue to have issues or see any errors "
+"in the output, please contact us and include the output in your message."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:724
+msgid "Activate DMB Debugger and start collect info."
+msgstr ""
+
+#: includes/class-dp-dmb-cmb2.php:730
+msgid "Debugger Output"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:19 includes/class-dp-dmb-import.php:196
+msgid "Import"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:70
+msgid "All Categories"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:95
+msgid "Official Modules"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:104
+msgid ""
+"Unable to connect to server. Please try again later or <a href=\"https://diviplugins."
+"com/modules/\" target=\"_blank\">manually download modules from our website.</a>"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:112 includes/class-dp-dmb-import.php:122
+msgid "Import Modules from DiviPlugins library"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:123
+msgid ""
+"It appears your license is not active. Please purchase a new license or enter an active "
+"license to continue."
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:124
+msgid "Purchase a new license"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:126
+msgid "Enter an active license"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:155
+msgid "Divi Module Builder - Import"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:156
+msgid "Import a custom module from the diviplugins.com library or from a JSON file."
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:157
+msgid "Import Modules from JSON File"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:158
+msgid "Import Module File"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:160 includes/class-dp-dmb-settings.php:131
+msgid "Publish"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:161 includes/class-dp-dmb-settings.php:91
+#: includes/class-dp-dmb-settings.php:133
+msgid "Edit"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:162
+msgid "Close"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:200
+msgid "More Info"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:220 includes/class-dp-dmb-import.php:289
+msgid "The module was successfully imported"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:222 includes/class-dp-dmb-import.php:291
+msgid "Fail to insert the module post "
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:225 includes/class-dp-dmb-settings.php:219
+msgid "Fail to retrieve the file content"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:308
+msgid "The module was successfully published"
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:310
+msgid "Fail to publish the module "
+msgstr ""
+
+#: includes/class-dp-dmb-import.php:313
+msgid "Import publish action missing the module ID"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:39
+msgid ""
+"Please activate your Divi Module Builder license to receive support and automatic "
+"updates."
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:39
+msgid "Activation Page"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:49
+msgid "Plugin License"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:66
+msgid "Divi Module Builder - Licenses"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:67
+msgid "Enter your license key here to receive automatic updates"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: includes/class-dp-dmb-license.php:71
+msgid "Divi Module Builder"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:78
+msgid "License Key"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:85
+msgid "Enter your license key"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:91 includes/class-dp-dmb-license.php:106
+msgid "Activate License"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:95
+msgid "Active"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:99
+msgid "Deactivate License"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:178 includes/class-dp-dmb-license.php:206
+#: includes/class-dp-dmb-license.php:252
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:186
+#, php-format
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:190
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:193
+msgid "Invalid license."
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:197
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:200
+#, php-format
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:203
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:284
+msgid "Thank you for activating Divi Module Builder!"
+msgstr ""
+
+#: includes/class-dp-dmb-license.php:284
+msgid "Create your first custom module."
+msgstr ""
+
+#. translators: the plugin name.
+#: includes/class-dp-dmb-plugin-updater.php:227
+#, php-format
+msgid "There is a new version of %1$s available."
+msgstr ""
+
+#: includes/class-dp-dmb-plugin-updater.php:233
+msgid "Contact your network administrator to install the update."
+msgstr ""
+
+#. translators: 1. opening anchor tag, do not translate 2. the new plugin version 3. closing anchor tag, do not translate.
+#: includes/class-dp-dmb-plugin-updater.php:238
+#, php-format
+msgid "%1$sView version %2$s details%3$s."
+msgstr ""
+
+#: includes/class-dp-dmb-plugin-updater.php:246
+#, php-format
+msgid "%1$sView version %2$s details%3$s or %4$supdate now%5$s."
+msgstr ""
+
+#: includes/class-dp-dmb-plugin-updater.php:257
+msgid "Update now."
+msgstr ""
+
+#: includes/class-dp-dmb-plugin-updater.php:493
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: includes/class-dp-dmb-plugin-updater.php:493
+msgid "Error"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:52
+msgid "Divi Module Builder - Settings"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:53
+msgid ""
+"Manage, Import, and Export your modules. If you have entered invalid PHP markup in a "
+"module and have become locked out of the module editor, you can temporarily Disable PHP "
+"for that module. Once disabled, you can once again edit the module, correct your "
+"mistake and Enable PHP. Modules will not become available in the Divi Page Builder "
+"until they are published."
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:65
+msgid "Show Divi's third party, partial compatibility warning for all modules"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:68
+msgid "Save Settings"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:74
+msgid "Published Modules"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:87 includes/class-dp-dmb-settings.php:128
+msgid "Delete"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:89
+msgid "Clone"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:94
+msgid "Disable PHP"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:97
+msgid "Enable PHP"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:101
+msgid "Update"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:104
+msgid "Export"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:113
+msgid "Disable PHP on all modules"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:116
+msgid "Draft Modules"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:143
+msgid ""
+"Select the json file of a module previously exported to replace this module with. The "
+"module ID will stay the same, everything else will get replaced. You are about to "
+"replace: "
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:152
+msgid ""
+"Check this box if you want to replace the current module name with the imported module "
+"name."
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:155
+msgid "Update Module"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:215
+msgid "Error on update the post"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:240
+msgid "(copy)"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:266
+msgid "Error on insert the post"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:270 includes/class-dp-dmb-settings.php:294
+#: includes/class-dp-dmb-settings.php:319
+msgid "Missing the module id"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:290
+msgid "Error on delete the post"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:315
+msgid "Error on publish the post"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:340
+msgid "Missing the module id or php state"
+msgstr ""
+
+#: includes/class-dp-dmb-settings.php:376
+msgid "Settings Saved"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.diviplugins.com/divi-module-builder/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Create, import and export custom modules for Divi. Once a module is published, it "
+"becomes available as a new module inside the Divi Page Builder."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "DiviPlugins"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.diviplugins.com"
+msgstr ""

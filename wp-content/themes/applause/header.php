@@ -64,6 +64,12 @@
 	<script async src="https://js.qualified.com/qualified.js?token=tt5Qtw13byd2k6Sm"></script>
 	<!-- End Qualified -->
 
+	<?php 
+		if ( getenv("environment") == "development" ) {
+			print_r("<script>window.devMode = true;</script>");
+		}
+	?>
+
 </head>
 <body <?php body_class(); ?>>
 
