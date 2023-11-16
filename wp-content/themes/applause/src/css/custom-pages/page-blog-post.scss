@@ -426,7 +426,7 @@
   display: inline-block;
 }
 
-body.single-post #single-blog-post {
+body.single-post {
   mark {
     background-color: rgb(252 186 0);
     padding-left: .5rem;
@@ -576,12 +576,12 @@ body.single-post #single-blog-post {
         padding: .5rem;
       }
     }
-    .tw-w-5 {
-      width: 1.25rem;
-    }
-    .tw-block {
-      display: block;
-    }
+  }
+  .tw-w-5 {
+    width: 1.25rem;
+  }
+  .tw-block {
+    display: block;
   }
   .blog-image-single,
   .blog-image-double {
