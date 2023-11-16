@@ -1,0 +1,16 @@
+/* Block style on the modules list container */
+div.et-fb-modules-list li[class^="et_fb_dp_dmb_module"] {
+    background-color: #4AB939 !important;
+    color: #fff !important;
+}
+
+div.et-fb-modules-list li[class^="et_fb_dp_dmb_module"]:hover {
+    background-color: #2d2d2d !important;
+}
+
+div.et-fb-modules-list li[class^="et_fb_dp_dmb_module"]:before {
+    content: url("../../admin/img/dp.png") !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: -5px auto 10px !important;
+}

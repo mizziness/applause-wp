@@ -3,7 +3,45 @@
 function cptui_register_my_cpts() {
 
 	/**
-	 * Post Type: Blog Authors.
+	 * Post Type: Office Locations
+	 */
+
+	 $labels = [
+		"name" => esc_html__( "Office Locations", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Office Locations", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Office Locations", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => false,
+		"rewrite" => false,
+		"query_var" => true,
+		"menu_icon" => "dashicons-admin-users",
+		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "office-locations", $args );
+
+	/**
+	 * Post Type: Blog Authors
 	 */
 
 	$labels = [
@@ -69,7 +107,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => true,
-		"rewrite" => [ "slug" => "press", "with_front" => true ],
+		"rewrite" => [ "slug" => "press", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,
@@ -106,7 +144,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "biographies", "with_front" => true ],
+		"rewrite" => [ "slug" => "biographies", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,
@@ -143,7 +181,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "showcases", "with_front" => true ],
+		"rewrite" => [ "slug" => "showcases", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,
@@ -180,7 +218,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "events", "with_front" => true ],
+		"rewrite" => [ "slug" => "events", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,
@@ -217,7 +255,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "news_mentions", "with_front" => true ],
+		"rewrite" => [ "slug" => "news_mentions", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,
@@ -254,7 +292,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "case_studies", "with_front" => true ],
+		"rewrite" => [ "slug" => "case_studies", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author", "excerpt" ],
 		"show_in_graphql" => false,
@@ -268,12 +306,12 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => esc_html__( "Ebooks", "custom-post-type-ui" ),
-		"singular_name" => esc_html__( "Ebook", "custom-post-type-ui" ),
+		"name" => esc_html__( "eBooks", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "eBook", "custom-post-type-ui" ),
 	];
 
 	$args = [
-		"label" => esc_html__( "Ebooks", "custom-post-type-ui" ),
+		"label" => esc_html__( "eBooks", "custom-post-type-ui" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -292,7 +330,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "ebooks", "with_front" => true ],
+		"rewrite" => [ "slug" => "ebooks", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,
@@ -330,7 +368,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "resources/podcasts", "with_front" => true ],
+		"rewrite" => [ "slug" => "resources/podcasts", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,
@@ -368,7 +406,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "reports", "with_front" => true ],
+		"rewrite" => [ "slug" => "reports", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author", "excerpt" ],
 		"show_in_graphql" => false,
@@ -406,7 +444,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "webinars", "with_front" => true ],
+		"rewrite" => [ "slug" => "webinars", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,
@@ -482,7 +520,7 @@ function cptui_register_my_cpts() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "videos", "with_front" => true ],
+		"rewrite" => [ "slug" => "videos", "with_front" => false ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "author" ],
 		"show_in_graphql" => false,

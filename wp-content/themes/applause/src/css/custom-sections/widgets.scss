@@ -288,7 +288,7 @@
 /* Gray Border Boxes */
 .applause-border-box {
   .et_pb_blurb_container {
-    @apply tw-p-4 tw-relative tw-pt-0;
+    @apply tw-p-4 tw-static tw-pt-0;
   }
 
   .et_pb_main_blurb_image {
@@ -296,7 +296,7 @@
   }
 
   .et_pb_blurb_description {
-    @apply tw-pb-8 tw-p-4;
+    @apply tw-pb-8 tw-p-0;
   }
 
   &:hover {
@@ -307,6 +307,9 @@
 
   .card-link {
     @apply tw-absolute tw-bottom-4 tw-left-4 tw-inline-block tw-px-4 tw-py-2 tw-mt-2 tw-text-xs tw-font-semibold tw-text-gray-800 tw-no-underline tw-transition-colors tw-bg-gray-200 tw-rounded-sm;
-    
+  }
+
+  .et_pb_blurb_content {
+    @apply tw-static tw-pb-8;
   }
 }

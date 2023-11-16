@@ -1,0 +1,128 @@
+/*
+* Dependency Page Styles
+*/
+
+.option-dp_dmb_dependency_options {
+    margin: 35px 50px 30px 30px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.option-dp_dmb_dependency_options > h2 {
+    background-color: #2d2d2d;
+    padding: 20px 28px !important;
+    color: white;
+    font-weight: 300 !important;
+    font-size: 22px !important;
+    border-radius: 4px 4px 0 0;
+}
+
+#dp_dmb_external_cssjs_metabox {
+    padding: 20px 40px 40px;
+}
+
+#_dp_dmb_external_cssjs_metabox_repeat_group_fields_repeat > div > h3 {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb-shift-rows {
+    color: #fff;
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb-shift-rows:hover {
+    background: #000;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb-remove-group-row {
+    color: #fff;
+    background-color: #F35959;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb-remove-group-row:hover {
+    background-color: #EE1A1A;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb-add-group-row {
+    color: #fff;
+    background-color: #59B2F1;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb-add-group-row:hover {
+    background-color: #1A95EC;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb2-metabox button.dashicons-before.dashicons-no-alt.cmb-remove-group-row {
+    left: initial;
+    right: 0;
+    color: #fff !important;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb2-metabox .cmbhandle {
+    float: left;
+    right: 0;
+    color: #fff;
+}
+
+#dp_dmb_external_cssjs_metabox .cmb2-metabox .cmbhandle:before {
+    content: '\2630';
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    top: -4px;
+}
+
+.dp_dmb_external_name, .dp_dmb_external_url, .cmb-row.cmb-remove-field-row, .dp_dmb_external_type {
+    padding: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+.dp_dmb_external_name > .cmb-td > input, .dp_dmb_external_url > .cmb-td > input, .dp_dmb_external_type > .cmb-td > select {
+    border-radius: 4px;
+    background-color: #F1F5F9;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    width: 100%;
+    height: 39px;
+}
+
+#cmb2-metabox-dp_dmb_external_cssjs_metabox > .cmb-row.cmb-repeat-group-wrap {
+    background-color: whitesmoke;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+#cmb2-metabox-dp_dmb_external_cssjs_metabox > .cmb-row.cmb-type-title {
+    border: none;
+    background-color: white;
+    margin-bottom: 24px !important;
+    box-shadow: none;
+}

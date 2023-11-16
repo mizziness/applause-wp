@@ -87,13 +87,13 @@ add_filter('dpdfg_custom_meta', 'dpdfg_custom_meta_function', 10, 3);
  */
 function blog_author_permalinks($post_link, $post = null)
 {
-    if ($post->post_type === 'blog-author') {
-        $post_link = home_url('blog/author/' . $post->post_name . '/');
-    }
+    // if ($post->post_type === 'blog-author') {
+    //     $post_link = home_url('blog/author/' . $post->post_name . '/');
+    // }
 
-    if ($post->post_type == 'post' && (in_category('blog-topics-new') || in_category('blog-categories')) ) {
-      $post_link = home_url('blog/' . $post->post_name . '/');
-    }
+    // if ($post->post_type == 'post' && (in_category('blog-topics-new') || in_category('blog-categories')) ) {
+    //   $post_link = home_url('blog/' . $post->post_name . '/');
+    // }
 
     return $post_link;
 }
@@ -104,8 +104,17 @@ add_filter('post_type_link', 'blog_author_permalinks', 1, 3);
  */
 function blog_author_rewrites_init()
 {
-    add_rewrite_rule('blog/([^/]*)/?$', 'index.php?post_type=post&name=$matches[1]', 'top');
-    add_rewrite_rule('blog/author/([^/]*)/?$', 'index.php?post_type=blog-author&name=$matches[1]', 'top');
+
+    // add_rewrite_rule( "blog/author/([^/]+)/?$", 'index.php?post_type=blog-author&name=$matches[1]', 'top' );
+    // add_rewrite_rule( "blog/author/([^/]*)/?$", 'index.php?blog-author&name=$matches[1]', 'top' );
+
+    // add_rewrite_rule('blog/([^/]*)/?$', 'index.php?post_type=post&name=$matches[1]', 'bottom');
+    // add_rewrite_rule('blog/author/([^/]*)/?$', 'index.php?post_type=blog-author&name=$matches[1]', 'bottom');
     
+    // add_rewrite_rule(
+	// 	$page_data->post_name . '/subscriber/([^/]+)/?$',
+	// 	'index.php?pagename=' . $page_data->post_name . '&my_subscribers=1&my_subscriber=$matches[1]',
+	// 	'top'
+	// );
 }
 add_action('init', 'blog_author_rewrites_init');

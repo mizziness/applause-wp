@@ -124,48 +124,6 @@
   }
 }
 
-
-.video-play-button-careers {
-  svg {
-    display: block;
-    position: absolute;
-    height: auto;
-    transition: transform 0.3s;
-  }
-  
-  .play-button {
-    @apply tw-inset-1/2 tw-absolute tw-z-10 tw-block tw-w-20 tw-h-20 tw-align-middle tw-opacity-100;
-    $halfSize: math.div(5rem, 2) * -1;
-    transform: translate($halfSize, $halfSize);
-
-    > * {
-      transform-origin: center center;
-    }
-
-    .play-icon {
-      transition: all 0.3s ease-in;
-      @apply tw-fill-blue-500;
-    }
-
-    .play-bg {
-      transition: all 0.3s cubic-bezier(0.3, 1.5, 0.7, 1);
-      @apply tw-fill-white;
-    }
-
-    &:hover {
-      .play-bg {
-        transform: scale(.85, .85);
-        opacity: 0.75;
-      }
-
-      .play-icon {
-        @apply tw-stroke-blue-300 tw-stroke-2;
-      }
-    }
-  }
-}
-
-
 // Related Blocks at Page Bottom
 // ======================================================== //
 .information-blocks {

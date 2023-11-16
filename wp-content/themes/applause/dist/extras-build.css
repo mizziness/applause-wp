@@ -777,19 +777,29 @@ div.reviews-glassdoor {
 
 .video-image:after {
   background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0.375rem;
 }
 
+#life-at-applause-tabs .et_pb_tabs_controls {
+  @apply tw-text-center;
+}
+#life-at-applause-tabs .et_pb_tabs_controls li {
+  @apply tw-inline-block tw-float-none;
+}
 #life-at-applause-tabs img {
-  border-radius: 6px;
+  @apply tw-rounded-md;
 }
 
-.et-db #et-boc .et-l #life-at-applause-tabs .et-fb-popover-tinymce > div {
-  max-width: 100%;
+#life-at-applause-tabs .et_pb_tab_content {
+  position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-column-gap: 2rem;
+  margin-right: 2rem;
+  max-width: 100%;
 }
 
-.et-db #et-boc .et-l #life-at-applause-tabs .et-fb-popover-tinymce > div > div {
+#life-at-applause-tabs .et_pb_tab_content > div {
   margin: 1rem auto;
 }
 
@@ -1932,32 +1942,32 @@ body.wistia_popover_mode {
   transform: rotate(-90deg) scale(0.95);
 }
 
-.video-play-button-careers svg {
+.applause-inline-wistia svg {
   display: block;
   position: absolute;
   height: auto;
   transition: transform 0.3s;
 }
-.video-play-button-careers .play-button {
+.applause-inline-wistia .play-button {
   @apply tw-inset-1/2 tw-absolute tw-z-10 tw-block tw-w-20 tw-h-20 tw-align-middle tw-opacity-100;
   transform: translate(-2.5rem, -2.5rem);
 }
-.video-play-button-careers .play-button > * {
+.applause-inline-wistia .play-button > * {
   transform-origin: center center;
 }
-.video-play-button-careers .play-button .play-icon {
+.applause-inline-wistia .play-button .play-icon {
   transition: all 0.3s ease-in;
   @apply tw-fill-blue-500;
 }
-.video-play-button-careers .play-button .play-bg {
+.applause-inline-wistia .play-button .play-bg {
   transition: all 0.3s cubic-bezier(0.3, 1.5, 0.7, 1);
   @apply tw-fill-white;
 }
-.video-play-button-careers .play-button:hover .play-bg {
+.applause-inline-wistia .play-button:hover .play-bg {
   transform: scale(0.85, 0.85);
   opacity: 0.75;
 }
-.video-play-button-careers .play-button:hover .play-icon {
+.applause-inline-wistia .play-button:hover .play-icon {
   @apply tw-stroke-blue-300 tw-stroke-2;
 }
 
@@ -2237,19 +2247,22 @@ body.wistia_popover_mode {
 
 /* Gray Border Boxes */
 .applause-border-box .et_pb_blurb_container {
-  @apply tw-p-4 tw-relative tw-pt-0;
+  @apply tw-p-4 tw-static tw-pt-0;
 }
 .applause-border-box .et_pb_main_blurb_image {
   @apply tw-mb-2;
 }
 .applause-border-box .et_pb_blurb_description {
-  @apply tw-pb-8 tw-p-4;
+  @apply tw-pb-8 tw-p-0;
 }
 .applause-border-box:hover .card-link {
   @apply tw-bg-gray-300 tw-text-black;
 }
 .applause-border-box .card-link {
   @apply tw-absolute tw-bottom-4 tw-left-4 tw-inline-block tw-px-4 tw-py-2 tw-mt-2 tw-text-xs tw-font-semibold tw-text-gray-800 tw-no-underline tw-transition-colors tw-bg-gray-200 tw-rounded-sm;
+}
+.applause-border-box .et_pb_blurb_content {
+  @apply tw-static tw-pb-8;
 }
 
 /*# sourceMappingURL=widgets.css.map */

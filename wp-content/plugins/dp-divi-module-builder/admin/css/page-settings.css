@@ -1,0 +1,194 @@
+/*
+* Settings Page Style
+*/
+
+.dp_dmb_wrapper {
+    margin: 35px 50px 30px 30px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+#dp_dmb_admin_page_modules_container, #dp_dmb_admin_page_import_form_container {
+    padding: 20px 40px 40px;
+}
+
+.dp_dmb_admin_page_title {
+    background: #2d2d2d;
+    padding: 25px 28px;
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    border-radius: 4px 4px 0 0;
+}
+
+.dp_dmb_admin_page_description {
+    color: #6c6c6c;
+    padding: 8px 28px;
+}
+
+.dp_dmb_admin_page_section {
+    color: #000;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.dp_dmb_admin_page_module {
+    background-color: #2d2d2d;
+    margin-bottom: 8px;
+    padding: 8px 24px;
+    border-radius: 2px;
+}
+
+.dp_dmb_admin_page_module > div {
+    display: inline-block;
+}
+
+.dp_dmb_admin_page_module > div > span {
+    color: white;
+    font-size: 18px;
+}
+
+.dp_dmb_admin_page_module > div > a {
+    font-size: 16px;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-left: 4px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.dp_dmb_admin_page_module_name_container {
+    width: 30%;
+}
+
+.dp_dmb_admin_page_module_actions_container {
+    width: 69%;
+    text-align: right;
+}
+
+.dp_dmb_admin_page_module_actions_container a {
+    color: #000;
+    background-color: #F5F5F5;
+}
+
+.dp_dmb_admin_page_module_actions_container a:hover {
+    color: #000;
+    background-color: #ddd;
+}
+
+a.dp_dmb_admin_page_php_off_link {
+    color: #000;
+    background-color: #8CE67C;
+}
+
+a.dp_dmb_admin_page_php_off_link:hover {
+    background-color: #5ADB43;
+}
+
+a.dp_dmb_admin_page_publish_link {
+    color: #fff;
+    background-color: #59B2F1;
+}
+
+a.dp_dmb_admin_page_publish_link:hover {
+    color: #fff;
+    background-color: #1A95EC;
+}
+
+a.dp_dmb_admin_page_php_on_link {
+    color: #fff;
+    background-color: #F35959;
+}
+
+a.dp_dmb_admin_page_php_on_link:hover, #dp_dmb_deactivate_all_php:hover {
+    color: #fff;
+    background-color: #EE1A1A;
+}
+
+#dp_dmb_deactivate_all_php {
+    font-size: 16px;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 3px;
+    background-color: #F35959;
+    color: #fff;
+    display: inline-block;
+}
+
+#dp_dmb_deactivate_all_php:hover {
+    color: white;
+}
+
+@keyframes rotateIn {
+    from {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0, 0, 1, -360deg);
+        transform: rotate3d(0, 0, 1, -360deg);
+    }
+    to {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.dp_dmb_loader {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 6px #FF8426 outset;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation: rotateIn 2s infinite;
+}
+
+.dp_dmb_loader_wrapper {
+    text-align: center;
+}
+
+#dp_dmb_admin_page_update_modal_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+}
+
+#dp_dmb_admin_page_update_form_container {
+    position: absolute;
+    max-width: 500px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px;
+    box-shadow: 1px 1px 1px gray;
+}
+
+.dp_dmb_close_btn {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+#dp_dmb_admin_page_settings_form {
+    padding: 8px 32px;
+}
+
+#dp_dmb_admin_page_settings_form label {
+    display: block;
+    margin-bottom: 8px;
+}

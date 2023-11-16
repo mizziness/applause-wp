@@ -1,0 +1,245 @@
+/*
+* Import Page Style
+*/
+
+.dp_dmb_wrapper {
+    margin: 35px 50px 30px 30px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+#dp_dmb_admin_page_modules_container, #dp_dmb_admin_page_import_form_container {
+    padding: 20px 40px 40px;
+}
+
+.dp_dmb_admin_page_title {
+    background: #2d2d2d;
+    padding: 25px 28px;
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    border-radius: 4px 4px 0 0;
+}
+
+.dp_dmb_admin_page_description {
+    color: #6c6c6c;
+    padding: 8px 28px;
+}
+
+.dp_dmb_admin_page_section {
+    color: #000;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#dp_dmb_loader_wrapper {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+#dp_dmb_form_import_msg {
+    display: none;
+    padding: 16px;
+    background-color: white;
+    width: 500px;
+}
+
+#dp_dmb_form_import_msg p {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+#dp_dmb_form_import_actions {
+    text-align: center;
+}
+
+#dp_dmb_form_import_actions a {
+    font-size: 16px;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-left: 4px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+#dp_dmb_form_import_actions a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.dp_dmb_admin_page_close_link {
+    background-color: #FF8426;
+    color: white;
+}
+
+.dp_dmb_admin_page_edit_link {
+    background-color: #008ED6;
+    color: white;
+}
+
+.dp_dmb_admin_page_publish_link {
+    background-color: #00C5AC;
+    color: white;
+}
+
+.dp_dmb_loader {
+    display: none;
+    width: 36px;
+    height: 36px;
+    border: 6px transparent solid;
+    border-top: 6px #FF8426 solid;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+/*
+* Library
+*/
+
+.dp_dmb_library {
+
+}
+
+.dp_dmb_error_message {
+    text-align: center;
+}
+
+#dp_dmb_library_modules_tabs {
+    background-color: whitesmoke;
+}
+
+#dp_dmb_library_modules_tabs ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+#dp_dmb_library_modules_tabs ul li {
+    width: 50%;
+    text-align: center;
+    background-color: whitesmoke;
+    margin: 0;
+}
+
+#dp_dmb_library_modules_tabs ul li.ui-tabs-active {
+    background-color: #2d2d2d;
+    border: none;
+    box-shadow: none;
+}
+
+#dp_dmb_library_modules_tabs ul li a {
+    padding: 16px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+}
+
+#dp_dmb_library_modules_tabs ul li.ui-tabs-active a {
+    color: white;
+}
+
+#dp_dmb_library_modules_tabs div#tabs-1, #dp_dmb_library_modules_tabs div#tabs-2 {
+    padding: 16px 0;
+    overflow-y: auto;
+}
+
+#dp_dmb_library_modules_tabs .modules_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.dp_dmb_module {
+    display: flex;
+    flex-flow: column nowrap;
+    box-sizing: border-box;
+    width: 23%;
+    background-color: white;
+    padding: 16px;
+    box-shadow: 1px 1px 1px lightgray;
+    margin: 1%;
+}
+
+.dp_dmb_module img {
+    display: none;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.dp_dmb_library_title, .dp_dmb_library_description {
+    margin-top: 0;
+}
+
+.dp_dmb_module_actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 8px;
+}
+
+.button.dp_dmb_library_import, .button.dp_dmb_library_read_more {
+    box-shadow: none;
+}
+
+#dp_dmb_library_filters {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#dp_dmb_library_filter, #dp_dmb_library_search {
+    display: block;
+    font-size: 16px;
+    line-height: 1.2em;
+}
+
+.cat-hide, .search-hide, .pagination-hide {
+    display: none;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+    .dp_dmb_module {
+        width: 31%;
+        margin: 1% !important;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .dp_dmb_module {
+        width: 46%;
+        margin: 2% !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dp_dmb_module {
+        width: 100%;
+        margin: 3% !important;
+    }
+
+    #dp_dmb_library_filters {
+        flex-direction: column;
+    }
+}

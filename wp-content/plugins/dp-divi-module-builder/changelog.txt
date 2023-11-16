@@ -1,0 +1,193 @@
+version 2.4.3 ( 11-30-2022 )
+
+    - Corresponding labels of selected checkboxes now saved to PHP variable $[insert_field_identifier_here]_labels
+
+    - External JS are now requiring jQuery as a dependency to ensure script is loaded after jquery is loaded
+
+    - Updated color scheme
+
+version 2.4.2 ( 6-7-2022 )
+
+    - Added ability to remove repeat field HTML wrapper (Design and Advanced tab settings will no longer work on repeat fields)
+
+    - Added Update URI to plugin metadata to avoid conflicts with Elegant Themes marketplace
+
+version 2.4.1 ( 2-9-2022 )
+
+    - Changed the default indent when editing module code from tab to 2 spaces
+
+    - Fixed responsive option not generating the PHP variables and HTML code for each screen
+
+    - Fixed PHP 8 CMB2 deprecated notice for Field Type
+
+version 2.4 ( 12-29-2021 )
+
+    - Added responsive option to certain field types
+
+    - Added compatibility with Divi 4.13 expanded icon library
+
+    - Added new global asset meta box to load global styles from default Divi modules
+
+    - Added new before render box, useful for adding advanced php code to modules that needs to run before the module is rendered
+
+version 2.3 ( 10-5-2021 )
+
+    - Added video, audio and link field types
+
+    - Updated CMB2 to 2.9.0
+
+    - Modified PHP button output for TinyMCE and repeat fields
+
+    - Fixed broken layout in module editor related to WPML meta boxes
+
+version 2.2 ( 9-10-2020 )
+
+    - Added ability to use Dynamic Content for text, textarea, image and button field types
+
+    - Added Gallery field type
+
+    - Added option to control which field will be used as the label for the repeat fields
+
+    - Fixed PHP error if plugin active and Divi theme deactivated
+
+    - Javascript for each custom module is now only enqueued on pages the module is added to vs all pages
+
+version 2.1.4 ( 12-16-2019 )
+
+    - Removed all 3rd party metaboxes from custom module edit page
+
+    - Added filter to manually add 3rd party metaboxes
+
+    - Updated color scheme and icon for custom modules within the Divi Builder
+
+version 2.1.3 ( 11-22-2019 )
+
+    - Added ability to group fields under the same toggle
+
+    - Fixed checkbox fields getting auto checked when custom module imported from library
+
+version 2.1.2 ( 9-13-2019 )
+
+    - Fixed button field displaying URL of first post permalink when included inside query
+
+version 2.1.1 ( 9-4-2019 )
+
+    - Fixed button field adding URL prefix twice when permalink option on
+
+    - Fixed styles issues with codeMirror elements when full screen is active
+
+    - Updated EDD Update class
+
+version 2.1 ( 8-21-2019 )
+
+    - Modules from diviplugins.com can now be downloaded directly from within the plugin's Import page
+
+    - Added CodeMirror editor with native PHP support
+
+    - Added ability to expand editors to full screen
+
+    - Added Checkbox List field type
+
+    - Added File Upload field type
+
+    - UI improvements to Settings page
+
+version 2.0.3 ( 9-21-2018 )
+
+    - Added partial VB support for repeat fields and TinyMCE editor
+
+    - Fixed TinyMCE editor content not saving when added from within the Visual Builder
+
+    - Removed extra space before and after PHP output
+
+version 2.0.2 ( 8-22-2018 )
+
+    - Changed color field returning #ffffff value even if color not selected in module
+
+    - Added border and box shadow options back to modules and Add New Item child modules
+
+version 2.0.1 ( 8-8-2018 )
+
+    - Fixed Partial VB support option, if checked, becoming unchecked when importing, cloning, or updating a module.
+
+    - Added Default Image option
+
+version 2.0 ( 7-25-2018 )
+
+    - Added partial support option for live preview in the Visual Builder.
+
+    - Improved modules class rewrite for compatibility with the new way fields are declared in Divi.
+
+    - Improved function to clear local storage.
+
+    - Complete rewrite of the plugin from procedural to OOP.
+
+    - Fixed bug between custom functions feature and activate/deactivate php processing for all modules.
+
+version 1.0.9 ( 3-13-2018 )
+
+    - Added date/time picker
+
+    - Added ability to update a module by replacing with json file
+
+    - Added ability to control select values
+
+    - Added CodeMirror for CSS and JS input boxes
+
+    - Now escaping HTML entities on field labels and descriptions
+
+    - Fixed compatibility with PHP 7.2
+
+version 1.0.8 ( 2-22-2018 )
+
+    - Added integration for Divi Plugin Creator add-on
+
+version 1.0.7 ( 1-26-2018 )
+
+    - Fixed a bug that removed backslashes from module code boxes
+
+version 1.0.6 ( 1-16-2018 )
+
+    - Added support for buttons
+
+    - Added support for Custom CSS in the Advanced tab
+
+    - Added support for font control in Design tab for TinyMCE editor text
+
+    - Added support for multisite
+
+    - Fixed error when unchecking TinyMCE option and saving module
+
+version 1.0.5 ( 11-16-2017 )
+
+    - Added support for repeat field groups
+
+    - Added support for select field type
+
+    - Added support for TinyMCE editor
+
+    - Added icon options to Design tab
+
+version 1.0.4 ( 10-19-2017 )
+
+    - Fixed modules not reflecting changes after recent Divi update
+
+    - Fixed updater issues
+
+version 1.0.3 ( 9-18-2017 )
+
+    - Added ability to enqueue CSS and Javascript libraries
+
+    - Fixed error when migrating site from localhost to live site
+
+version 1.0.2 ( 9-5-2017 )
+
+    - Changed location of saved modules to prevent conflicts when plugin is updated
+
+version 1.0.1 ( 9-3-2017 )
+
+    - Field Identifier now restricts user from inputting any characters other than lowercase letters, numbers and underscores.
+
+version 1.0 ( 8-27-2017 )
+
+    - Initial release
