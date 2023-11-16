@@ -426,7 +426,7 @@
   display: inline-block;
 }
 
-body.single-post #left-area article {
+body.single-post #single-blog-post {
   mark {
     background-color: rgb(252 186 0);
     padding-left: .5rem;
@@ -503,11 +503,12 @@ body.single-post #left-area article {
   ol.blue-numbers li::marker {
     color: rgb(2 114 180);
   }
-  .entry-content tr td {
-    border-top: 1px solid #d3d3d3;
-  }
-  .entry-content table:not(.variations) {
+  table {
     border: 1px solid #d3d3d3;
+  }
+  table tr td {
+    border-top: 1px solid #d3d3d3;
+    padding: .625em;
   }
   blockquote.blog-quote {
     background-color: rgb(255 255 255);
@@ -597,4 +598,26 @@ body.single-post #left-area article {
       margin-left: .5rem;
     }
   }
+  @media screen and (max-width: 600px) {
+    table td {
+      border-bottom: 1px solid #d3d3d3 !important;
+      display: block;
+      font-size: .8em;
+      text-align: left;
+    }
+    .blog-image-double {
+      flex-direction: column;
+      .blog-image:first-of-type {
+        margin-right: 0;
+      }
+      .blog-image:last-of-type {
+        margin-left: 0;
+      }
+      img {
+        margin-bottom: 1rem;
+      }
+    }
+
+  }
+
 }
