@@ -46,8 +46,6 @@ class ACM_HypeEmbed extends ET_Builder_Module
 
 	function render($attrs, $content = null, $render_slug)
 	{
-		$output = "";
-
 		$hype_archive 		= $this->props['hype_archive'] ?? null;
 		$post_id 			= get_attachment_id_by_filename( basename($hype_archive) );
 		$attachment			= get_post( $post_id ) ?? null;
@@ -56,21 +54,19 @@ class ACM_HypeEmbed extends ET_Builder_Module
 		if ( $attachment != null ) {
 			$s3Folder = "https://" . getenv('BUCKETEER_BUCKET_NAME') . ".s3.amazonaws.com/public/wp-content/uploads/hype4/" . $mkt_id . "/Default/extracted.html";
 			$extracted = file_get_contents($s3Folder) ?? false;
+			$content = "";
 
 			if ( $extracted != false ) {
 				$hype_content = str_replace(array('><![CDATA[', ']]></script>'), array('>', '</script>'), $extracted);
-
 				$baseUrl = "https://bucketeer-57bb6f5e-ac50-48d6-a1b4-a5559e3736dc.s3.amazonaws.com/public/wp-content/uploads/hype4/{$mkt_id}/Default/Default.hyperesources";
-				$hype_content = str_replace( array('"Default.hyperesources', '&quot;Default.hyperesources'), '"' . $baseUrl, $hype_content);
-				$output = $hype_content;
-				
+				$content = str_replace( array('"Default.hyperesources', '&quot;Default.hyperesources'), '"' . $baseUrl, $hype_content);
 			} else {
-				$output = "Nothing Here";
+				$content = "<div>Error: Can't load Hype file properly.</div>";
 			}
-			
 		}
 
-		return $this->_render_module_wrapper($output, $render_slug);
+		// Render module content
+		return $content;
 	}
 }
 

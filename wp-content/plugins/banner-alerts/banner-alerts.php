@@ -3,7 +3,7 @@
  * Plugin Name: Banner Alerts
  * Plugin URI: https://www.banneralertsplugin.com/
  * Description: Provides an easy interface for creating and displaying alerts or notices as a banner on a website
- * Version: 1.4.0
+ * Version: 1.4.1
  * Author: Valice
  * Author URI: https://www.valice.com/
  * License: GPLv2 or later

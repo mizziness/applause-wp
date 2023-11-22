@@ -149,7 +149,7 @@ function wistiaEmbed_func($atts)
         $html .= "<span>{$a["icon"]} {$a["label"]}</span>";
         $html .= "</div></span>";
 
-    } else {
+    } else if ( $a["type"] == "image" ) {
         
         $html .= "<div id='wistia-embed-{$a["wistia_id"]}' class='applause-inline-wistia wistia_embed wistia_async_{$a["wistia_id"]} popover=true popoverContent=html'>";
         $html .= "<a class='{$a["button_class"]} click-track wistia-trigger' data-video='{$a["wistia_id"]}' target='_self' data-category='{$a["category"]}' data-action='{$a["action"]}' data-label='{$a["label"]}' data-href='{$a["wistia_id"]}'>";
@@ -157,6 +157,14 @@ function wistiaEmbed_func($atts)
             $html .= "<div class='video-image tw-overflow-hidden tw-rounded-lg'><img src='' data-src='{$a["video_image"]}' class='lazyload' /></div>";
         $html .= "</a></div>";
 
+    } else if ( $a["type"] == "plain" ) {
+
+        $html .= "<script src='https://fast.wistia.com/assets/external/E-v1.js' async></script>";
+        $html .= "<div class='wistia_responsive_padding' style='padding:56.25% 0 0 0;position:relative;'>";
+        $html .= "<div class='wistia_responsive_wrapper' style='height:100%;left:0;position:absolute;top:0;width:100%;'>";
+        $html .= "<div class='wistia_embed wistia_async_{$a["wistia_id"]} videoFoam=true' style='height:100%;width:100%'>&nbsp;</div>";
+        $html .= "</div></div>";
+        
     }
     
     // Use like: [wistia_button wistia_id="xxxxxxx" label="Watch Now"]

@@ -1423,6 +1423,15 @@ class Dp_Dfg_Utils {
 					'include_children' => 'on' === $props['filter_children_terms']
 				);
 			}
+
+			// TS CUSTOM CODE START
+			if ( is_null( $active_filter_term )  ) {
+				$active_filter_term = get_post_type_object( $props['active_filter'] );
+				if ( get_class($active_filter_term) == "WP_Post_Type" ) {
+					$filters_query = false;
+				}
+			}
+			// TS CUSTOM CODE END
 		}
 
 		return $filters_query;

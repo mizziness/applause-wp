@@ -5,7 +5,7 @@ jQuery(function ($) {
   window._wq = window._wq || [];
   window.applause = window.applause || [];
 
-  /* Events & Tracking */
+  // FUNCTION  Events & Tracking 
   /*
     - handleEventTracking() should be applied to links and buttons for Google Analytics/Tracking
     - A list of Event Types and their corresponding category, action and label can be found here:
@@ -21,6 +21,22 @@ jQuery(function ($) {
       callback();
     }
   }
+
+  // FUNCTION - wait for element to exist
+  var waitForEl = function (selector, callback) {
+    if ($(selector).length) {
+      callback();
+    } else {
+      setTimeout(function () {
+        waitForEl(selector, callback);
+      }, 100);
+    }
+  };
+
+  
+  $("#main-header #top-menu a").each(function(index){
+    $(this).attr("tabindex", index);
+  });
 
   // Press Releases / News Mentions 
   // ==========================================================
@@ -89,23 +105,6 @@ jQuery(function ($) {
         },
       });
     }
-  });
-
-  // FUNCTION - wait for element to exist
-  var waitForEl = function (selector, callback) {
-    if ($(selector).length) {
-      callback();
-    } else {
-      setTimeout(function () {
-        waitForEl(selector, callback);
-      }, 100);
-    }
-  };
-
-  // If it exists, move the banner alert into the header
-  waitForEl(".banner-alerts-container", function() {
-    let newPadding = $("#main-header").height();
-    $("#page-container").css("padding-top", newPadding );
   });
 
   // GRAVITY FORMS - MATERIAL DSIGN - ADD FOCUS TO LABEL
@@ -352,7 +351,6 @@ jQuery(function ($) {
     $(this).find('figure').wrapAll('<div class="column"></div>');
   });
 
-
   // add data attributes for custom click tracking
   // CTA buttons
   $(".et_pb_button").each(function(){
@@ -414,10 +412,7 @@ jQuery(function ($) {
   <a class="click-track" href="" data-category="" data-action="" data-label="" name=""></a>
   */
 
-  window.applause = window.applause || {};
-
   const trackClicksOn = document.querySelectorAll(".click-track");
-
   trackClicksOn.forEach(link => {
     link.addEventListener("click", function (event) {
       event.preventDefault();
@@ -444,7 +439,53 @@ jQuery(function ($) {
     });
   });
 
-});
+  // Add a handy link helper window for logged in users only
+  if ( $('body').hasClass("logged-in admin-bar") && $("#link-helper-window").length < 1 ) {
+    let linkWindow = "<div id='link-helper-window'><ul></ul></div>";
+    $("#main-content").append( linkWindow );
+    
+    $("link[hreflang]").each(function(){
+      let url = new URL( $(this).attr("href") );
+      let text = "<span>" + $(this).attr("hreflang") + "</span> - " + decodeURI( $(this).attr("href") );
+      let newLink = "<li><a href='" + url + "'>" + text + "</a></li>";
+      $("#link-helper-window").find("ul").append(newLink);
+    });
+  };
 
-// END Sliders 
-// ============================================================
+ $(".dp-dfg-search-input.search-clean").on("focus", function(){
+    let saved = $(this).attr("placeholder");
+    $(this).attr("data-placeholder", saved);
+    $(this).attr("placeholder", "");
+  });
+
+  $(".dp-dfg-search-input.search-clean").on("blur", function(){
+    let saved = $(this).attr("data-placeholder");
+    $(this).attr("data-placeholder", "");
+    $(this).attr("placeholder", saved);
+  });
+
+  $(document).off("click", ".dp-dfg-clear-filters-button");
+  $(document).on("click", ".dp-dfg-clear-filters-button", function(a) {
+    a.preventDefault();
+    a.stopPropagation();
+    console.log( "got it!" );
+  });
+
+  $("#podcast-transcript").addClass("closed");
+  $("#podcast-transcript").append("<div class='read-more-toggle'><div class='button'>Read More</div></div>");
+
+  $(document).on("click", "#podcast-transcript .read-more-toggle", function(a) {
+    $("#podcast-transcript").toggleClass("closed");
+  });
+
+  // If it exists, move the banner alert into the header
+  waitForEl(".banner-alerts-container", function() {
+    // If the banner alert slides in...
+    $("body").addClass("has-banner-alert");
+    // let bannerHeight    = $(".banner-alerts-container").height();
+    // let navHeight       = $("#main-header").height();
+    // $(".banner-alerts-container").css({ "position": "sticky", "top": 0, "z-index": 99 });
+    // $("#main-header").css({ "position": "sticky", "top": bannerHeight, "z-index": 99 });
+  });
+
+});

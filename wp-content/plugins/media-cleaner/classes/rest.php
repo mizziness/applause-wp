@@ -63,6 +63,7 @@ class Meow_WPMC_Rest
 					'orderBy' => array( 'required' => false, 'default' => 'id' ),
 					'order' => array( 'required' => false, 'default' => 'desc' ),
 					'search' => array( 'required' => false ),
+					'repairMode' => array( 'required' => false, 'default' => false ),
 				)
 			) );
 
@@ -86,6 +87,11 @@ class Meow_WPMC_Rest
 				'methods' => 'POST',
 				'permission_callback' => array( $this->core, 'can_access_features' ),
 				'callback' => array( $this, 'rest_reset_db' )
+			) );
+			register_rest_route( $this->namespace, '/repair', array(
+				'methods' => 'POST',
+				'permission_callback' => array( $this->core, 'can_access_features' ),
+				'callback' => array( $this, 'rest_repair' )
 			) );
 
 			// SCAN
@@ -176,15 +182,16 @@ class Meow_WPMC_Rest
 		$params = $request->get_json_params();
 		$src = isset( $params['source'] ) ? $params['source'] : null;
 		$search = isset( $params['search'] ) ? $params['search'] : null;
+		$repair_mode = isset( $params['repairMode'] ) ? rest_sanitize_boolean( $params['repairMode'] ) : false;
 		$ids = [];
 		if ( $src === 'issues' ) {
-			$ids = $this->get_issues_ids($search);
+			$ids = $repair_mode ? $this->core->get_repair_ids( $search ) : $this->get_issues_ids( $search );
 		}
 		else if ( $src === 'ignored' ) {
-			$ids = $this->get_ignored_ids($search);
+			$ids = $this->get_ignored_ids( $search );
 		}
 		else if ( $src === 'trash' ) {
-			$ids = $this->get_trash_ids($search);
+			$ids = $this->get_trash_ids( $search );
 		}
 		else {
 			return new WP_REST_Response( [ 
@@ -379,15 +386,25 @@ class Meow_WPMC_Rest
 		$orderBy = sanitize_text_field( $request->get_param('orderBy') );
 		$order = sanitize_text_field( $request->get_param('order') );
 		$search = sanitize_text_field( $request->get_param('search') );
+		$referenceFilter = sanitize_text_field( $request->get_param('referenceFilter') );
 		$table_ref = $wpdb->prefix . "mclean_refs";
 
-		$total = $this->count_references($search);
+		$total = $this->count_references($search, $referenceFilter);
+
+		$where_sql = '';
+		if ($referenceFilter === 'mediaIds') {
+			$where_sql = 'AND mediaId IS NOT NULL';
+		} else if ($referenceFilter === 'mediaUrls') {
+			$where_sql = 'AND mediaUrl IS NOT NULL';
+		}
 
 		$order_sql = 'ORDER BY id DESC';
-		if ( $orderBy === 'mediaId' ) {
-			$order_sql = 'ORDER BY mediaId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+		if ( $orderBy === 'id' ) {
+			$order_sql = 'ORDER BY ID IS NULL, ID ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+		} elseif ( $orderBy === 'mediaId' ) {
+			$order_sql = 'ORDER BY mediaId IS NULL, mediaId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
 		} elseif ( $orderBy === 'mediaUrl' ) {
-			$order_sql = 'ORDER BY mediaUrl ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			$order_sql = 'ORDER BY mediaUrl IS NULL, mediaUrl ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
 		} elseif ( $orderBy === 'originType' ) {
 			$order_sql = 'ORDER BY originType ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
 		}
@@ -397,6 +414,8 @@ class Meow_WPMC_Rest
 			$entries = $wpdb->get_results( 
 				$wpdb->prepare( "SELECT *
 					FROM $table_ref
+					WHERE 1=1
+					$where_sql
 					$order_sql
 					LIMIT %d, %d", $skip, $limit
 				)
@@ -407,6 +426,7 @@ class Meow_WPMC_Rest
 				$wpdb->prepare( "SELECT *
 					FROM $table_ref
 					WHERE mediaUrl LIKE %s
+					$where_sql
 					$order_sql
 					LIMIT %d, %d", ( '%' . $search . '%' ), $skip, $limit
 				)
@@ -424,6 +444,7 @@ class Meow_WPMC_Rest
 		$orderBy = sanitize_text_field( $request->get_param('orderBy') );
 		$order = sanitize_text_field( $request->get_param('order') );
 		$search = sanitize_text_field( $request->get_param('search') );
+		$repair_mode = rest_sanitize_boolean( $request->get_param('repairMode') );
 		$table_scan = $wpdb->prefix . "mclean_scan";
 		$total = 0;
 
@@ -431,61 +452,114 @@ class Meow_WPMC_Rest
 			return $this->rest_reference_entries( $request );
 		}
 
-		$whereSql = '';
-		if ( $filterBy == 'issues' ) {
-			$whereSql = 'WHERE ignored = 0 AND deleted = 0';
-			$total = $this->count_issues($search);
-		}
-		else if ( $filterBy == 'ignored' ) {
-			$whereSql = 'WHERE ignored = 1';
-			$total = $this->count_ignored($search);
-		}
-		else if ( $filterBy == 'trash' ) {
-			$whereSql = 'WHERE deleted = 1';
-			$total = $this->count_trash($search);
-		}
-		else {
-			$whereSql = 'WHERE deleted = 0';
-		}
-
-		$orderSql = 'ORDER BY id DESC';
-		if ( $orderBy === 'type' ) {
-			$orderSql = 'ORDER BY postId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
-		}
-		else if ( $orderBy === 'postId' ) {
-			$orderSql = 'ORDER BY postId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
-		}
-		else if ( $orderBy === 'path' ) {
-			$orderSql = 'ORDER BY path ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
-		}
-		else if ( $orderBy === 'size' ) {
-			$orderSql = 'ORDER BY size ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
-		}
-
 		$entries = [];
-		if ( empty( $search ) ) {
-			$entries = $wpdb->get_results( 
-				$wpdb->prepare( "SELECT id, type, postId, path, size, ignored, deleted, issue
-					FROM $table_scan
-					$whereSql
-					$orderSql
-					LIMIT %d, %d", $skip, $limit
-				)
-			);
-		}
-		else {
-			$entries = $wpdb->get_results( 
-				$wpdb->prepare( "SELECT id, type, postId, path, size, ignored, deleted, issue
-					FROM $table_scan
-					$whereSql
-					AND path LIKE %s
-					$orderSql
-					LIMIT %d, %d", ( '%' . $search . '%' ), $skip, $limit
-				)
-			);
+		if ( $repair_mode ) {
+			$entries = $this->core->get_issues_to_repair( $orderBy, $order, $search, $skip, $limit );
+			$total = $this->core->get_count_of_issues_to_repair( $search );
+		} else {
+			$whereSql = '';
+			if ( $filterBy == 'issues' ) {
+				$whereSql = 'WHERE ignored = 0 AND deleted = 0';
+				$total = $this->count_issues($search);
+			}
+			else if ( $filterBy == 'ignored' ) {
+				$whereSql = 'WHERE ignored = 1';
+				$total = $this->count_ignored($search);
+			}
+			else if ( $filterBy == 'trash' ) {
+				$whereSql = 'WHERE deleted = 1';
+				$total = $this->count_trash($search);
+			}
+			else {
+				$whereSql = 'WHERE deleted = 0';
+			}
+
+			$orderSql = 'ORDER BY id DESC';
+			if ( $orderBy === 'type' ) {
+				$orderSql = 'ORDER BY postId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			}
+			else if ( $orderBy === 'postId' ) {
+				$orderSql = 'ORDER BY postId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			}
+			$whereSql = '';
+			if ( $filterBy == 'issues' ) {
+				$whereSql = 'WHERE ignored = 0 AND deleted = 0';
+				$total = $this->count_issues($search);
+			}
+			else if ( $filterBy == 'ignored' ) {
+				$whereSql = 'WHERE ignored = 1';
+				$total = $this->count_ignored($search);
+			}
+			else if ( $filterBy == 'trash' ) {
+				$whereSql = 'WHERE deleted = 1';
+				$total = $this->count_trash($search);
+			}
+			else {
+				$whereSql = 'WHERE deleted = 0';
+			}
+
+			$orderSql = 'ORDER BY id DESC';
+			if ( $orderBy === 'type' ) {
+				$orderSql = 'ORDER BY postId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			}
+			else if ( $orderBy === 'postId' ) {
+				$orderSql = 'ORDER BY postId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			}
+			$whereSql = '';
+			if ( $filterBy == 'issues' ) {
+				$whereSql = 'WHERE ignored = 0 AND deleted = 0';
+				$total = $this->count_issues($search);
+			}
+			else if ( $filterBy == 'ignored' ) {
+				$whereSql = 'WHERE ignored = 1';
+				$total = $this->count_ignored($search);
+			}
+			else if ( $filterBy == 'trash' ) {
+				$whereSql = 'WHERE deleted = 1';
+				$total = $this->count_trash($search);
+			}
+			else {
+				$whereSql = 'WHERE deleted = 0';
+			}
+
+			$orderSql = 'ORDER BY id DESC';
+			if ( $orderBy === 'type' ) {
+				$orderSql = 'ORDER BY postId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			}
+			else if ( $orderBy === 'postId' ) {
+				$orderSql = 'ORDER BY postId ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			}
+			else if ( $orderBy === 'path' ) {
+				$orderSql = 'ORDER BY path ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			}
+			else if ( $orderBy === 'size' ) {
+				$orderSql = 'ORDER BY size ' . ( $order === 'asc' ? 'ASC' : 'DESC' );
+			}
+
+			if ( empty( $search ) ) {
+				$entries = $wpdb->get_results( 
+					$wpdb->prepare( "SELECT id, type, postId, path, size, ignored, deleted, issue
+						FROM $table_scan
+						$whereSql
+						$orderSql
+						LIMIT %d, %d", $skip, $limit
+					)
+				);
+			}
+			else {
+				$entries = $wpdb->get_results( 
+					$wpdb->prepare( "SELECT id, type, postId, path, size, ignored, deleted, issue
+						FROM $table_scan
+						$whereSql
+						AND path LIKE %s
+						$orderSql
+						LIMIT %d, %d", ( '%' . $search . '%' ), $skip, $limit
+					)
+				);
+			}
 		}
 
-		$base = '/' . ( $filterBy == 'trash' ? $this->core->get_trashurl() : $this->core->upload_url );
+		$base = $filterBy == 'trash' ? $this->core->get_trashurl() : $this->core->upload_url;
 		foreach ( $entries as $entry ) {
 			// FILESYSTEM
 			if ( $entry->type == 0 ) {
@@ -579,6 +653,23 @@ class Meow_WPMC_Rest
 		return new WP_REST_Response( [ 'success' => true, 'data' => $data ], 200 );
 	}
 
+	function rest_repair( $request ) {
+		$params = $request->get_json_params();
+		$entryIds = isset( $params['entryIds'] ) ? (array)$params['entryIds'] : null;
+		$entryId = isset( $params['entryId'] ) ? (int)$params['entryId'] : null;
+		$data = null;
+		if ( !empty( $entryIds ) ) {
+			foreach ( $entryIds as $entryId ) {
+				$this->core->repair( $entryId );
+			}
+			$data = 'N/A';
+		}
+		else if ( !empty( $entryId ) ) {
+			$data = $this->core->repair( $entryId );
+		}
+		return new WP_REST_Response( [ 'success' => true, 'data' => $data ], 200 );
+	}
+
 	function get_issues_ids($search) {
 		global $wpdb;
 		$whereSql = empty($search) ? '' : $wpdb->prepare("AND path LIKE %s", ( '%' . $search . '%' ));
@@ -621,29 +712,41 @@ class Meow_WPMC_Rest
 		return (int)$wpdb->get_var( "SELECT COUNT(*) FROM $table_scan WHERE deleted = 1 $whereSql" );
 	}
 
-	function count_references($search) {
+	function count_references($search, $referenceFilter) {
 		global $wpdb;
-		$whereSql = empty($search) ? '' : $wpdb->prepare("AND mediaUrl LIKE %s", ( '%' . $search . '%' ));
+		$where_sqls = [];
+		if (! empty($search) ) {
+			$where_sqls[] = $wpdb->prepare("AND mediaUrl LIKE %s", ( '%' . $search . '%' ));
+		}
+		if ( $referenceFilter !== 'showAll' ) {
+			if ($referenceFilter === 'mediaIds') {
+				$where_sqls[] = 'AND mediaId IS NOT NULL';
+			} else if ($referenceFilter === 'mediaUrls') {
+				$where_sqls[] = 'AND mediaUrl IS NOT NULL';
+			}
+		}
+		$where_sql = implode(' ', $where_sqls);
 		$table_ref = $wpdb->prefix . "mclean_refs";
-		return (int)$wpdb->get_var( "SELECT COUNT(id) FROM $table_ref WHERE 1=1 $whereSql" );
+		return (int)$wpdb->get_var( "SELECT COUNT(id) FROM $table_ref WHERE 1=1 $where_sql" );
 	}
 
-	function rest_get_stats($request) {
+	function rest_get_stats( $request ) {
 		$search = sanitize_text_field( $request->get_param('search') );
+		$reference_filter = sanitize_text_field( $request->get_param('referenceFilter') );
+		$repair_mode = rest_sanitize_boolean( $request->get_param('repairMode') );
 
 		global $wpdb;
 		$whereSql = empty($search) ? '' : $wpdb->prepare("AND path LIKE %s", ( '%' . $search . '%' ));
-		$refWhereSql = empty($search) ? '' : $wpdb->prepare("AND mediaUrl LIKE %s", ( '%' . $search . '%' ));
 		$table_scan = $wpdb->prefix . "mclean_scan";
-		$table_ref = $wpdb->prefix . "mclean_refs";
-		$issues = $wpdb->get_row( "SELECT COUNT(*) as entries, SUM(size) as size
-			FROM $table_scan WHERE ignored = 0 AND deleted = 0 $whereSql" );
+		$issues = $repair_mode
+			? $this->core->get_stats_of_issues_to_repair( $search )
+			: $wpdb->get_row( "SELECT COUNT(*) as entries, SUM(size) as size 
+				FROM $table_scan WHERE ignored = 0 AND deleted = 0 $whereSql" );
 		$ignored = (int)$wpdb->get_var( "SELECT COUNT(*) 
 			FROM $table_scan WHERE ignored = 1 $whereSql" );
 		$trash = $wpdb->get_row( "SELECT COUNT(*) as entries, SUM(size) as size
 			FROM $table_scan WHERE deleted = 1 $whereSql" );
-		$references = $wpdb->get_var( "SELECT COUNT(id)
-			FROM $table_ref WHERE 1=1 $refWhereSql" );
+		$references = $this->count_references($search, $reference_filter);
 
 		return new WP_REST_Response( [ 'success' => true, 'data' => array(
 			'issues' => $issues->entries,

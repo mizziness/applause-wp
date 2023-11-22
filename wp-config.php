@@ -148,6 +148,10 @@ if(function_exists('get_option')) {
   define('WP_SITEURL', $localUrl);
 }
 
+define( 'APMO_DEBUG', false );
+
+define( 'ACM_DEBUG', false );
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

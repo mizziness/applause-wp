@@ -29,5 +29,8 @@
   "cde": {
     "gettext": "acm-applause-custom-modules",
     "prefix": "acm"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.23.3"
   }
 }

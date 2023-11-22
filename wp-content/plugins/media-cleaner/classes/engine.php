@@ -229,13 +229,18 @@ SQL;
 			$clean_path = $this->core->clean_uploaded_filename( $file );
 			$table_name = $wpdb->prefix . "mclean_scan";
 			$filesize = file_exists( $filepath ) ? filesize ($filepath) : 0;
+			// Let's find out if there is a parentId for this file
+			$potentialParentPath = $this->core->clean_url_from_resolution( $clean_path );
+			$parentId = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $table_name WHERE path = %s", $potentialParentPath ) );
+			$parentId = $parentId ? (int)$parentId : null;
 			$wpdb->insert( $table_name,
 				array(
 					'time' => current_time('mysql'),
 					'type' => 0,
 					'path' => $clean_path,
 					'size' => $filesize,
-					'issue' => $issue
+					'issue' => $issue,
+					'parentId' => $parentId
 				)
 			);
 		}

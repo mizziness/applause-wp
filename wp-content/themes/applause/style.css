@@ -15,6 +15,52 @@
 .et-fb-root-ancestor #q-messenger-frame { display: none !important; }
 .et-fb-root-ancestor #mega-menu-dropdowns { display: none !important; }
 
+@media ( min-width: 769px ) {
+  body.has-banner-alert #page-container { padding-top: 3rem; }
+  body.has-banner-alert #page-container #main-header { top: 3rem; position: fixed; z-index: 100; }
+  body.has-banner-alert .banner-alerts-container { top: 0; position: sticky; z-index: 100; }
+}
+
+#link-helper-window {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  #link-helper-window {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    background-color: #cccccce3;
+    padding: 1rem;
+    border: 2px dashed #fff;
+  }
+
+  #link-helper-window ul {
+    list-style: disc inside;
+  }
+
+  #link-helper-window ul li {
+    padding: 2px 0;
+    margin: 0;
+    line-height: 1rem;
+  }
+
+  #link-helper-window ul li span {
+    font-weight: 600;
+    color: #333;
+  }
+
+  #link-helper-window ul li a {
+    font-size: 13px;
+  }
+
+  #link-helper-window ul li a:hover {
+    text-decoration: underline;
+  }
+}
+
 .et_pb_pagebuilder_layout {
   overflow-x: visible;
 }
@@ -222,8 +268,8 @@ nav.et-menu-nav,
   }
 
   #page-container #main-header {
-    top: 0px !important;
-    position: sticky;
+    /* top: 0px !important;
+    position: sticky; */
   }
 
   #et_mobile_nav_menu #mobile_menu {
@@ -329,13 +375,13 @@ nav.et-menu-nav,
   }
 
   #page-container #main-header {
-    top: 0px !important;
-    position: fixed;
+    /* top: 0px !important;
+    position: fixed; */
   }
   
   .et_fixed_nav.et_show_nav #page-container:not(.et-fb-root-ancestor) {
-    padding-top: 72px;
-    overflow-y: visible !important;
+    /* padding-top: 72px; */
+    /* overflow-y: visible !important; */
   }
 }
 
@@ -477,7 +523,8 @@ nav.et-menu-nav,
 
 #mega-footer-bottom .footer-bottom-section {
   display: flex;
-  width: 100%;
+  width: 80%;
+  max-width: 1080px;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -647,8 +694,8 @@ nav.et-menu-nav,
   @media (min-width:980px) {
     #mega-footer-bottom .footer-bottom-section {
       display: block;
-      max-width: none;
-      width: 100%;
+      max-width: 1080px;
+      width: 80%;
       margin: 0;
     }
 

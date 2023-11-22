@@ -187,9 +187,9 @@
     a {
       --tw-bg-opacity: 1;
       --tw-text-opacity: 1;
-      background-color: rgb(236 236 236 / var(--tw-bg-opacity));
+      background-color: rgb(236, 236, 236);
       border-radius: 9999px;
-      color: rgb(27 27 27 / var(--tw-text-opacity));
+      color: rgb(27, 27, 27);
       display: inline-block;
       font-size: 0.875rem;
       margin-right: 0.5rem;
@@ -199,8 +199,8 @@
       &:hover {
         --tw-bg-opacity: 1;
         --tw-text-opacity: 1;
-        background-color: rgb(2 114 180 / var(--tw-bg-opacity));
-        color: rgb(255 255 255 / var(--tw-text-opacity));
+        background-color: rgb(2, 114, 180);
+        color: rgb(255, 255, 255);
         text-decoration-line: none;
       }
     }
@@ -428,13 +428,13 @@
 
 body.single-post {
   mark {
-    background-color: rgb(252 186 0);
+    background-color: rgb(252, 186, 0);
     padding-left: .5rem;
     padding-right: .5rem;
     white-space: nowrap;
   }
   code {
-    background-color: rgb(240 240 240);
+    background-color: rgb(240, 240, 240);
     padding-left: .5rem;
     padding-right: .5rem;
     white-space: nowrap;
@@ -459,7 +459,7 @@ body.single-post {
   }
   ul.blue-arrows li:before {
     align-content: center;
-    color: rgb(2 114 180);
+    color: rgb(2, 114, 180);
     content: "⟶";
     display: grid;
     font-size: 1rem;
@@ -471,9 +471,9 @@ body.single-post {
   }
   ul.green-check li:before {
     align-content: center;
-    background-color: rgb(0 183 139);
+    background-color: rgb(0, 183, 139);
     border-radius: 9999px;
-    color: rgb(255 255 255);
+    color: rgb(255, 255, 255);
     content: "✓";
     display: grid;
     font-size: 1rem;
@@ -485,9 +485,9 @@ body.single-post {
   }
   ul.red-x li:before {
     align-content: center;
-    background-color: rgb(239 68 68);
+    background-color: rgb(239, 68, 68);
     border-radius: 9999px;
-    color: rgb(255 255 255);
+    color: rgb(255, 255, 255);
     content: "✕";
     display: grid;
     font-size: 1rem;
@@ -501,7 +501,7 @@ body.single-post {
     list-style-position: outside;
   }
   ol.blue-numbers li::marker {
-    color: rgb(2 114 180);
+    color: rgb(2, 114, 180);
   }
   table {
     border: 1px solid #d3d3d3;
@@ -511,11 +511,11 @@ body.single-post {
     padding: .625em;
   }
   blockquote.blog-quote {
-    background-color: rgb(255 255 255);
-    color: rgb(2 114 180);
+    background-color: rgb(255, 255, 255);
+    color: rgb(2, 114, 180);
     font-size: 1.25rem;
     margin-bottom: 2.5rem;
-    border-color: rgb(2 114 180/var(--tw-border-opacity));
+    border-color: rgb(2, 114, 180);
     border-left-style: solid;
     border-left-width: 4px;
     padding: .5rem 1rem;
@@ -527,7 +527,7 @@ body.single-post {
     line-height: 1.75rem;
   }
   blockquote.blog-quote .quote-author {
-    color: rgb(58 58 58);
+    color: rgb(58, 58, 58);
     font-size: .875rem;
     font-weight: 400;
     margin-top: .5rem;
@@ -538,14 +538,14 @@ body.single-post {
     margin-right: 5px;
   }
   .blog-cta {
-    background-color: rgb(230 241 248);
+    background-color: rgb(230, 241, 248);
     border-radius: .375rem;
     margin-bottom: 2.5rem;
     margin-top: 2.5rem;
     padding: 1rem 2rem;
 
     .type-tag {
-      color: rgb(2 103 162);
+      color: rgb(2, 103, 162);
       font-size: .875rem;
     }
     .title {

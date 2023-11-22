@@ -1,5 +1,5 @@
 (function ($) {
-	
+
 	var bannerAlerts = {
 		latestTimestamp: 0,
 
@@ -8,14 +8,14 @@
 		$alerts: null,
 		$controls: null,
 
-		options: [], 
+		options: [],
 
 		init: function () {
 			var cookieData = (this.getCookie('last-alert-timestamp') || '0:0').split(':');
 			this.latestTimestamp = cookieData[0] || 0;
 
 			if ((Math.floor(new Date().getTime() / 1000) - (cookieData[1] || 0)) >= 1800) {
-				this.retrieveAlerts(this.latestTimestamp); 
+				this.retrieveAlerts(this.latestTimestamp);
 			}
 		},
 
@@ -90,8 +90,7 @@
 
 			this.$alertsBannerContainer.hide();
 
-			// $('body').prepend(this.$alertsBannerContainer);
-			$('#main-header').prepend(this.$alertsBannerContainer);
+			$('body').prepend(this.$alertsBannerContainer);
 		},
  
 		addAlerts: function (alerts) {
@@ -135,6 +134,10 @@
 					'type': 'text/css'
 				}).prependTo(this.$alertsBannerContainer);
 
+				this.$navigation = $('<div/>', {
+					'class': 'navigation'
+				}).appendTo(this.$controls);
+
 				$('<a/>', {
 					'text': '<',
 					'class': 'previous',
@@ -142,7 +145,7 @@
 				}).on('click', function() {
 					container.find('.alert:last-child').prependTo(container);
 					return false;
-				}).appendTo(this.$controls);
+				}).appendTo(this.$navigation);
 
 				$('<a/>', {
 					'text': '>',
@@ -151,7 +154,7 @@
 				}).on('click', function() {
 					container.find('.alert:first-child').appendTo(container);
 					return false;
-				}).appendTo(this.$controls);
+				}).appendTo(this.$navigation);
 			}
 
 			if (this.options['display-dismiss'] == '1') {

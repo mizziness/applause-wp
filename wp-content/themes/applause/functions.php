@@ -6,10 +6,12 @@ if (!defined('ABSPATH')) {
 
 use Aws\S3\Exception\S3Exception;
 
-require __DIR__ . "/custom-posts.php";
+require __DIR__ . "/includes/custom-posts.php";
 require __DIR__ . "/includes/shortcodes.php";
 require __DIR__ . "/includes/blog.php";
+require __DIR__ . "/includes/resources.php";
 require __DIR__ . "/includes/newsroom.php";
+require __DIR__ . "/includes/biographies.php";
 
 if (!function_exists('WP_Filesystem')) {
     include_once 'wp-admin/includes/file.php';
@@ -56,17 +58,18 @@ function wpb_custom_new_menu()
 add_action('init', 'wpb_custom_new_menu');
 
 
-function enqueue_admin_script() {
-    wp_register_style( 'font-css', get_stylesheet_directory_uri() . '/public/webfonts/proximanova/font-proximanova.css');
-    wp_register_style( 'admin-css', get_stylesheet_directory_uri() . '/dist/admin.css', array('font-css'));
+function enqueue_admin_script()
+{
+    wp_register_style('font-css', get_stylesheet_directory_uri() . '/public/webfonts/proximanova/font-proximanova.css');
+    wp_register_style('admin-css', get_stylesheet_directory_uri() . '/dist/admin.css', array('font-css'));
 
-    wp_register_script( 'admin-js', get_stylesheet_directory_uri() . '/src/js/admin.js', array());
+    wp_register_script('admin-js', get_stylesheet_directory_uri() . '/src/js/admin.js', array());
 
-    wp_enqueue_style( 'font-css' );
-    wp_enqueue_style( 'admin-css' );
-    wp_enqueue_script( 'admin-js' );
+    wp_enqueue_style('font-css');
+    wp_enqueue_style('admin-css');
+    wp_enqueue_script('admin-js');
 }
-add_action( 'admin_enqueue_scripts', 'enqueue_admin_script' );
+add_action('admin_enqueue_scripts', 'enqueue_admin_script');
 
 
 add_action('wp_enqueue_scripts', 'ds_ct_enqueue_parent');
@@ -100,15 +103,48 @@ function ds_ct_loadjs()
         return;
     }
 
-    wp_enqueue_script('wistia-script', 'https://fast.wistia.com/assets/external/E-v1.js', array(), '', array('strategy'  => 'async'));
+    wp_enqueue_script('wistia-script', 'https://fast.wistia.com/assets/external/E-v1.js', array(), '', array('strategy' => 'async'));
     wp_enqueue_script('lazysizes', get_stylesheet_directory_uri() . '/public/assets/lazysizes.min.js');
 
     // Localize the AJAX URL
     wp_localize_script('ds-theme-script', 'load_more_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
-    ));
+    )
+    );
 }
+
+function dpdfg_custom_loader()
+{
+    ob_start();
+    ?>
+        <div class="dp-dfg-loader"><div class="applause-loader"></div></div>
+        <style>
+            .dp-dfg-loader {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -30px;
+                margin-left: -30px;
+            }
+            .applause-loader {
+                border: 8px solid #01446C;
+                border-top: 8px solid #0D7DC1;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                animation: spin 2s ease-in-out infinite;
+                margin: 0 auto;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+    <?php
+    return ob_get_clean();
+}
+add_filter('dpdfg_custom_loader', 'dpdfg_custom_loader');
 
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 
@@ -219,25 +255,25 @@ function posts_orderby($query)
     return $query;
 }
 
-function custom_attachment_filter( $post_id ) 
+function custom_attachment_filter($post_id)
 {
-    
-    $file = get_post( $post_id );
+
+    $file = get_post($post_id);
 
     // We only want to handle zip files that begin with mkt#### 
-    if ( $file === null || $file->post_mime_type != "application/zip" || strpos($file->guid, "mkt") < 0 ) {
+    if ($file === null || $file->post_mime_type != "application/zip" || strpos($file->guid, "mkt") < 0) {
         // Not a Hype File, skipsies
         return $post_id;
     }
 
-    $filename       = basename($file->guid);
-    $fileParts      = explode(".", $filename);
-    $localFile      = get_attached_file( $file->ID );
-    $hypeFolder     = WP_CONTENT_DIR . "/uploads/hype4";
-    $mkt_id         = explode("-", $fileParts[0])[0] ?? null;
+    $filename = basename($file->guid);
+    $fileParts = explode(".", $filename);
+    $localFile = get_attached_file($file->ID);
+    $hypeFolder = WP_CONTENT_DIR . "/uploads/hype4";
+    $mkt_id = explode("-", $fileParts[0])[0] ?? null;
 
     // Make sure we have a marketo ID on the filename
-    if ( $mkt_id == null ) {
+    if ($mkt_id == null) {
         return $post_id;
     }
 
@@ -270,7 +306,7 @@ function custom_attachment_filter( $post_id )
 
     $foundFolder = WP_CONTENT_DIR . "/uploads/hype4/" . $foundIt;
 
-    if ( !is_dir($foundFolder) ) {
+    if (!is_dir($foundFolder)) {
         error_log('Hype Uploads: Extracted folder was not found.');
         return $file;
     }
@@ -283,13 +319,13 @@ function custom_attachment_filter( $post_id )
 
     // Grab the index.html file
     if (is_dir($defaultFolder) && file_exists($defaultFolder . "/index.html")) {
-        $index          = $defaultFolder . "/index.html";
-        $pageHTML       = mb_convert_encoding(file_get_contents($index), "UTF-8");
-        $updatedHTML    = str_replace("default_hype_container", "default_hype_container_" . $mkt_id, $pageHTML);
-        $updatedHTML    = str_replace(array('><![CDATA[', ']]></script>'), array('>', '</script>'), $updatedHTML);
-        $updatedHTML    = str_replace('\n', " ", $updatedHTML);
-        $updatedHTML    = str_replace('\t', "", $updatedHTML);
-        
+        $index = $defaultFolder . "/index.html";
+        $pageHTML = mb_convert_encoding(file_get_contents($index), "UTF-8");
+        $updatedHTML = str_replace("default_hype_container", "default_hype_container_" . $mkt_id, $pageHTML);
+        $updatedHTML = str_replace(array('><![CDATA[', ']]></script>'), array('>', '</script>'), $updatedHTML);
+        $updatedHTML = str_replace('\n', " ", $updatedHTML);
+        $updatedHTML = str_replace('\t', "", $updatedHTML);
+
         $domme = new DomDocument();
         $domme->validateOnParse = true;
         $domme->preserveWhiteSpace = false;
@@ -327,13 +363,13 @@ function custom_attachment_filter( $post_id )
 
         // Upload folder to S3
         $sharedConfig = [
-            'region'  => getenv('AWS_REGION'),
+            'region' => getenv('AWS_REGION'),
             'version' => 'latest'
         ];
 
-        $sdk        = new Aws\Sdk($sharedConfig);
-        $client     = $sdk->createS3();
-        $prefix     = "public/wp-content/uploads/hype4/";
+        $sdk = new Aws\Sdk($sharedConfig);
+        $client = $sdk->createS3();
+        $prefix = "public/wp-content/uploads/hype4/";
 
         try {
 
@@ -348,7 +384,7 @@ function custom_attachment_filter( $post_id )
 
         // Delete the local folder
         $filesystem->delete($targetFolder, true);
-        
+
     }
 }
-add_action( 'add_attachment', 'custom_attachment_filter', 10, 1 );
+add_action('add_attachment', 'custom_attachment_filter', 10, 1);
